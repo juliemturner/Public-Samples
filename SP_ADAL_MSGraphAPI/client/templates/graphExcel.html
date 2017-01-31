@@ -1,0 +1,9 @@
+<div>{{vm.message}}</div>
+<div><div class="ge-button" ng-click="vm.createFile()">Create File</div></div>
+<div><div ng-repeat="ws in vm.Worksheets">
+        <span>id: {{ws.id}}</span>
+        <span>position: {{ws.position}}</span>
+        <span>name: {{ws.name}}</span>
+        <span>visibility: {{ws.visibility}}</span>
+        </div>
+</div>

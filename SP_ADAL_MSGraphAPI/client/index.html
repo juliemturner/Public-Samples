@@ -1,0 +1,17 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal-angular.min.js"></script>
+<!--Used only to create the XLSX file, will use the GraphAPI to manipulate the XSLX file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.1/xlsx.core.min.js"></script>
+
+<!--Change the relative paths for your files to your library -->
+<script src="<your lib url>/client/js/module.js"></script>
+<script src="<your lib url>/client/js/module.adal.js"></script>
+<script src="<your lib url>/client/js/ge.component.js"></script>
+
+<link href="<your lib url>/client/styles/graphExcel.css" rel="stylesheet" type="text/css"/>
+
+<div ng-app="GraphExcel">
+    <graph-excel></graph-excel>
+</div>
