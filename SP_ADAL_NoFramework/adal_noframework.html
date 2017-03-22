@@ -1,0 +1,108 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal.min.js"></script>
+
+<div>
+    <h1>My Great ADAL Test</h1>
+    <div id="message"></div>
+    <br/>
+    <div id="displayName"></div>
+    <div id="jobTitle"></div>
+    <div id="mail"></div>
+    <div id="mobilePhone"></div>
+    <div id="officeLocation"></div>
+</div>
+
+<script type="text/javascript">
+    "use strict";
+    var sympraxis = window.sympraxis || {};
+    //AzureAD App = ADALTest2
+    //sympraxis.clientId = 'ywNSNzr79AOAFEaTfHFWfn31QSyw5XTuVcwrIrSuqxM=';
+    sympraxis.clientId = '799eab9f-6e8e-42fd-b1a4-90f784b1356e';
+    //sympraxis.tenant = '72f988bf-86f1-41af-91ab-2d7cd011db47';
+    //AzureAD App = ADALTest
+    //sympraxis.clientId = '45c1ba25-1b90-44fd-8ab9-cfb2f45920e8';
+    sympraxis.tenant = '5a3f949f-70ba-467b-b915-b40feeadc67d';
+
+    sympraxis.config = {
+        tenant: sympraxis.tenant,
+        clientId: sympraxis.clientId,
+        endpoints: {
+            graphUri: 'https://graph.microsoft.com'
+        },
+        cacheLocation: "localStorage"
+    };
+    //Create the autentication context
+    sympraxis.authContext =  new AuthenticationContext(sympraxis.config);
+
+    sympraxis.getAuthToken = function(endpoint){
+        var d = jQuery.Deferred();
+        
+        //Read the token from the cache
+        var tokenCache = sympraxis.authContext.getCachedToken(endpoint);
+
+        if(tokenCache == undefined) {
+            //If token is undefined, then call AAD to get a new token
+            sympraxis.authContext.acquireToken(endpoint, function (error, token) {
+                if (error || !token) {
+                    d.reject(error);
+                }
+                else {
+                    d.resolve(token);
+                }
+            });
+        }else{
+            d.resolve(tokenCache);
+        }
+        //Return a promise for acquiring token
+        return d.promise();
+    };
+
+    sympraxis.getGraphData = function(){
+        //Get the token, either from the cache or from the server
+        var tokenPromise = sympraxis.getAuthToken(sympraxis.config.endpoints.graphUri);
+        tokenPromise.then(function(token){
+            //Promise for token resolved
+            if(token != undefined) {
+                //Valid token, make a REST call to the MSGraphAPI
+                var meUri = "https://graph.microsoft.com/v1.0/me";
+                $.ajax
+                ({
+                    type: "GET",
+                    url: meUri,
+                    headers: {
+                        //Include the token
+                        "Authorization": "Bearer " + token
+                    }
+                }).done(function (response) {
+                    $("#message").text("Got the data.");
+                    $("#displayName").text(response.displayName);
+                    $("#jobTitle").text(response.jobTitle);
+                    $("#mail").text(response.mail);
+                    $("#mobilePhone").text(response.mobilePhone);
+                    $("#officeLocation").text(response.officeLocation);
+                }).fail(function () {
+                    $("#message").text("Failed to get the data.");
+                });
+            }
+        }, function(error){console.log(JSON.stringify(error));});
+    };
+
+    $(document).ready(function() {
+        // Check For & Handle Redirect From AAD After Login or Acquiring Token
+        var isCallback = sympraxis.authContext.isCallback(window.location.hash);
+
+        if (isCallback && !sympraxis.authContext.getLoginError()) {        
+            sympraxis.authContext.handleWindowCallback(window.location.hash);
+        }else{
+            var user = sympraxis.authContext.getCachedUser();
+            if (!user) {
+                //Log in user
+                sympraxis.authContext.login();
+            }else{
+                sympraxis.getGraphData();
+            }
+        }
+                
+    });
+
+</script>
