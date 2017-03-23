@@ -1,13 +1,16 @@
 'use strict'
-
 window.Sympraxis = window.Sympraxis || {};
-Sympraxis.adalangularapp = angular.module('ADALAngular', ['AdalAngular'])
-    .config(['$httpProvider', 'adalAuthenticationServiceProvider', '$locationProvider',
-        function ($httpProvider, adalProvider, $locationProvider) {
+Sympraxis.adalangularapp = angular.module('ADALAngular', ['ngRoute', 'AdalAngular'])
+    .config(['$httpProvider', '$routeProvider', 'adalAuthenticationServiceProvider', '$locationProvider',
+        function ($httpProvider, $routeProvider, adalProvider, $locationProvider) {
             $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false
             }).hashPrefix('!');
+            
+            $routeProvider.when("/", {
+                requireADLogin: true
+            }).otherwise({ redirectTo: "/" });
 
             adalProvider.init(
                 {

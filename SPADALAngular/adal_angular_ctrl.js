@@ -5,6 +5,7 @@ Sympraxis.adalangularapp.controller('ADALAngularCtrl', ['$rootScope', '$scope', 
         $scope.message = "Getting the data";
         $scope.data = {};
 
+        //Check to delay call to MSGraphAPI until after user is authenticated
         if (adalService.userInfo.isAuthenticated) {
             $http.get(msgraph)
                 .then(function (data) {
