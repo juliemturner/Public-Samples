@@ -1,11 +1,11 @@
 {
-  "name": "sp_adal_msgraphapi",
+  "name": "spadalmsgraphapi",
   "version": "1.0.0",
   "description": "A demo application to access the graph api and work with excel files",
   "license": "UNLICENSED",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/juliemturner/Public-Samples/SP_ADAL_MSGraphAPI"
+    "url": "https://github.com/juliemturner/Public-Samples/SPADALMSGraphAPI"
   }
 }

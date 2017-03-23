@@ -1,5 +1,6 @@
 var GraphExcel;
 (function (GraphExcel) {
+    //Configure ADAL function
     function configure($httpProvider, $locationProvider, adalProvider) {
         $locationProvider.html5Mode({
             enabled: true,
@@ -16,10 +17,11 @@ var GraphExcel;
             anonymousEndpoints: ['<your templates folder location>', '<your site collection>/_api/']
         }, $httpProvider);
     }
+    //Module dependencies
     configure.$inject = ["$httpProvider", "$locationProvider", "adalAuthenticationServiceProvider"];
-    
+    //Declare module and add ADAL configuration and constants
     angular
-        .module("GraphExcel")
+        .module("GraphExcel", ['AdalAngular'])
         .config(configure)
         .constant("_CONFIG", {
         "ONEDRIVE_EP": "https://graph.microsoft.com/v1.0/me/drive/", //if you want to try it against onedrive

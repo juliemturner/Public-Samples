@@ -1,0 +1,11 @@
+{
+  "name": "spadalnoframework",
+  "version": "1.0.0",
+  "description": "A demo application to utilize the adal.js with jQuery",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliemturner/Public-Samples/SPADALNoFramework"
+  }
+}

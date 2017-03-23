@@ -1,0 +1,22 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal-angular.min.js"></script>
+
+<script src="<your lib url>/adal_angular.js"></script>
+<script src="<your lib url>/adal_angular_ctrl.js"></script>
+
+<div ng-app="ADALAngular">
+    <div ng-controller="ADALAngularCtrl" class="ng-cloak">
+        <div>
+            <h1>My Great ADAL Test</h1>
+            <div>{{message}}</div>
+            <br/>
+            <div>{{data.displayName}}</div>
+            <div>{{data.jobTitle}}</div>
+            <div>{{data.mail}}</div>
+            <div>{{data.mobilePhone}}</div>
+            <div>{{data.officeLocation}}</div>
+        </div>
+    </div>
+</div>

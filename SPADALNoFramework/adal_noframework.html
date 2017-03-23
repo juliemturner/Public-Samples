@@ -14,15 +14,12 @@
 
 <script type="text/javascript">
     "use strict";
+    //Create your namespace
     var sympraxis = window.sympraxis || {};
-    //AzureAD App = ADALTest2
-    //sympraxis.clientId = 'ywNSNzr79AOAFEaTfHFWfn31QSyw5XTuVcwrIrSuqxM=';
-    sympraxis.clientId = '799eab9f-6e8e-42fd-b1a4-90f784b1356e';
-    //sympraxis.tenant = '72f988bf-86f1-41af-91ab-2d7cd011db47';
-    //AzureAD App = ADALTest
-    //sympraxis.clientId = '45c1ba25-1b90-44fd-8ab9-cfb2f45920e8';
-    sympraxis.tenant = '5a3f949f-70ba-467b-b915-b40feeadc67d';
-
+    //Declare variables to hold your client/application id and your tenant id
+    sympraxis.clientId = '<client id>';
+    sympraxis.tenant = '<tenant id>';
+    //Create a config object to pass to the ADAL Authentiucation Context
     sympraxis.config = {
         tenant: sympraxis.tenant,
         clientId: sympraxis.clientId,

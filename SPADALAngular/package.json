@@ -1,0 +1,11 @@
+{
+  "name": "spadalangular",
+  "version": "1.0.0",
+  "description": "A demo application to utilize the adal.js and adal-angular.js libraries",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliemturner/Public-Samples/SPADALAngular"
+  }
+}

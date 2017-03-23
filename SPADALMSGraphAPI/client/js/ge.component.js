@@ -1,6 +1,8 @@
 var GraphExcel;
 (function (GraphExcel) {
+    //Components controller
     var geController = (function () {
+        //Constructor
         function geController($http, $q, adalProvider, _CONFIG) {
             this.$http = $http;
             this.$q = $q;
@@ -13,6 +15,7 @@ var GraphExcel;
             this.tempID = null;
             this.adalAuthContext = new AuthenticationContext(adalProvider.config);
         }
+        //Helper function that creates an Excel "Sheet" from an array of arrays
         geController.prototype.sheet_from_array_of_arrays = function (data, opts) {
             var ws = {};
             var range = { s: { c: 10000000, r: 10000000 }, e: { c: 0, r: 0 } };
@@ -38,6 +41,7 @@ var GraphExcel;
                 ws['!ref'] = XLSX.utils.encode_range(range);
             return ws;
         };
+        //Create an Excel spreadshet file in memory, return a Array Buffer
         geController.prototype.createXlsx = function () {
             var emptyWB = { SheetNames: [], Sheets: {} };
             var ws = this.sheet_from_array_of_arrays([[null]], null);
@@ -51,6 +55,8 @@ var GraphExcel;
                 view[i] = wbOut.charCodeAt(i) & 0xFF;
             return buf;
         };
+
+        //Save the Excel spreadsheet to a SharePoint library
         geController.prototype.saveXlsx = function (fileArrayBuffer) {
             var dateValue = new Date();
             var dateString = dateValue.getMilliseconds().toString();
@@ -67,6 +73,7 @@ var GraphExcel;
                 }
             });
         };
+        //Get the worksheets in the workbook
         geController.prototype.getWorksheets = function () {
             var xlsFileUrl = this._CONFIG.SP_EP + "items/" + this.tempID + "/workbook/worksheets";
             return this.$http({
@@ -77,6 +84,7 @@ var GraphExcel;
                 }
             });
         };
+        //Update a cell in a worksheet of the Workbook
         geController.prototype.updateCell = function (rangeData) {
             var xlsUpdateCell = this._CONFIG.SP_EP + "items/" + this.tempID + "/workbook/worksheets('Sheet1')/range(address='A1')";
             return this.$http({
@@ -88,6 +96,7 @@ var GraphExcel;
                 data: rangeData
             });
         };
+        //Click event function for Create File button
         geController.prototype.createFile = function () {
             var _this = this;
             var xlsBuffer = this.createXlsx();
@@ -115,6 +124,7 @@ var GraphExcel;
                 console.log(JSON.stringify(error));
             });
         };
+        //Component-Controller initialization function that runs when the component is first created
         geController.prototype.$onInit = function () {
             var isCallback = this.adalAuthContext.isCallback(window.location.hash);
             if (isCallback && !this.adalAuthContext.getLoginError()) {
@@ -130,7 +140,9 @@ var GraphExcel;
         };
         return geController;
     }());
+    //Component dependencies
     geController.$inject = ["$http", "$q", "adalAuthenticationService", "_CONFIG"];
+    //Component
     var geComponent = (function () {
         function geComponent() {
             this.bindings = {};
@@ -140,5 +152,6 @@ var GraphExcel;
         }
         return geComponent;
     }());
+    //Declare component in module
     angular.module("GraphExcel").component("graphExcel", new geComponent());
 })(GraphExcel || (GraphExcel = {}));
