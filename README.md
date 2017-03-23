@@ -7,8 +7,8 @@ Please feel free to utilize the code at will.  As such there are no garantees th
 
 ## Leveraging Microsoft Graph API through Client Side Web Parts
 
-Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./SPADALNoFramework)
+Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./SPADALNoFramework)
 
-Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./SPADALAngular) 
+Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./SPADALAngular) 
 
-Demo:Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./SPADALMSGraphAPI)
+Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./SPADALMSGraphAPI)
