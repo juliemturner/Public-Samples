@@ -1,0 +1,72 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div id="message" style="color: crimson; font-size: 1.2em; margin-bottom:5px;"></div>
+<div id="SPDataView">
+DATA WILL APPEAR HERE!
+</div>
+
+<script type="text/javascript">
+    "use strict";
+    var SPDV = window.SPDV || {};
+    SPDV.currentSite = window.location.protocol + "//" + window.location.host + _spPageContextInfo.webServerRelativeUrl;
+    SPDV.LISTNAME = "SPDateTime";
+    SPDV.items = [];
+    SPDV.TimeZone = {};
+
+    SPDV.init = function() {
+        function showData(data){
+            if(data.length > 0){
+                var html = "";
+                SPDV.items = [];
+                for(var i=0; i<data.length; i++){
+                    var itm = {title: null, datetimestring:null, itemsdatetime: null, datestring: null, itemsdate:null, adjusteddate: null, utcdate: null};
+                    itm.title = data[i].Title;
+                    if(data[i].ItemsDate != undefined){
+                        itm.datetimestring = data[i].ItemsDate;
+                        itm.itemsdatetime = new Date(data[i].ItemsDate);   
+                        var localTime = itm.itemsdatetime.getTime();
+                        var regionTimeoffset = (SPDV.TimeZone.Information.Bias + SPDV.TimeZone.Information.DaylightBias) * 60000;
+                        var localTimeoffset =  itm.itemsdatetime.getTimezoneOffset() * 60000;
+                        itm.adjusteddate = new Date();
+                        itm.adjusteddate.setTime(localTime + ((localTimeoffset-regionTimeoffset) * 2 ));
+                        itm.utcdate = new Date();
+                        itm.utcdate.setTime(localTime + (localTimeoffset-regionTimeoffset));
+                    }
+                    if(data[i].ItemsDateNoTime != undefined){
+                        itm.datestring = data[i].ItemsDateNoTime;
+                        itm.itemsdate = new Date(data[i].ItemsDateNoTime);   
+                    }
+                    SPDV.items.push(itm);
+                    html += "<div style='margin-bottom: 20px;'><div>" + itm.title + "</div>";
+                    html += "<div><span><b>Item Date:</b>&nbsp;</span>" + itm.itemsdatetime + "</div><div style='margin-bottom: 5px;'><span><b>Item Date (string):</b>&nbsp;</span>" + itm.datetimestring + "</div>";
+                    html += "<div><span><b>Item Date No Date:</b>&nbsp;</span>" + itm.itemsdate + "</div><div style='margin-bottom: 5px;'><span><b>Item Date No Date (string):</b>&nbsp;</span>" + itm.datestring + "</div>";
+                    html += "<div><span><b>Item Date Adjusted:</b>&nbsp;</span>" + itm.adjusteddate + "</div>";
+                    html += "<div><span><b>Item Date UTC:</b>&nbsp;</span>" + itm.utcdate + "</div></div>";
+                }
+                $("#SPDataView").html(html);
+            }
+        }
+
+        $.ajax({
+            url: SPDV.currentSite + "/_api/Web/RegionalSettings/TimeZone",
+            method: "GET",
+            headers: { "Accept": "application/json; odata=verbose" },
+        }).done(function (response) {
+            SPDV.TimeZone = response.d;
+            $("#message").text("Timezone: " + SPDV.TimeZone.Description);
+            $.ajax({
+                url: SPDV.currentSite + "/_api/web/lists/getbytitle('" + SPDV.LISTNAME + "')/items",
+                method: "GET",
+                headers: { "Accept": "application/json; odata=verbose" },
+            }).done(function (response) {
+                showData(response.d.results);
+            }).fail(function () {
+                $("#message").text("Failed to get the data.");
+            });
+        });        
+    }
+
+    $(document).ready(function() {
+        SPDV.init();
+    });
+</script>
