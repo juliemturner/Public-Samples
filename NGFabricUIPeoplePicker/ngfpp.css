@@ -1,0 +1,23 @@
+.ms-PeoplePicker input[type=button], .ms-PeoplePicker input[type=reset], .ms-PeoplePicker input[type=submit], button {
+    min-width: 0;
+    padding: inherit;
+    margin-left: 0;
+    border: 0;
+}
+
+.ms-PeoplePicker .ms-PeoplePicker-searchField {
+    padding: 2px 5px;
+    border: 0;
+}
+
+.ngfppTable{
+    width: 100%;
+}
+
+.ngfppTable td:nth-child(1){
+    width: 200px;
+}
+
+.ngfppTable input[type=text], .ngfppTable select, .ngfppTable textarea {
+    width: 400px;
+}

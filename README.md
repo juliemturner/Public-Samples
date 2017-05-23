@@ -7,6 +7,8 @@ Please feel free to utilize the code at will.  As such there are no garantees th
 
 *Blog posts are linked here, with a link to the corresponding code to the right of the ->*
 
+[Utilizing ngOfficeUIFabric People Picker in SharePoint](http://wp.me/p7UKup-5v) -> [`SPDateTime`](./NGFabricUIPeoplePicker)
+
 [SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)
 
 # Conference Sessions - Most recent sessions at the top.
