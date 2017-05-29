@@ -1,0 +1,45 @@
+<table class="ngfppTable">
+    <tr>
+        <td>Title:</td>
+        <td><input type="text" ng-model="vm.Issue.Title" /></td>
+    </tr>
+    <tr>
+        <td>Business Unit:</td>
+        <td><select ng-model="vm.Issue.BusinessUnit">
+            <option value="Engineering">Engineering</option>
+            <option value="HR">HR</option>
+            <option value="Operations">Operations</option>
+            <option value="Sales">Sales</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Shipping">Shipping</option>
+            <option value="R&amp;D">R&amp;D</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>Category:</td>
+        <td><select ng-model="vm.Issue.Category">
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Security">Security</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>Assigned To:</td>
+        <td>
+            <uif-people-picker uif-people="vm.getPeopleSearchResults" ng-model="vm.Issue.AssignedTo" uif-type="compact" uif-search-delay="300"
+                placeholder="Search Sympraxis Employees">
+                <uif-people-search-more>
+                    <uif-primary-text uif-search-for-text="You are searching for: ">Search Sympraxis employees
+                    </uif-primary-text>
+                </uif-people-search-more>
+            </uif-people-picker>
+        </td>
+    </tr>
+    <tr>
+        <td>Comment:</td>
+        <td><textarea ng-model="vm.Issue.Comment"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" ng-click="vm.save()" value="Save"/></td>
+    </tr>
+</table>

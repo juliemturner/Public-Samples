@@ -1,0 +1,5 @@
+{"projectname":"CDNDemo",
+"rootFolder": "/Code/Conference-Demos/CDNDemo",
+"srcFiles": ["./build/*.js"],
+"siteCollURL": "https://sympraxis.sharepoint.com/sites/cdn",
+"destFolder": "/Code/CDNWebpack"}

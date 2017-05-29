@@ -1,0 +1,57 @@
+<!--This is our styling section that makes everying beautiful-->
+<style type="text/css">
+    ul.wwTabs {
+        float: left;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    ul.wwTabs li {
+        float: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        color: #3cb0fd;
+        height: 36px; /*tab height*/
+        line-height: 36px; /*tab height - vertically centers text*/
+        border: 1px solid gray;
+        margin-right: 4px;
+        border-radius: 3px;
+    }
+
+    ul.wwTabs li, ul.wwTabs li:hover {
+        text-decoration: none;
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 10px; /*tab l/r padding for tab title*/
+        cursor: pointer;
+    }
+
+    ul.wwTabs li:hover {
+        background: #3498db;
+		color: #FFFFFF;
+    }
+</style>
+
+<!--This is our View where we layout and display the information-->
+<div>
+    <ul class="wwTabs">
+        <li onclick="Sympraxis.tabClick(this,'Tab 1');">Tab 1</li>
+        <li onclick="Sympraxis.tabClick(this,'Tab 2');">Tab 2</li>
+        <li onclick="Sympraxis.tabClick(this,'Tab 3');">Tab 3</li>
+    </ul>
+    <div id="ActionTaken"></div>
+</div>
+
+<!--This is our View Model - Model -->
+<script type="text/javascript">
+    //implements very basic syntax checking and rules
+    "use strict";
+    //declares a namespace, can also use iffys (function(){})();
+    var Sympraxis = window.Sympraxis || {};
+
+    Sympraxis.tabClick = function(element, tabName){
+        document.getElementById("ActionTaken").innerText = tabName + " was clicked!";
+    };
+</script>

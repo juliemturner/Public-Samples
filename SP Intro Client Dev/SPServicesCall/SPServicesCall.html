@@ -1,0 +1,102 @@
+<!--These are our reference libraries-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices.min.js"></script>
+
+<!--This is our styling section that makes everying beautiful-->
+<style type="text/css">
+    ul.wwTabs {
+        float: left;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    ul.wwTabs li {
+        float: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        color: #3cb0fd;
+        height: 36px; /*tab height*/
+        line-height: 36px; /*tab height - vertically centers text*/
+        border: 1px solid gray;
+        margin-right: 4px;
+        border-radius: 3px;
+    }
+
+    ul.wwTabs li, ul.wwTabs li:hover {
+        text-decoration: none;
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 10px; /*tab l/r padding for tab title*/
+        cursor: pointer;
+    }
+
+    ul.wwTabs li:hover {
+        background: #3498db;
+        color: #FFFFFF;
+    }
+</style>
+
+<!--This is our View where we layout and display the information-->
+<div>
+    <ul class="wwTabs">
+        <li onclick="Sympraxis.tabClick(this,'Tab 1');">Tab 1</li>
+        <li onclick="Sympraxis.tabClick(this,'Tab 2');">Tab 2</li>
+        <li onclick="Sympraxis.tabClick(this,'Tab 3');">Tab 3</li>
+    </ul>
+    <div id="Tab1"></div>
+    <div id="Tab2"></div>
+    <div id="Tab3"></div>
+</div>
+
+<!--This is our View Model - Model -->
+<script type="text/javascript">
+    //implements very basic syntax checking and rules
+    "use strict";
+    //declares a namespace, can also use iffys (function(){})();
+    var Sympraxis = window.Sympraxis || {};
+
+    Sympraxis.selectedTab = null;
+
+    Sympraxis.tabClick = function(element, tabName){
+        if(tabName === "Tab 1")
+            $("#Tab1").show();
+        else
+            $("#Tab1").hide();
+        if(tabName === "Tab 2")
+            $("#Tab2").show();
+        else
+            $("#Tab2").hide();
+        if(tabName === "Tab 3")
+            $("#Tab3").show();
+        else
+            $("#Tab3").hide();
+    };
+
+    Sympraxis.loadData = function(){
+        $("#Tab1").hide();
+        $("#Tab2").hide();
+        $("#Tab3").hide();
+
+        var dataPromise = $().SPServices.SPGetListItemsJson({
+            listName: "IT Requests"
+        });
+
+        dataPromise.done(function() {
+            var result = $(dataPromise.responseXML).find("ErrorCode");
+            if(result.length > 0 && result.text() != "0x00000000"){
+                result = result.text() + " - " + $(dataPromise.responseXML).find("ErrorText").text();
+                console.log("Unable to retrieve items: " + result);
+            }else{
+                var dataLength = this.data.length;
+                for(var i = 1; i <= 3; i++){
+                    var divHtml = "The Id of item <b>" + i + "</b> is: " + this.data[i].ID;
+                    $("#Tab" + i).html(divHtml);
+                }
+            }
+        });
+    };
+
+    Sympraxis.loadData();
+</script>

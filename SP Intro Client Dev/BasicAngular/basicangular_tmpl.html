@@ -1,0 +1,22 @@
+<div>
+    <table style="width: 100%">
+        <thead>
+            <tr>
+                <th>Business Unit</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Due Date</th>
+                <th>Assigned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vm.requests">
+                <td>{{item.BusinessUnit}}</td>
+                <td>{{item.Category}}</td>
+                <td>{{item.Status}}</td>
+                <td>{{item.DueDate | date: MM/dd/yyyy}}</td>
+                <td>{{item.Assigned}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

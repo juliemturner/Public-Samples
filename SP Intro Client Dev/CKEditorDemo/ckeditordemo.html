@@ -1,0 +1,17 @@
+<!-- Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Script to make the call -->
+<script type="text/javascript" src="/sites/juliedemos/Style%20Library/_demos/CKEditorDemo/ckeditordemo.js"></script>
+
+<!-- Display UI -->
+<div id="data">
+    <div>Business Unit: <span id="txtBusinessUnit"></span></div>
+    <div>Category: <span id="txtCategory"></span></div>
+    <div>Status: <span id="txtStatus"></span></div>
+    <div>Due Date: <span id="txtDueDate"></span></div>
+    <div>Assigned: <span id="txtAssigned"></span></div>
+    <div>Description: </div>
+    <textarea id="ckDescription"></textarea>
+    <div style="margin: 20px 0 0 0;"><input id="cmdSave" type="button" value="Save" on-click="javascript(CKD.update();)"/></div>
+</div>

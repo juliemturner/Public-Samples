@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<style>
+    .faDemo_cont {
+        font-size: 2em;
+    }
+
+    .faDemo_cont > div {
+        margin-bottom: 20px;
+    }
+
+    .faDemo_cont a {
+        margin-left: 20px;
+    }
+
+    @keyframes bounceIn {
+        0% {
+            transform: scale(0.1);
+            opacity: 0;
+        }
+        60% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes bounceIn2 {
+        0% {
+            transform: scale(0.1);
+            opacity: 0;
+        }
+        60% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .applyBounceIn {
+        animation-duration: 2s;
+        animation-name: bounceIn;
+    }
+
+    .applyBounceIn2 {
+        animation: bounceIn2 2s ease-in-out 3s 2;
+    }
+</style>
+<div class="faDemo_cont">
+    <div><span style="color: cornflowerblue; text-decoration: underline;" class="fa fa-twitter"></span><a href="http://www.twitter.com">Twitter</a></div>
+    <div><span style="color: purple;" class="fa fa-linkedin"></span><a href="http://linkedin.com">Linked In</a></div>
+    <div><span class="fa fa-yelp applyBounceIn"></span><a href="http://yelp.com">Yelp</a></div>
+    <div><span style="color: darkred; text-shadow: 0 0 1em gray;" class="fa fa-youtube"></span><a href="http://youtube.com">You Tube</a></div>
+    <div><span class="fa fa-windows applyBounceIn2"></span><a href="http://windows.com">Windows</a></div>
+</div>

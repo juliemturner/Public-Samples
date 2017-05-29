@@ -1,0 +1,30 @@
+<!-- Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+<!-- Script to create module/controller -->
+<script src="/sites/juliedemos/Style%20Library/_demos/basicknockout/basicko.js"></script>
+
+<!-- Display UI -->
+<div id="BasicKO">
+    <table style="width: 100%">
+        <thead>
+            <tr>
+                <th>Business Unit</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Due Date</th>
+                <th>Assigned</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: requests">
+            <tr>
+                <td data-bind="text: BusinessUnit"></td>
+                <td data-bind="text: Category"></td>
+                <td data-bind="text: Status"></td>
+                <td data-bind="text: DueDate"></td>
+                <td data-bind="text: Assigned"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

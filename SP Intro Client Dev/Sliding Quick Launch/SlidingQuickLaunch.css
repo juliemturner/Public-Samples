@@ -1,0 +1,36 @@
+/* Quick Launch */
+@keyframes sideNavSlideIn {
+    from {left: 0px;}
+    to {left: -175px;}
+}
+
+@keyframes sideNavSlideOut {
+    from {left: -175px;}
+    to {left: 0px;}
+}
+
+#sideNavBox {
+    position: absolute;
+    background: #ffffff;
+    left:-175px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    float:none;
+    animation-name: sideNavSlideIn;
+    animation-timing-function: ease-out;
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    z-index: 999;
+}
+
+#sideNavBox:hover{
+    left: 0px;
+    animation-name: sideNavSlideOut;
+    animation-timing-function: ease-out;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+#contentBox {
+    margin-left:40px;
+}

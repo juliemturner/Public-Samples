@@ -1,0 +1,35 @@
+{
+  "name": "cdndemo",
+  "version": "1.0.0",
+  "description": "Sympraxis Conference Demos - CDN Demo",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuliemTurner/Public-Samples"
+  },
+  "watch": {
+    "scss-compile": {
+      "patterns": [
+        "client"
+      ],
+      "extensions": "scss"
+    }
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-spsave": "^2.0.2",
+    "gulp-watch": "^4.3.8",
+    "html-loader": "^0.4.5",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^4.1.1",
+    "spsave": "^3.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
+  }
+}
