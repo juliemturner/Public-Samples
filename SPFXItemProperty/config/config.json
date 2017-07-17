@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/spfxItemPropPane/SpfxItemPropPaneWebPart.js",
+      "manifest": "./src/webparts/spfxItemPropPane/SpfxItemPropPaneWebPart.manifest.json",
+      "outputPath": "./dist/spfx-item-prop-pane.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "spfxItemPropPaneStrings": "webparts/spfxItemPropPane/loc/{locale}.js"
+  }
+}

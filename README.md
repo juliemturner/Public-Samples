@@ -9,6 +9,8 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 *Blog posts are linked here, with a link to the corresponding code to the right of the ->*
 
+[Creating a property pane for editing items in your SPFx web parts](http://wp.me/p7UKup-6D) -> [`SPFXItemProperty`](./SPFXItemProperty)
+
 [Utilizing ngOfficeUIFabric People Picker in SharePoint](http://wp.me/p7UKup-5v) -> [`NGFabricUIPeoplePicker`](./NGFabricUIPeoplePicker)
 
 [SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)

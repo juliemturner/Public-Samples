@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "9f3373de-a900-4094-981e-3cd2aea767d5",
+  "alias": "SpfxItemPropPaneWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "9f3373de-a900-4094-981e-3cd2aea767d5",
+    "group": { "default": "Under Development" },
+    "title": { "default": "SPFXItemPropPane" },
+    "description": { "default": "Demo of how to create a custom item property pane in a SPFX web part" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "title": "Links Web Part",
+      "linkItems": []
+    }
+  }]
+}
