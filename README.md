@@ -15,7 +15,7 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 [SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)
 
-[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> ['MSGraph ADAL Intro'](./MSGraph ADAL Intro)
+[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph ADAL Intro)
 
 # Conference Sessions - Most recent sessions at the top.
 
