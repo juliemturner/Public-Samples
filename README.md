@@ -19,6 +19,12 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 # Conference Sessions - Most recent sessions at the top.
 
+## Build a Complete Business Solution using Microsoft Graph API through Client Side Web Parts
+
+Demo: Get Manager/Peers/Direct Reports -> ['GetManagerPeerDR.ts'](./MSGraph Application)
+
+Demo: File from SharePoint to OneDrive -> ['FileSPtoOD.ts'](./MSGraph Application)
+
 ## BI for the Cobbler's Children - Client Side Charting and Graphing
 
 Demo: C3 Chart -> ['C3 Chart'](./SP Client Charting/C3 Chart)

@@ -156,7 +156,14 @@ DBD.DashboardModel = function () {
                     }
                 });
                 if (i == -1) {
-                    dailyRequests.push({ Category: category, Data: [{ Day: 'Sunday', ReqCount: 0 }, { Day: 'Monday', ReqCount: 0 }, { Day: 'Tuesday', ReqCount: 0 }, { Day: 'Wednesday', ReqCount: 0 }, { Day: 'Thursday', ReqCount: 0 }, { Day: 'Friday', ReqCount: 0 }, { Day: 'Saturday', ReqCount: 0 }] });
+                    dailyRequests.push({ Category: category, 
+                        Data: [{ Day: 'Sunday', ReqCount: 0 }, 
+                                { Day: 'Monday', ReqCount: 0 }, 
+                                { Day: 'Tuesday', ReqCount: 0 }, 
+                                { Day: 'Wednesday', ReqCount: 0 }, 
+                                { Day: 'Thursday', ReqCount: 0 }, 
+                                { Day: 'Friday', ReqCount: 0 }, 
+                                { Day: 'Saturday', ReqCount: 0 }] });
                     dailyRequests[dailyRequests.length - 1].Data[this.DueDate.getDay()].ReqCount++;
                 }
                 else
