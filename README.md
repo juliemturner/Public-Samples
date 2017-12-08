@@ -37,7 +37,11 @@ Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](.
 
 ## Getting Started with JavaScript Development Workshop
 
+<<<<<<< HEAD
 All Demos in the subfolder: [`SP Intro Client Dev`](./SP%20Intro%20Client%20Dev)
+=======
+All Demos in the subfolder: [`SP Intro Client Dev`](./SP-Intro-Client-Dev)
+>>>>>>> origin/master
 
 ## Build a Complete Business Solution using Microsoft Graph API through Client Side Web Parts
 
