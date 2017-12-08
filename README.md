@@ -15,35 +15,35 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 [SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)
 
-[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph-ADAL-Intro)
+[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
 
 # Conference Sessions - Most recent sessions at the top.
 
 ## BI for the Cobbler's Children - Client Side Charting and Graphing
 
-Demo: C3 Chart -> [`C3 Chart`](./SP-Client-Charting/C3-Chart)
+Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
 
-Demo: Highcharts Dashboard -> [`Highcharts Dashboard`](./SP-Client-Charting/Highcharts-Dashboard)
+Demo: Highcharts Dashboard -> [`Highcharts Dashboard`](./SP%20Client%20Charting/Highcharts%20Dashboard)
 
-Demo: Canvas Guage -> [`Canvas Guage`](./SP-Client-Charting/Canvas-Guage)
+Demo: Canvas Guage -> [`Canvas Guage`](./SP%20Client%20Charting/Canvas%20Guage)
 
 ## Leveraging Microsoft Graph API through Client Side Web Parts
 
-Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./MSGraph-ADAL-Intro/SPADALNoFramework)
+Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./MSGraph%20ADAL%20Intro/SPADALNoFramework)
 
-Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./MSGraph-ADAL-Intro/SPADALAngular) 
+Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./MSGraph%20ADAL%20Intro/SPADALAngular) 
 
-Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./MSGraph-ADAL-Intro/SPADALMSGraphAPI)
+Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./MSGraph%20ADAL%20Intro/SPADALMSGraphAPI)
 
 ## Getting Started with JavaScript Development Workshop
 
-All Demos in the subfolder: ['SP Intro Client Dev'](./SP-Intro-Client-Dev)
+All Demos in the subfolder: [`SP Intro Client Dev`](./SP%20Intro%20Client%20Dev)
 
 ## Build a Complete Business Solution using Microsoft Graph API through Client Side Web Parts
 
-Demo: Get Manager/Peers/Direct Reports -> [`GetManagerPeerDR.ts`](./MSGraph-Application)
+Demo: Get Manager/Peers/Direct Reports -> [`GetManagerPeerDR.ts`](./MSGraph%20Application)
 
-Demo: File from SharePoint to OneDrive -> [`FileSPtoOD.ts`](./MSGraph-Application)
+Demo: File from SharePoint to OneDrive -> [`FileSPtoOD.ts`](./MSGraph%20Application)
 
 
 
