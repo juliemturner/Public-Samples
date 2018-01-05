@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+.idea/*
+**/node_modules/
+**/.vscode/
+**/.vscode/*
+**/settings_security.json
