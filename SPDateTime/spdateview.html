@@ -4,6 +4,10 @@
 <div id="SPDataView">
 DATA WILL APPEAR HERE!
 </div>
+<div>
+    <div>DateTime-Local: <input type="datetime-local" id="newDateTimeLocal" /></div>
+    <div><input type="button" onclick="SPDV.newData();" value="Create Record"/></div>
+</div>
 
 <script type="text/javascript">
     "use strict";
@@ -64,7 +68,34 @@ DATA WILL APPEAR HERE!
                 $("#message").text("Failed to get the data.");
             });
         });        
-    }
+    };
+
+    SPDV.newData = function() {
+        var newDate = document.getElementById("newDateTimeLocal").value;
+        var itemDate = new Date(newDate);
+
+        var localTime = itemDate.getTime();
+        var regionTimeoffset = (SPDV.TimeZone.Information.Bias + SPDV.TimeZone.Information.StandardBias) * 60000;
+        var localTimeoffset =  itemDate.getTimezoneOffset() * 60000;
+
+        itemDate.setTime(localTime + (regionTimeoffset-localTimeoffset));
+
+        var item = {Title: "Item " + (new Date()).toString(), ItemsDate: itemDate};
+        item["__metadata"] = {"type": "SP.Data." + SPDV.LISTNAME.replace('_', '_x005f_').replace(' ', '') + "ListItem"};
+        $.ajax({
+            url: SPDV.currentSite + "/_api/web/lists/getbytitle('" + SPDV.LISTNAME + "')/items",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;odata=verbose",
+                "Accept": "application/json;odata=nometadata",
+                "X-RequestDigest": document.getElementById("__REQUESTDIGEST")['value'],
+            },
+            data: JSON.stringify(item)
+        }).done(function (response) {
+            //SPDV.TimeZone = response.d;
+            $("#message").text("Created New Record");
+        });
+    };
 
     $(document).ready(function() {
         SPDV.init();

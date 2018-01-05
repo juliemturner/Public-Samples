@@ -1,6 +1,0 @@
-{
-  "workingDir": "./temp/deploy/",
-  "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "sp-fx-hello-world",
-  "accessKey": "<!-- ACCESS KEY -->"
-}

@@ -1,0 +1,8 @@
+{
+  "projectname": "cdndemowebpackts",
+  "srcFiles": [
+    "./build/*.js"
+  ],
+  "siteCollURL": "https://tenant.sharepoint.com/sites/mysite",
+  "destFolder": "/Style%20Library/MyCode"
+}

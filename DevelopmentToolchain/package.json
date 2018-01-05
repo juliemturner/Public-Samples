@@ -1,7 +1,7 @@
 {
-  "name": "cdndemowebpack",
+  "name": "cdndemowebpackts",
   "version": "1.0.0",
-  "description": "Sympraxis Conference Demos - Toolchain Deployment Webpack Demo",
+  "description": "Sympraxis Conference Demos - Toolchain Deployment Webpack TS Demo",
   "license": "UNLICENSED",
   "private": true,
   "repository": {
@@ -24,6 +24,12 @@
     "sass-loader": "~4.1.1",
     "css-loader": "~0.26.4",
     "html-loader": "~0.4.5",
-    "style-loader": "~0.13.2"
+
+    "typescript": "~2.3.4",
+    "@types/angular": "~1.6.36",
+    "@types/node": "~8.0.53",
+    "@types/request": "~2.0.8",
+    "style-loader": "~0.13.2",
+    "ts-loader": "~2.3.7"
   }
 }
