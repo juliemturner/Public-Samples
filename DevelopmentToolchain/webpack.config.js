@@ -3,10 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        bundleCDNDemo: "./client/cdndemo.js"
+        bundleDevToolchain: "./client/devToolchain.ts"
     },
     output: {
-        path: '/code/Conference-Demos/CDNDemoWebpack/build/',
+        path: '/code/Public-Samples/DevelopmentToolchain/build/',
         filename: "[name].js",
         publicPath: '/'
     },
@@ -18,15 +18,32 @@ module.exports = {
                 loader: ["style-loader", "css-loader"]
             },
             {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loader: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 loader: "html-loader"
+            },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/
             }
         ]
     },
     externals: {
         angular: 'angular',
         Sympraxis: 'Sympraxis'
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
+        alias: {
+            angular: './node_modules/angular',
+            Sympraxis: './libs'
+        }
     },
     watch: true
 };

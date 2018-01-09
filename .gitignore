@@ -5,3 +5,4 @@
 **/.vscode/
 **/.vscode/*
 **/settings_security.json
+package-lock.json
