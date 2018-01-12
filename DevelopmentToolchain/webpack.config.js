@@ -39,11 +39,7 @@ module.exports = {
         Sympraxis: 'Sympraxis'
     },
     resolve: {
-        extensions: ['.ts', '.js'],
-        alias: {
-            angular: './node_modules/angular',
-            Sympraxis: './libs'
-        }
+        extensions: ['.ts', '.js']
     },
     watch: true
 };
