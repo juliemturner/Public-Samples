@@ -1,0 +1,12 @@
+{
+  "projectname":"GraphExcel",
+  "srcFiles": [
+    "./build/*.js",
+    "./client/GraphExcel_index.html"
+  ],
+  "siteCollURL": "https://sympraxis.sharepoint.com/sites/juliedemos",
+  "destFolder": "/Style%20Library/_demos/GraphExcel"
+}
+
+// For more information on automating your development process in classic SharePoint see the blog posts: 
+// http://julieturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/

@@ -1,0 +1,25 @@
+<style>
+#sideNavBox{
+  display:none;
+}
+#contentBox{
+  margin-left: 20px;
+}
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<div>
+    <div>
+        <div ui-view></div>
+    </div>
+    <script type="text/javascript" src="<page relative path to widget wrangler pnp-ww.min.js>"
+            ww-appName="GraphExcel"
+            ww-appType="Angular"
+            ww-appScripts='[{"src": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js", "priority":0},
+                        {"src": "~/sympraxisUtils.js", "priority":0},
+                        {"src": "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js", "priority":1},
+                        {"src": "https://secure.aadcdn.microsoftonline-p.com/lib/1.0.17/js/adal.min.js", "priority":1},
+                        {"src": "~/GraphExcel/bGraphExcel.js", "priority":2}]'>
+    </script>
+</div>
+
+<!-- For more details on using the widget wrangler please see our git-hub repo here: https://github.com/Widget-Wrangler/ww -->

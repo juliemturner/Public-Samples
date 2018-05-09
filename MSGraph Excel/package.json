@@ -1,0 +1,43 @@
+{
+  "name": "GraphExcel",
+  "version": "1.0.0",
+  "description": "Excel file manipulation using the Microsoft Graph",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliemturner/Public-Samples"
+  },
+  "watch": {
+    "scss-compile": {
+      "patterns": [
+        "client"
+      ],
+      "extensions": "scss"
+    }
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@types/adal": "^1.0.23",
+    "@types/angular": "^1.5.23",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/bluebird": "^3.5.18",
+    "@types/request": "^2.0.7",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-watch": "^4.3.8",
+    "map-stream": "0.0.7",
+    "node-sass": "^4.5.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.1.1",
+    "spsave": "^3.0.2",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.2.1"
+  }
+}

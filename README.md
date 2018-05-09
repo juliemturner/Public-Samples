@@ -1,9 +1,9 @@
 # Public Samples
 This repo is for any public published samples from presentations or blog articles.
 
-Please feel free to utilize the code at will.  As such there are no garantees that any code provided in this repo will function properly in all cases, and is meant for educational use only.
+Please feel free to utilize the code at will.  As such there are no guarantees that any code provided in this repo will function properly in all cases, and is meant for educational use only.
 
-USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended to be run inside the context of a SharePoint site collection. Where a 3rd party library was used I make an effort to point to a public CDN where available. Many of these examples have references to custom files that would be stored in a library in a site collection in my own tenant.  Please make sure you review the locataions of all reference libraries and make sure to adjust accordingly to your own needs.
+USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended to be run inside the context of a SharePoint site collection. Where a 3rd party library was used I make an effort to point to a public CDN where available. Many of these examples have references to custom files that would be stored in a library in a site collection in my own tenant.  Please make sure you review the locations of all reference libraries and make sure to adjust accordingly to your own needs.
 
 # Blog Posts - Most recent posts at the top.
 
@@ -18,6 +18,10 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 [Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
 
 # Conference Sessions - Most recent sessions at the top.
+
+## Excel automation scenarios with SharePoint client-side development
+
+Demo: MSGraph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
 
 ## BI for the Cobbler's Children - Client Side Charting and Graphing
 
