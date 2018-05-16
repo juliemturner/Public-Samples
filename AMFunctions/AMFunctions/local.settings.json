@@ -1,0 +1,18 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+        "un":  "<email username>",
+        "up":  "<email pwd>",
+        "Home":  "<current directory>",
+        "ClientId":  "<Azure App Id>",
+        "Cert":  "<Cert File Name>",
+        "CertPassword":  "<Cert password>",
+        "Authority":  "<URL to O365 tenant login>",
+        "Resource":  "<URL to Resource>",
+        "ServiceBase": "<URL base to your Service>",
+        "SharePointSiteUrl": "<URL to SharePoint site collection>",
+        "SharePointListDisplayForm":  "<URL to SharePoint list's display form, including query string param ID=>" 
+    }
+}

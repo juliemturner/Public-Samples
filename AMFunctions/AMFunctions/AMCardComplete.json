@@ -1,0 +1,74 @@
+﻿{{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "style": "emphasis",
+  "body": [
+    {{
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {{
+          "type": "ColumnSet",
+          "columns": [
+            {{
+              "width": "auto",
+              "items": [
+                {{
+                  "type": "Image",
+                  "width": "200px",
+                  "url": "<URL TO IMAGE>"
+                }}
+              ]
+            }},
+            {{
+              "width": "stretch",
+              "spacing": "padding",
+              "items": [
+                {{
+                  "type": "TextBlock",
+                  "size": "large",
+                  "color": "accent",
+                  "text": "**Whew, All Done!**",
+                  "wrap": true
+                }},
+                {{
+                  "type": "TextBlock",
+                  "spacing": "none",
+                  "text": "from AMTasks SharePoint list",
+                  "wrap": true
+                }}
+              ]
+            }}
+          ]
+        }},
+        {{
+          "type": "Container",
+          "spacing": "padding",
+          "style": "default",
+          "items": [
+            {{
+              "type": "TextBlock",
+              "spacing": "none",
+              "size": "medium",
+              "color": "accent",
+              "text": "{0} is complete",
+              "wrap": true
+            }}
+          ]
+        }},
+        {{
+          "type": "ActionSet",
+          "spacing": "padding",
+          "actions": [
+            {{
+              "type": "Action.OpenUrl",
+              "title": "Go to Task...",
+              "url": "{1}"
+            }}
+          ]
+        }}
+      ]
+    }}
+  ]
+}}

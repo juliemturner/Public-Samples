@@ -1,0 +1,121 @@
+﻿{{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "style": "emphasis",
+  "body": [
+    {{
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {{
+          "type": "ColumnSet",
+          "columns": [
+            {{
+              "width": "auto",
+              "items": [
+                {{
+                  "type": "Image",
+                  "width": "200px",
+                  "url": "<URL TO IMAGE>"
+                }}
+          ]
+        }},
+    {{
+      "width": "stretch",
+      "spacing": "padding",
+      "items": [
+        {{
+          "type": "TextBlock",
+          "size": "large",
+          "color": "accent",
+          "text": "**Your Task has been Updated**",
+          "wrap": true
+        }},
+    {{
+      "type": "TextBlock",
+      "spacing": "none",
+      "text": "from AMTasks SharePoint list.",
+      "wrap": true
+    }}]
+						}}
+					]
+				}},
+				{{
+					"type": "Container",
+					"spacing": "padding",
+					"style": "default",
+					"items": [
+					    {{
+							"type": "TextBlock",
+							"spacing": "none",
+							"size": "medium",
+							"color": "accent",
+							"text": "{0} is updated",
+							"wrap": true
+						}},
+						{{
+							"type": "ColumnSet",
+							"columns": [
+								{{
+									"width": 1,
+									"items": [
+										{{
+											"type": "TextBlock",
+											"text": "**Due date:**"
+										}},
+										{{
+											"type": "Input.Date",
+											"id": "dueDate",
+											"value": "{1}"
+										}}
+									]
+								}},
+								{{
+									"width": 1,
+									"items": [
+										{{
+											"type": "TextBlock",
+											"text": "**% Complete:**"
+										}},
+										{{
+											"type": "Input.Number",
+											"id": "percentComplete",
+											"value": "{2}"
+										}}
+									]
+								}}
+							]
+						}},
+						{{
+							"type": "TextBlock",
+							"text": "**Description:**"
+						}},
+						{{
+							"type": "TextBlock",
+							"wrap": true,
+							"text": "{3}"
+						}}
+					]
+				}},
+				{{
+					"type": "ActionSet",
+					"spacing": "padding",
+					"actions": [
+						{{
+							"type": "Action.Http",
+              "method":  "POST", 
+							"title": "Mark Complete",
+							"url": "<URL TO COMPLETE TASK FUNCTION>&taskID={4}"
+						}},
+						{{
+							"type": "Action.OpenUrl",
+							"title": "Go to Task...",
+							"url": "{5}"
+						}}
+					]
+				}}
+			]
+		}}
+	]
+}}

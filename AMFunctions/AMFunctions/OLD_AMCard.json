@@ -1,0 +1,69 @@
+﻿{{
+  "@type": "MessageCard",
+  "@context": "http://schema.org/extensions",
+  "summary": "Overdue Task",
+  "title": "Your Task is Overdue",
+  "text": "This notice is to inform you that you have overdue task.",
+  "themeColor": "E81123",
+  "sections": [
+    {{
+      "title": "{0}",
+      "facts": [
+        {{
+          "name": "Due Date",
+          "value": "{1}"
+        }},
+    {{
+      "name": "% Complete",
+      "value": "{2}"
+    }},
+        {{
+          "name": "Description",
+          "value": "{3}"
+        }}
+      ],
+      "potentialAction": [
+        {{
+          "@type": "ActionCard",
+          "name": "Update",
+          "inputs": [
+            {{
+              "@type": "TextInput",
+              "id": "percentComplete",
+              "title": "Update % Complete"
+            }},
+            {{
+              "@type": "DateInput",
+              "id": "dueDate",
+              "title": "Update Due Date"
+            }}
+          ],
+          "actions": [
+            {{
+                "@type": "HttpPOST",
+                "name": "Save",
+                "target": "https://sympfunctions.azurewebsites.net/api/AMTaskUpdate?code=knLbGR1WDVP6WtoROiOZ1teFLEEWZsakbI2PyTfZ8GSW6Us08NXdag==&taskId={4}",
+                "body": "{{dueDate: '{{{{dueDate.value}}}}', percentComplete: {{{{percentComplete.value}}}}}}",
+                "headers": [ {{ "Content-Type": "application/json" }} ]
+            }}
+          ]
+        }},
+        {{
+            "@type": "HttpPOST",
+            "name": "Mark Complete",
+            "target": "https://sympfunctions.azurewebsites.net/api/AMTaskComplete?code=z2AYu0k/5wxUxGeoDkDxePRStCqVgQFxDaAO4/ORWEQqC1LN757rqA==&taskID={5}"
+        }},
+        {{
+          "@type": "OpenUri",
+          "name": "Go to Task",
+          "targets": [
+            {{
+              "os": "default",
+              "uri": "{6}"
+            }}
+          ]
+        }}
+      ]
+    }}
+  ]
+}}
