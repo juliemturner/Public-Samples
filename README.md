@@ -20,6 +20,10 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 # Conference Sessions - Most recent sessions at the top.
 
+## Develop and deploy Outlook Actionable Messages for optimize user productivity
+
+Demo: Actionable Message Azure Functions -> [`AMFunctions`](./AMFunctions)
+
 ## Excel automation scenarios with SharePoint client-side development
 
 Demo: MSGraph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
