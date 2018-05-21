@@ -74,7 +74,10 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public loadDriveItem(): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.getWorksheets(this.data.driveItem).then((result) => {
+    this.graphExcelData.getPersistantSession(this.data.driveItem, "true").then((result) => {
+      this.data.sessionId = result;
+      return this.graphExcelData.getWorksheets(this.data.driveItem, this.data.sessionId);
+    }).then((result) => {
       this.data.worksheets = result;
       this.data.getWorksheets = true;
       d.resolve(true);
@@ -84,7 +87,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public getTables(): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.getTables(this.data.driveItem).then((result) => {
+    this.graphExcelData.getTables(this.data.driveItem, this.data.sessionId).then((result) => {
       this.data.tables = result;
       this.data.getTables = true;
       d.resolve(true);
@@ -94,9 +97,9 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public renameSheet(sheetId: string, newName: string): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.renameWorksheet(this.data.driveItem, sheetId, newName).then((result) => {
+    this.graphExcelData.renameWorksheet(this.data.driveItem, sheetId, newName, this.data.sessionId).then((result) => {
       this.$timeout(() => {
-        this.graphExcelData.getWorksheets(this.data.driveItem).then((result) => {
+        this.graphExcelData.getWorksheets(this.data.driveItem, this.data.sessionId).then((result) => {
           this.data.worksheets = result;
           this.data.renameSheet = true;
           d.resolve(true);
@@ -108,9 +111,9 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public addSheet(newName: string): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.addWorksheet(this.data.driveItem, newName).then((result) => {
+    this.graphExcelData.addWorksheet(this.data.driveItem, newName, this.data.sessionId).then((result) => {
       this.$timeout(() => {
-        this.graphExcelData.getWorksheets(this.data.driveItem).then((result) => {
+        this.graphExcelData.getWorksheets(this.data.driveItem, this.data.sessionId).then((result) => {
           this.data.worksheets = result;
           this.data.addSheet = true;
           d.resolve(true);
@@ -124,7 +127,7 @@ export class GraphExcelVM implements IGraphExcelVM {
     let d: angular.IDeferred<{}> = this.$q.defer();
     this.graphExcelData.getHelpDeskRequests().then((result) => {
       this.data.helpDeskItems = result;
-      return this.graphExcelData.addWorksheetRange(this.data.driveItem, sheetId, result);
+      return this.graphExcelData.addWorksheetRange(this.data.driveItem, sheetId, result, this.data.sessionId);
     }).then((result) => {
       this.data.addData = result;
       d.resolve(result);
@@ -134,7 +137,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public formatDates(sheetId: string, format: string): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.formatWorksheetRange(this.data.driveItem, sheetId, this.data.helpDeskItems, format).then((result) => {
+    this.graphExcelData.formatWorksheetRange(this.data.driveItem, sheetId, this.data.helpDeskItems, format, this.data.sessionId).then((result) => {
       this.data.formatDates = result;
       d.resolve(result);
     });
@@ -143,7 +146,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public createTable(sheetId: string): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.createTable(this.data.driveItem, sheetId, this.data.helpDeskItems, "G").then((result) => {
+    this.graphExcelData.createTable(this.data.driveItem, sheetId, this.data.helpDeskItems, "G", this.data.sessionId).then((result) => {
       this.data.createTable = result;
       d.resolve(result);
     });
@@ -152,7 +155,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public createCalcColumn(sheetId: string): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.createCalcColumn(this.data.driveItem, sheetId, this.data.helpDeskItems).then((result) => {
+    this.graphExcelData.createCalcColumn(this.data.driveItem, sheetId, this.data.helpDeskItems, this.data.sessionId).then((result) => {
       this.data.addColumn = result;
       d.resolve(result);
     });
@@ -161,7 +164,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public addRow(newRow: HelpDeskRequest): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.addRow(this.data.driveItem, this.data.tables[0].id, newRow).then((result) => {
+    this.graphExcelData.addRow(this.data.driveItem, this.data.tables[0].id, newRow, this.data.sessionId).then((result) => {
       this.data.addRow = result;
       d.resolve(result);
     });
@@ -172,11 +175,13 @@ export class GraphExcelVM implements IGraphExcelVM {
     let d: angular.IDeferred<{}> = this.$q.defer();
     this.graphExcelData.getHelpDeskRequests().then((result) => {
       this.data.helpDeskItems = result;
-      return this.graphExcelData.addChartTable(this.data.driveItem, this.data.worksheets[1].name, this.data.helpDeskItems);
+      return this.graphExcelData.addChartTable(this.data.driveItem, this.data.worksheets[1].name, this.data.helpDeskItems, this.data.sessionId);
     }).then((result) => {
-      return this.graphExcelData.addChart(this.data.driveItem, this.data.worksheets[0].name, result, chartType);
+      return this.graphExcelData.addChart(this.data.driveItem, this.data.worksheets[0].name, result, chartType, this.data.sessionId);
     }).then((result) => {
       this.data.createChart = result;
+      return this.graphExcelData.closePersistantSession(this.data.driveItem, this.data.sessionId);
+    }).then((result) => {
       d.resolve(result);
     });
     return d.promise;
@@ -184,7 +189,7 @@ export class GraphExcelVM implements IGraphExcelVM {
 
   public calculateGrandTotal(redWidget: number, blueWidget: number, yellowWidget: number): angular.IPromise<any> {
     let d: angular.IDeferred<{}> = this.$q.defer();
-    this.graphExcelData.getPersistantSession(this.data.driveItem).then((result) => {
+    this.graphExcelData.getPersistantSession(this.data.driveItem, "false").then((result) => {
       this.data.sessionId = result;
       return this.graphExcelData.updateNamedItemValue(this.data.driveItem, "RedQty", redWidget.toString(), this.data.sessionId);
     }).then((result) => {

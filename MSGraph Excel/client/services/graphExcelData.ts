@@ -6,19 +6,19 @@ import { Worksheet, IRangeData, DashboardData, Item, HelpDeskRequest, Tables } f
 
 export interface IGraphExcelData {
     getFiles(): angular.IPromise<Item[]>;
-    getWorksheets(graphFileId: string): angular.IPromise<Worksheet[]>;
-    getTables(graphFileId: string): angular.IPromise<Tables[]>;
-    renameWorksheet(graphFileId: string, worksheetId: string, newName: string): angular.IPromise<boolean>;
-    addWorksheet(graphFileId: string, newName: string): angular.IPromise<boolean>;
+    getWorksheets(graphFileId: string, sessionId: string): angular.IPromise<Worksheet[]>;
+    getTables(graphFileId: string, sessionId: string): angular.IPromise<Tables[]>;
+    renameWorksheet(graphFileId: string, worksheetId: string, newName: string, sessionId: string): angular.IPromise<boolean>;
+    addWorksheet(graphFileId: string, newName: string, sessionId: string): angular.IPromise<boolean>;
     getHelpDeskRequests(): angular.IPromise<HelpDeskRequest[]>;
-    addWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<boolean>;
-    formatWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], format: string): angular.IPromise<boolean>;
-    createTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], endColumn: string): angular.IPromise<boolean>;
-    createCalcColumn(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<boolean>;
-    addRow(graphFileId: string, worksheetId: string, newRow: HelpDeskRequest): angular.IPromise<boolean>;
-    addChartTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<string>;
-    addChart(graphFileId: string, worksheetId: string, range: string, chartType: string): angular.IPromise<boolean>;
-    getPersistantSession(graphFileId: string): angular.IPromise<string>;
+    addWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<boolean>;
+    formatWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], format: string, sessionId: string): angular.IPromise<boolean>;
+    createTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], endColumn: string, sessionId: string): angular.IPromise<boolean>;
+    createCalcColumn(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<boolean>;
+    addRow(graphFileId: string, worksheetId: string, newRow: HelpDeskRequest, sessionId: string): angular.IPromise<boolean>;
+    addChartTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<string>;
+    addChart(graphFileId: string, worksheetId: string, range: string, chartType: string, sessionId: string): angular.IPromise<boolean>;
+    getPersistantSession(graphFileId: string, persistChanges: string): angular.IPromise<string>;
     closePersistantSession(graphFileId: string, sessionId: string): angular.IPromise<boolean>;
     updateNamedItemValue(graphFileId: string, namedItem: string, value: string, sessionId: string): angular.IPromise<boolean>;
     getNamedItemValue(graphFileId: string, namedItem: string, sessionId: string): angular.IPromise<any>;
@@ -227,11 +227,11 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public getWorksheets(graphFileId: string): angular.IPromise<Worksheet[]> {
+    public getWorksheets(graphFileId: string, sessionId: string): angular.IPromise<Worksheet[]> {
         let d: angular.IDeferred<Worksheet[]> = this.$q.defer();
 
         let fileUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets";
-        this.getAdal(fileUrl, this._CONFIG.adal.endpoints.graphUri, false).then((result) => {
+        this.getAdal(fileUrl, this._CONFIG.adal.endpoints.graphUri, false, sessionId).then((result) => {
             let retVal: Worksheet[] = [];
             let data = result.data.value;
             for (let i: number = 0; i < data.length; i++) {
@@ -248,11 +248,11 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public getTables(graphFileId: string): angular.IPromise<Tables[]> {
+    public getTables(graphFileId: string, sessionId: string): angular.IPromise<Tables[]> {
         let d: angular.IDeferred<Tables[]> = this.$q.defer();
 
         let fileUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/tables";
-        this.getAdal(fileUrl, this._CONFIG.adal.endpoints.graphUri, false).then((result) => {
+        this.getAdal(fileUrl, this._CONFIG.adal.endpoints.graphUri, false, sessionId).then((result) => {
             let retVal: Tables[] = [];
             let data = result.data.value;
             for (let i: number = 0; i < data.length; i++) {
@@ -275,7 +275,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public renameWorksheet(graphFileId: string, worksheetId: string, newName: string): angular.IPromise<boolean> {
+    public renameWorksheet(graphFileId: string, worksheetId: string, newName: string, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let data: any = {
@@ -283,7 +283,7 @@ export class GraphExcelData implements IGraphExcelData {
         }
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets/" + worksheetId;
-        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data.value;
             d.resolve(true);
         });
@@ -291,7 +291,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public addWorksheet(graphFileId: string, newName: string): angular.IPromise<boolean> {
+    public addWorksheet(graphFileId: string, newName: string, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let data: any = {
@@ -299,7 +299,7 @@ export class GraphExcelData implements IGraphExcelData {
         }
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets/add";
-        this.postAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.postAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data.value;
             d.resolve(true);
         });
@@ -332,7 +332,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public addWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<boolean> {
+    public addWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let data: any = {
@@ -350,7 +350,7 @@ export class GraphExcelData implements IGraphExcelData {
         let range: string = "A1:G" + data.values.length.toString();
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets('" + worksheetId + "')/range(address='" + range + "')";
-        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -358,7 +358,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public formatWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], format: string): angular.IPromise<boolean> {
+    public formatWorksheetRange(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], format: string, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let range: string = "A2:G" + (items.length + 1).toString();
@@ -372,7 +372,7 @@ export class GraphExcelData implements IGraphExcelData {
         }
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets('" + worksheetId + "')/range(address='" + range + "')";
-        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -380,7 +380,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public createTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], endColumn: string): angular.IPromise<boolean> {
+    public createTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], endColumn: string, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let range: string = "A1:" + endColumn + (items.length + 1).toString();
@@ -391,7 +391,7 @@ export class GraphExcelData implements IGraphExcelData {
         };
 
         let tableUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/tables/add";
-        this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -399,7 +399,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public createCalcColumn(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<boolean> {
+    public createCalcColumn(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let range: string = "H1:H" + (items.length + 1).toString();
@@ -415,7 +415,7 @@ export class GraphExcelData implements IGraphExcelData {
         }
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets('" + worksheetId + "')/range(address='" + range + "')";
-        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -423,7 +423,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public addRow(graphFileId: string, tableId: string, newRow: HelpDeskRequest): angular.IPromise<boolean> {
+    public addRow(graphFileId: string, tableId: string, newRow: HelpDeskRequest, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let data: any = {
@@ -432,7 +432,7 @@ export class GraphExcelData implements IGraphExcelData {
         };
 
         let tableUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/tables/" + tableId + "/rows/add";
-        this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -440,7 +440,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public addChartTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[]): angular.IPromise<string> {
+    public addChartTable(graphFileId: string, worksheetId: string, items: HelpDeskRequest[], sessionId: string): angular.IPromise<string> {
         let d: angular.IDeferred<string> = this.$q.defer();
 
         let data: any = {
@@ -471,14 +471,14 @@ export class GraphExcelData implements IGraphExcelData {
         }
 
         let worksheetUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets('" + worksheetId + "')/range(address='" + range + "')";
-        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.patchAdal(worksheetUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data: any = {
                 "address": worksheetId + "!" + range,
                 "hasHeaders": true
             };
             
             let tableUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/tables/add";
-            return this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data);
+            return this.postAdal(tableUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId);
         }).then((result) => {
             d.resolve(worksheetId + "!" + range);
         });
@@ -486,7 +486,7 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public addChart(graphFileId: string, worksheetId: string, range: string, chartType: string): angular.IPromise<boolean> {
+    public addChart(graphFileId: string, worksheetId: string, range: string, chartType: string, sessionId: string): angular.IPromise<boolean> {
         let d: angular.IDeferred<boolean> = this.$q.defer();
 
         let data: any = {
@@ -496,7 +496,7 @@ export class GraphExcelData implements IGraphExcelData {
         };
 
         let chartUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/worksheets('" + worksheetId + "')/charts/add"
-        this.postAdal(chartUrl, this._CONFIG.adal.endpoints.graphUri, data).then((result) => {
+        this.postAdal(chartUrl, this._CONFIG.adal.endpoints.graphUri, data, sessionId).then((result) => {
             let data = result.data;
             d.resolve(true);
         });
@@ -504,11 +504,11 @@ export class GraphExcelData implements IGraphExcelData {
         return d.promise;
     }
 
-    public getPersistantSession(graphFileId: string): angular.IPromise<string> {
+    public getPersistantSession(graphFileId: string, persistChanges: string = "true"): angular.IPromise<string> {
         let d: angular.IDeferred<string> = this.$q.defer();
 
         let data: any = {
-            "persistChanges": false
+            "persistChanges": persistChanges
         };
 
         let chartUrl: string = this._CONFIG.urlLibrary + "items/" + graphFileId + "/driveItem/workbook/createSession"
