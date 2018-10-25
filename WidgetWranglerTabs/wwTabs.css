@@ -1,0 +1,49 @@
+﻿[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.hideWWTabs {
+    display: none !important;
+}
+
+ul.wwTabs {
+    float: left;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+    ul.wwTabs li {
+        float: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        color: #3cb0fd;
+        height: 36px; /*tab height*/
+        line-height: 36px; /*tab height - vertically centers text*/
+    }
+
+        ul.wwTabs li a, ul.wwTabs li a:hover {
+            text-decoration: none;
+            display: inline-block;
+            list-style-type: none;
+            padding: 0 10px; /*tab l/r padding for tab title*/
+            cursor: pointer;
+        }
+
+        ul.wwTabs li.active, ul.tabs li:hover {
+            background: #3498db;
+        }
+
+        ul.wwTabs li:hover a, ul.wwTabs li.active a, ul.tabs li a:hover {
+            color: #FFFFFF !important;
+        }
+
+        ul.wwTabs li:hover {
+            background: #3498db;
+            background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        }
