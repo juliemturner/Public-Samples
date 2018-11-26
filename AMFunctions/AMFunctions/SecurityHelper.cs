@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.O365.ActionableMessages.Authentication;
 
-namespace AMFunctions
+namespace SympFunctionsAM
 {
     public class SecurityHelper
     {
@@ -63,8 +63,8 @@ namespace AMFunctions
                 
                 var _username = Environment.GetEnvironmentVariable("un");
 
-                if (_username != null && (!string.Equals(result.Sender, _username, StringComparison.OrdinalIgnoreCase) ||
-                                          !string.Equals(result.ActionPerformer.Split('@')[1], _username.Split('@')[1], StringComparison.OrdinalIgnoreCase)))
+                if (!string.Equals(result.Sender, _username, StringComparison.OrdinalIgnoreCase) ||
+                    !string.Equals(result.ActionPerformer.Split('@')[1], _username.Split('@')[1], StringComparison.OrdinalIgnoreCase))
                 {
                     return HttpStatusCode.Forbidden;
                 }

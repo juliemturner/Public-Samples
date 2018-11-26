@@ -13,6 +13,7 @@
         "Resource":  "<URL to Resource>",
         "ServiceBase": "<URL base to your Service>",
         "SharePointSiteUrl": "<URL to SharePoint site collection>",
-        "SharePointListDisplayForm":  "<URL to SharePoint list's display form, including query string param ID=>" 
+        "SharePointListDisplayForm":  "<URL to SharePoint list's display form, including query string param ID=>",
+        "AMOriginator": "<Actionable Message Developer Dashboard Registration ID>"  
     }
 }

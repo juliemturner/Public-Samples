@@ -19,6 +19,9 @@
     <None Update="AMCardUpdated.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="OLD_AMCard.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AMCard.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -29,7 +32,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
-    <None Update="SympraxisFunctionsPrivateKey.pfx">
+    <None Update="SympraxisFunc.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

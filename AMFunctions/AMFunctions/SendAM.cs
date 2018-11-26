@@ -5,24 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
+using Microsoft.Azure.WebJobs.Extensions;
 
-namespace AMFunctions
+namespace SympFunctionsAM
 {
     public static class SendAM
     {
         [FunctionName("SendAM")]
-        //Every 5 minutes
         //0 */5 * * * *
-        //Once a day at 9am
         //0 00 9 * * *
-        public static void Run([TimerTrigger("0 00 9 * * *")]TimerInfo myTimer, TraceWriter log)
+        public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, TraceWriter log, ExecutionContext context)
         {
-            log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+           log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
             try
             {
-                string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrl");
+                string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
 
-                var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl));
+                var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                 task.Wait();
                 if (task.Result != null)
                 {
@@ -42,8 +41,8 @@ namespace AMFunctions
 
                         if (items.Count > 0)
                         {
-                            string filePath = Path.Combine(Environment.GetEnvironmentVariable("Home") ?? throw new InvalidOperationException(), "site\\wwwroot\\", "AMCard.json");
-                            //string filePath = "AMCard.json";
+                            string originator = Environment.GetEnvironmentVariable("AMOriginator");
+                            string filePath = Path.Combine(context.FunctionAppDirectory, "AMCard.json");
                             string jsonAM = System.IO.File.ReadAllText(filePath);
 
                             if (jsonAM.Length > 0)
@@ -62,8 +61,8 @@ namespace AMFunctions
                                     string percentComplete = (((double)item["PercentComplete"]) * 100).ToString(CultureInfo.InvariantCulture);
                                     //string percentComplete = (((double)item["PercentComplete"]) * 100) + " %";
                                     string description = item["Body"]?.ToString() ?? "";
-                                    string itemUrl = Environment.GetEnvironmentVariable("SharePointListDisplayForm") + item["ID"];
-                                    var itemEmail = string.Format(jsonAM, title, dueDate, percentComplete, description, item["ID"], itemUrl);
+                                    string itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
+                                    var itemEmail = string.Format(jsonAM, title, dueDate, percentComplete, description, item["ID"], itemUrl, originator);
 
                                     var result = notificationHelper.SendNotification(user.Email, itemEmail);
                                     log.Info($"SendAM (Run) notification {result} at: {DateTime.Now} - {user.Email}");
@@ -84,7 +83,7 @@ namespace AMFunctions
             }
             catch (Exception ex)
             {
-                log.Info($"SendAM (Run) error at: {DateTime.Now} - {ex.Message} - {ex.StackTrace}");
+                log.Error($"SendAM (Run) error at: {DateTime.Now} - {ex.Message} - {ex.StackTrace}");
             }
         }
     }

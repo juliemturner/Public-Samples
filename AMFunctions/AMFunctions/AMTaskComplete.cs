@@ -11,12 +11,12 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
 
-namespace AMFunctions
+namespace SympFunctionsAM
 {
     public static class AMTaskComplete
     {
         [FunctionName("AMTaskComplete")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log, ExecutionContext context)
         {
             HttpStatusCode responseCode = HttpStatusCode.OK;
             string status = "Unknown Error";
@@ -34,14 +34,14 @@ namespace AMFunctions
                     responseCode = security.validateSecurity(req, log);
                     if (responseCode == HttpStatusCode.OK)
                     {
-                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrl");
+                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
 
-                        var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl));
+                        var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                         task.Wait();
                         if (task.Result != null)
                         {
-                            string title;
-                            string itemUrl;
+                            string title = "";
+                            string itemUrl = "";
                             using (var ctx = task.Result)
                             {
                                 List l = ctx.Web.Lists.GetByTitle("AMTaskList");
@@ -52,12 +52,12 @@ namespace AMFunctions
                                 ctx.Load(item);
                                 ctx.ExecuteQuery();
                                 title = item["Title"].ToString();
-                                itemUrl = Environment.GetEnvironmentVariable("SharePointListDisplayForm") + item["ID"];
+                                itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
                             }
-                            string filePath = Path.Combine(Environment.GetEnvironmentVariable("Home") ?? throw new InvalidOperationException(), "site\\wwwroot\\", "AMCardComplete.json");
-                            //string filePath = "AMCardComplete.json";
+                            string filePath = Path.Combine(context.FunctionAppDirectory, "AMCardComplete.json");
+                            string originator = Environment.GetEnvironmentVariable("AMOriginator");
                             string jsonAM = System.IO.File.ReadAllText(filePath);
-                            var itemPost = string.Format(jsonAM, title, itemUrl);
+                            var itemPost = string.Format(jsonAM, title, itemUrl, originator);
                             var response = req.CreateResponse(responseCode);
                             response.Headers.Add("CARD-ACTION-STATUS",
                                 "The task has been marked complete.");

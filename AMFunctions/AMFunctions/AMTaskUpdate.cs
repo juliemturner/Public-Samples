@@ -12,12 +12,12 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
 
-namespace AMFunctions
+namespace SympFunctionsAM
 {
     public static class AMTaskUpdate
     {
         [FunctionName("AMTaskUpdate")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log, ExecutionContext context)
         {
             HttpStatusCode responseCode = HttpStatusCode.OK;
             string status = "Unknown Error";
@@ -48,18 +48,18 @@ namespace AMFunctions
                             $"AMTaskUpdate (Run) error at: {DateTime.Now} - Values: {dueDate} : {percentComplete}");
 
                         percentComplete = percentComplete / 100;
-                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrl");
+                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
 
-                        var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl));
+                        var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                         task.Wait();
                         if (task.Result != null)
                         {
-                            string ID;
-                            string title;
-                            string dueDateString;
-                            string percentCompleteString;
-                            string description;
-                            string itemUrl;
+                            string ID = "";
+                            string title = "";
+                            string dueDateString = "";
+                            string percentCompleteString = "";
+                            string description = "";
+                            string itemUrl = "";
 
                             using (var ctx = task.Result)
                             {
@@ -79,13 +79,13 @@ namespace AMFunctions
                                 percentCompleteString = (((double)item["PercentComplete"]) * 100).ToString(CultureInfo.InvariantCulture);
                                 //string percentComplete = (((double)item["PercentComplete"]) * 100) + " %";
                                 description = item["Body"]?.ToString() ?? "";
-                                itemUrl = Environment.GetEnvironmentVariable("SharePointListDisplayForm") + item["ID"];
+                                itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
                             }
-                            string filePath = Path.Combine(Environment.GetEnvironmentVariable("Home") ?? throw new InvalidOperationException(), "site\\wwwroot\\", "AMCardUpdated.json");
-                            //string filePath = "AMCardUpdated.json";
+                            string filePath = Path.Combine(context.FunctionAppDirectory, "AMCardUpdated.json");
+                            string originator = Environment.GetEnvironmentVariable("AMOriginator");
                             string jsonAM = System.IO.File.ReadAllText(filePath);
 
-                            var itemPost = string.Format(jsonAM, title, dueDateString, percentCompleteString, description, ID, itemUrl);
+                            var itemPost = string.Format(jsonAM, title, dueDateString, percentCompleteString, description, ID, itemUrl, originator);
 
                             var response = req.CreateResponse(responseCode);
                             response.Headers.Add("CARD-ACTION-STATUS",
