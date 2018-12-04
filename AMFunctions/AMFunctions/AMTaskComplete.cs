@@ -34,7 +34,7 @@ namespace SympFunctionsAM
                     responseCode = security.validateSecurity(req, log);
                     if (responseCode == HttpStatusCode.OK)
                     {
-                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
+                        string siteUrl = Environment.GetEnvironmentVariable("AMSPSiteUrl");
 
                         var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                         task.Wait();
@@ -52,7 +52,7 @@ namespace SympFunctionsAM
                                 ctx.Load(item);
                                 ctx.ExecuteQuery();
                                 title = item["Title"].ToString();
-                                itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
+                                itemUrl = Environment.GetEnvironmentVariable("AMSPListDisplayForm") + item["ID"];
                             }
                             string filePath = Path.Combine(context.FunctionAppDirectory, "AMCardComplete.json");
                             string originator = Environment.GetEnvironmentVariable("AMOriginator");

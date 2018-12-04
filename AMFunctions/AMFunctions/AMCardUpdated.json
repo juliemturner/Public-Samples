@@ -18,7 +18,7 @@
                 {{
                   "type": "Image",
                   "width": "200px",
-                  "url": "<URL TO IMAGE>"
+                  "url": "https://sympfunctionsb3b8.blob.core.windows.net/images/TaskUpdated.png"
                 }}
           ]
         }},
@@ -107,7 +107,7 @@
 							"type": "Action.Http",
               "method":  "POST", 
 							"title": "Mark Complete",
-							"url": "<URL TO COMPLETE TASK FUNCTION>&taskID={4}"
+							"url": "{4}"
 						}},
 						{{
 							"type": "Action.OpenUrl",

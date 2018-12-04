@@ -19,7 +19,10 @@ namespace SympFunctionsAM
            log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
             try
             {
-                string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
+                string siteUrl = Environment.GetEnvironmentVariable("AMSPSiteUrl");
+                string afUrl = "https://" + Environment.GetEnvironmentVariable("WEBSITE_HOSTNAME");
+                string afUpdateKey = Environment.GetEnvironmentVariable("AMUpdateKey");
+                string afCompleteKey = Environment.GetEnvironmentVariable("AMCompleteKey");
 
                 var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                 task.Wait();
@@ -61,8 +64,12 @@ namespace SympFunctionsAM
                                     string percentComplete = (((double)item["PercentComplete"]) * 100).ToString(CultureInfo.InvariantCulture);
                                     //string percentComplete = (((double)item["PercentComplete"]) * 100) + " %";
                                     string description = item["Body"]?.ToString() ?? "";
-                                    string itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
-                                    var itemEmail = string.Format(jsonAM, title, dueDate, percentComplete, description, item["ID"], itemUrl, originator);
+                                    string itemUrl = Environment.GetEnvironmentVariable("AMSPListDisplayForm") + item["ID"];
+                                    string afUpdateUrl = afUrl + "/api/AMTaskUpdate?code=" + afUpdateKey + "&taskId=" +
+                                                         item["ID"];
+                                    string afCompleteUrl = afUrl + "/api/AMTaskComplete?code=" + afCompleteKey + "&taskId=" +
+                                                         item["ID"];
+                                    var itemEmail = string.Format(jsonAM, title, dueDate, percentComplete, description, afUpdateUrl, afCompleteUrl, itemUrl, originator);
 
                                     var result = notificationHelper.SendNotification(user.Email, itemEmail);
                                     log.Info($"SendAM (Run) notification {result} at: {DateTime.Now} - {user.Email}");

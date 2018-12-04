@@ -10,7 +10,7 @@ namespace SympFunctionsAM
 {
     public class SecurityHelper
     {
-        private static readonly string ServiceBase = Environment.GetEnvironmentVariable("ServiceBase");
+        private static readonly string ServiceBase = "https://" + Environment.GetEnvironmentVariable("WEBSITE_HOSTNAME");
 
         public HttpStatusCode validateSecurity(HttpRequestMessage request, TraceWriter log)
         {
@@ -61,7 +61,7 @@ namespace SympFunctionsAM
                 // In this example, we verify that the email is sent by expense@contoso.com (expected sender)
                 // and the email of the person who performed the action is john@contoso.com (expected recipient)
                 
-                var _username = Environment.GetEnvironmentVariable("un");
+                var _username = Environment.GetEnvironmentVariable("AMUser");
 
                 if (!string.Equals(result.Sender, _username, StringComparison.OrdinalIgnoreCase) ||
                     !string.Equals(result.ActionPerformer.Split('@')[1], _username.Split('@')[1], StringComparison.OrdinalIgnoreCase))

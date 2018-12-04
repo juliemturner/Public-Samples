@@ -48,7 +48,7 @@ namespace SympFunctionsAM
                             $"AMTaskUpdate (Run) error at: {DateTime.Now} - Values: {dueDate} : {percentComplete}");
 
                         percentComplete = percentComplete / 100;
-                        string siteUrl = Environment.GetEnvironmentVariable("SharePointSiteUrlDemo");
+                        string siteUrl = Environment.GetEnvironmentVariable("AMSPSiteUrl");
 
                         var task = Task.Run(async () => await CSOMHelper.GetClientContext(siteUrl, context.FunctionAppDirectory, log));
                         task.Wait();
@@ -79,13 +79,17 @@ namespace SympFunctionsAM
                                 percentCompleteString = (((double)item["PercentComplete"]) * 100).ToString(CultureInfo.InvariantCulture);
                                 //string percentComplete = (((double)item["PercentComplete"]) * 100) + " %";
                                 description = item["Body"]?.ToString() ?? "";
-                                itemUrl = Environment.GetEnvironmentVariable("SharePointListAMDisplayForm") + item["ID"];
+                                itemUrl = Environment.GetEnvironmentVariable("AMSPListDisplayForm") + item["ID"];
+                                
                             }
+                            string afUrl = "https://" + Environment.GetEnvironmentVariable("WEBSITE_HOSTNAME");
+                            string afCompleteKey = Environment.GetEnvironmentVariable("AMCompleteKey");
+                            string afCompleteUrl = afUrl + "/api/AMTaskComplete?code=" + afCompleteKey + "&taskId=" + ID;
                             string filePath = Path.Combine(context.FunctionAppDirectory, "AMCardUpdated.json");
                             string originator = Environment.GetEnvironmentVariable("AMOriginator");
                             string jsonAM = System.IO.File.ReadAllText(filePath);
 
-                            var itemPost = string.Format(jsonAM, title, dueDateString, percentCompleteString, description, ID, itemUrl, originator);
+                            var itemPost = string.Format(jsonAM, title, dueDateString, percentCompleteString, description, afCompleteUrl, itemUrl, originator);
 
                             var response = req.CreateResponse(responseCode);
                             response.Headers.Add("CARD-ACTION-STATUS",

@@ -10,11 +10,11 @@ namespace SympFunctionsAM
 {
     public static class CSOMHelper
     {
-        private static readonly string ClientId = Environment.GetEnvironmentVariable("ClientIdAM");
-        private static readonly string Cert = Environment.GetEnvironmentVariable("Cert");
-        private static readonly string CertPassword = Environment.GetEnvironmentVariable("CertPassword");
-        private static readonly string Authority = Environment.GetEnvironmentVariable("Authority");
-        private static readonly string Resource = Environment.GetEnvironmentVariable("ResourceSharePoint");
+        private static readonly string ClientId = Environment.GetEnvironmentVariable("AMClientId");
+        private static readonly string Cert = Environment.GetEnvironmentVariable("AMCert");
+        private static readonly string CertPassword = Environment.GetEnvironmentVariable("AMCertPwd");
+        private static readonly string Authority = Environment.GetEnvironmentVariable("AMAuthority");
+        private static readonly string Resource = Environment.GetEnvironmentVariable("AMResourceSP");
         //private static readonly string Home = Environment.GetEnvironmentVariable("Home");
 
         public async static Task<ClientContext> GetClientContext(string siteUrl, string appDirectory, TraceWriter log)

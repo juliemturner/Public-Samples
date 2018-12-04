@@ -18,8 +18,8 @@ namespace SympFunctionsAM
         public NotificationHelper(TraceWriter log)
         {
             _log = log;
-            _username = Environment.GetEnvironmentVariable("un");
-            var password = Environment.GetEnvironmentVariable("up") == null?"": Environment.GetEnvironmentVariable("up");
+            _username = Environment.GetEnvironmentVariable("AMUser");
+            var password = Environment.GetEnvironmentVariable("AMPwd") == null?"": Environment.GetEnvironmentVariable("AMPwd");
             _password = new SecureString();
             if (password == null) return;
             foreach (char c in password)

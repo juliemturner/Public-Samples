@@ -2,7 +2,7 @@
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.0",
-  "originator": "{6}", 
+  "originator": "{7}", 
   "style": "emphasis",
   "body": [
     {{
@@ -18,7 +18,7 @@
                 {{
                   "type": "Image",
                   "width": "200px",
-                  "url": "<URL TO IMAGE>"
+                  "url": "https://sympfunctionsb3b8.blob.core.windows.net/images/TaskOverdue.png"
                 }}
           ]
         }},
@@ -104,7 +104,7 @@
 									"type": "Action.Http",
 									"method": "POST",
 									"title": "Update task",
-									"url": "<URL TO UPDATE TASK FUNCTION>&taskId={4}",
+									"url": "{4}",
 							    "body": "{{dueDate: '{{{{dueDate.value}}}}', percentComplete: {{{{percentComplete.value}}}}}}",
 							    "headers": [ {{ "Content-Type": "application/json" }} ]
 								}}
@@ -120,12 +120,12 @@
 							"type": "Action.Http",
               "method":  "POST", 
 							"title": "Mark Complete",
-							"url": "<URL TO COMPLETE TASK FUNCTION>&taskID={4}"
+							"url": "{5}"
 						}},
 						{{
 							"type": "Action.OpenUrl",
 							"title": "Go to Task...",
-							"url": "{5}"
+							"url": "{6}"
 						}}
 					]
 				}}
