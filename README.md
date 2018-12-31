@@ -8,6 +8,9 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 # Blog Posts - Most recent posts at the top.
 
 *Blog posts are linked here, with a link to the corresponding code to the right of the ->*
+
+[Resolve to Log](https://julieturner.net/2018/12/resolve-to-log/) -> [`PnPLogger`](./PnPLogger)
+
 [Conquer your dev toolchain in classic SharePoint](http://julieturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/) -> [`DevelopmentToolchain`](./DevelopmentToolchain)
 
 [Creating a property pane for editing items in your SPFx web parts](http://wp.me/p7UKup-6D) -> [`SPFXItemProperty`](./SPFXItemProperty)
