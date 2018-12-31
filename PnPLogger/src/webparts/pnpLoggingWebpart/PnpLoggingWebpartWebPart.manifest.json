@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "ff8c2d88-4018-4ea4-8d49-9849d87c72ad",
+  "alias": "PnpLoggingWebpartWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "group": { "default": "Other" },
+    "title": { "default": "PnPLogging Demo" },
+    "description": { "default": "Demo various logging techniques using PnP Logging" },
+    "officeFabricIconFontName": "Education",
+    "properties": {
+      "applicationName": "PnPLoggingWebPart",
+      "logWebUrl": "<your log site collection url>",
+      "logListName": "ApplicationLog",
+      "loggingType": "Basic"
+    }
+  }]
+}

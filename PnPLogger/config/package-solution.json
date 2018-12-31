@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "pnp-logging-client-side-solution",
+    "id": "32e35dd3-5539-47b7-a3ac-3cbcee4b1c2b",
+    "version": "1.3.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/pnp-logging.sppkg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "pnp-logging-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pnpLoggingWebpart/PnpLoggingWebpartWebPart.js",
+          "manifest": "./src/webparts/pnpLoggingWebpart/PnpLoggingWebpartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PnpLoggingWebpartWebPartStrings": "lib/webparts/pnpLoggingWebpart/loc/{locale}.js"
+  }
+}
