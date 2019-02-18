@@ -9,6 +9,8 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 *Blog posts are linked here, with a link to the corresponding code to the right of the ->*
 
+[Curate the News: Social Following Sites on behalf of a user](https://julieturner.net/?p=838&preview=true) -> [`FollowSite`](./FollowSite)
+
 [Resolve to Log](https://julieturner.net/2018/12/resolve-to-log/) -> [`PnPLogger`](./PnPLogger)
 
 [Conquer your dev toolchain in classic SharePoint](http://julieturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/) -> [`DevelopmentToolchain`](./DevelopmentToolchain)
