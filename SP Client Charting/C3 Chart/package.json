@@ -1,0 +1,36 @@
+{
+  "name": "c3chart",
+  "version": "1.0.0",
+  "description": "Sympraxis Conference Demos - BI Demo - Modern",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SympraxisConsulting/Conference-Demos"
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "~2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-cache": "~1.1.1",
+    "gulp-watch": "~5.0.1",
+    "html-loader": "~0.5.5",
+    "map-stream": "~0.0.7",
+    "node-sass": "~4.11.0",
+    "sass-loader": "~7.1.0",
+    "spsave": "~3.1.0",
+    "style-loader": "~0.23.1",
+    "ts-loader": "~5.3.3",
+    "typescript": "~3.3.3333",
+    "vinyl-fs": "~3.0.1",
+    "webpack": "~4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@types/c3": "^0.6.3",
+    "c3": "^0.6.13",
+    "lodash": "^4.17.11"
+  }
+}

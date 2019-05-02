@@ -1,0 +1,32 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+$dPad: 16px;
+
+.biDemoGuage {
+  &.guageCont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .guage {
+    //position: relative;
+    margin-bottom: $dPad;
+    width: calc(33% - #{$dPad});
+  }
+
+  .canvasCont {
+    position: relative;
+  }
+
+  .userGuage,
+  .userImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .userText {
+    text-align: center;
+  }
+}

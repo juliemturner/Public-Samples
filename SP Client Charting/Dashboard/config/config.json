@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "bispfx-dashboard-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/bispfxDashboard/BispfxDashboardWebPart.js",
+          "manifest": "./src/webparts/bispfxDashboard/BispfxDashboardWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BispfxDashboardWebPartStrings": "lib/webparts/bispfxDashboard/loc/{locale}.js"
+  }
+}

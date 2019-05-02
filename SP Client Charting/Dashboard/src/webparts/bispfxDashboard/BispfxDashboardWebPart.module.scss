@@ -1,0 +1,35 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+$dPad: 16px;
+
+.bispfxDashboard {
+  .header {
+    display: flex;
+    width: 100%;
+
+    >div:first-child {
+      flex-basis: 100%;
+    }
+
+    >div:nth-child(2) {
+      align-self: flex-end;
+      width: 400px;
+      text-align: right;
+    }
+  }
+
+  .chartCont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .chart {
+    margin-bottom: $dPad;
+    width: calc(50% - #{$dPad});
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
