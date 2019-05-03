@@ -1,2 +1,0 @@
-require("./graphExcelData");
-require("./graphExcelVM");

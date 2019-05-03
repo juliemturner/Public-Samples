@@ -1,0 +1,41 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.excelGraph {
+  font-size: 1em;
+
+  ul{
+    list-style-type: none;
+  }
+
+  div{
+    padding: 2px 0;
+  }
+
+  button{
+    margin-left: 10px;
+  }
+
+  table{
+    margin: 10px 0;
+    width: 600px;
+    th{
+      text-align: left;
+    }
+  }
+
+  .driveItem{
+    cursor: pointer;
+  }
+
+  .success{
+    color: green;
+  }
+
+  .persistantTable{
+    tr{
+      td:first-child{
+        text-align: right;
+      }
+    }
+  }
+}
