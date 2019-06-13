@@ -1,0 +1,78 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.linkTiles {
+  &.tileCont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  .tile,
+  .tileFlip,
+  .tileFront,
+  .tileFront>img,
+  .tileBack {
+    width: var(--tileWidth);
+    height: var(--tileHeight);
+  }
+
+  .tile {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    perspective: 1000px;
+  }
+
+  .tile:hover .tileFlip,
+  .tile.hover .tileFlip {
+    transform: rotateY(180deg);
+  }
+
+  .tileFlip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+  }
+
+  .tileFront,
+  .tileBack {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .tileFront {
+    z-index: 2;
+    transform: rotateY(0deg);
+
+    & .tileTitle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #333333E6;
+      color: white;
+      padding: 2px;
+      text-align: center;
+    }
+  }
+
+  .tileBack {
+    transform: rotateY(180deg);
+
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+  }
+
+  .tileDescription {
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+  }
+}

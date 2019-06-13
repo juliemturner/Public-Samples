@@ -1,13 +1,16 @@
 # Public Samples
+
 This repo is for any public published samples from presentations or blog articles.
 
 Please feel free to utilize the code at will.  As such there are no guarantees that any code provided in this repo will function properly in all cases, and is meant for educational use only.
 
-USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended to be run inside the context of a SharePoint site collection. Where a 3rd party library was used I make an effort to point to a public CDN where available. Many of these examples have references to custom files that would be stored in a library in a site collection in my own tenant.  Please make sure you review the locations of all reference libraries and make sure to adjust accordingly to your own needs.
+USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise stipulated,are intended to be run inside the context of a SharePoint site collection. Where a 3rd party library was used I make an effort to point to a public CDN where available. Many of these examples have references to custom files that would be stored in a library in a site collection in my own tenant.  Please make sure you review the locations of all reference libraries and make sure to adjust accordingly to your own needs.
 
-# Blog Posts - Most recent posts at the top.
+## Blog Posts - Most recent posts at the top
 
-*Blog posts are linked here, with a link to the corresponding code to the right of the ->*
+>Blog posts are linked here, with a link to the corresponding code to the right of the ->
+
+[Using CSS Variables to Morph Your SPFx Design at Run Time](https://wp.me/p7UKup-ew) -> [`CSSVariables`](./CSSVariables)
 
 [Curate the News: Social Following Sites on behalf of a user](https://julieturner.net/?p=838&preview=true) -> [`FollowSite`](./FollowSite)
 
@@ -23,9 +26,9 @@ USE INSTRUCTIONS: Unless otherwise stipulated all of these examples are intended
 
 [Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
 
-# Conference Sessions - Most recent sessions at the top.
+## Conference Sessions - Most recent sessions at the top.
 
-## BI for the Cobbler's Children - Client Side Charting and Graphing
+### BI for the Cobbler's Children - Client Side Charting and Graphing
 
 Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
 
@@ -33,15 +36,15 @@ Demo: C3 Dashboard -> [`C3 Dashboard`](./SP%20Client%20Charting/Dashboard)
 
 Demo: Canvas Guage -> [`Canvas Guage`](./SP%20Client%20Charting/Guage)
 
-## Excel automation scenarios with SharePoint client-side development
+### Excel automation scenarios with SharePoint client-side development
 
 Demo: Microsoft Graph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
 
-## Develop and deploy Outlook Actionable Messages for optimize user productivity
+### Develop and deploy Outlook Actionable Messages for optimize user productivity
 
 Demo: Actionable Message Azure Functions -> [`AMFunctions`](./AMFunctions)
 
-## Leveraging Microsoft Graph API through Client Side Web Parts
+### Leveraging Microsoft Graph API through Client Side Web Parts
 
 Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./MSGraph%20ADAL%20Intro/SPADALNoFramework)
 
@@ -49,16 +52,12 @@ Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngu
 
 Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./MSGraph%20ADAL%20Intro/SPADALMSGraphAPI)
 
-## Getting Started with JavaScript Development Workshop
+### Getting Started with JavaScript Development Workshop
 
 All Demos in the subfolder: [`SP Intro Client Dev`](./SP%20Intro%20Client%20Dev)
 
-## Build a Complete Business Solution using Microsoft Graph API through Client Side Web Parts
+### Build a Complete Business Solution using Microsoft Graph API through Client Side Web Parts
 
 Demo: Get Manager/Peers/Direct Reports -> [`GetManagerPeerDR.ts`](./MSGraph%20Application)
 
 Demo: File from SharePoint to OneDrive -> [`FileSPtoOD.ts`](./MSGraph%20Application)
-
-
-
-
