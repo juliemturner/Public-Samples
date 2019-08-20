@@ -28,6 +28,10 @@ USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise
 
 ## Conference Sessions - Most recent sessions at the top.
 
+### Excel automation scenarios with SharePoint client-side development
+
+Demo: Microsoft Graph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
+
 ### BI for the Cobbler's Children - Client Side Charting and Graphing
 
 Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
@@ -35,10 +39,6 @@ Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
 Demo: C3 Dashboard -> [`C3 Dashboard`](./SP%20Client%20Charting/Dashboard)
 
 Demo: Canvas Guage -> [`Canvas Guage`](./SP%20Client%20Charting/Guage)
-
-### Excel automation scenarios with SharePoint client-side development
-
-Demo: Microsoft Graph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
 
 ### Develop and deploy Outlook Actionable Messages for optimize user productivity
 
