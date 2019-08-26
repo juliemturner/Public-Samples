@@ -1,6 +1,6 @@
 {
   "projectname": "BIDemosSPFx",
-  "srcFiles": ["./build/**/*.{js,html}"],
-  "siteCollURL": "https://contoso.sharepoint.com",
+  "srcFiles": ["./dist/**/*.js", "./dist/**/*.html"],
+  "siteCollURL": "https://sympjulie.sharepoint.com/sites/demosclassic",
   "destFolder": "/Style%20Library/_demos/BISPFx"
 }

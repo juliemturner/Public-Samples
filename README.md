@@ -26,11 +26,11 @@ USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise
 
 [Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
 
-## Conference Sessions - Most recent sessions at the top.
+## Conference Sessions - Most recent sessions at the top
 
-### Excel automation scenarios with SharePoint client-side development
+### Strategies for Modernizing Your Development Skills
 
-Demo: Microsoft Graph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
+Demo: [`Development Toolchain`](./DevelopmentToolchain)
 
 ### BI for the Cobbler's Children - Client Side Charting and Graphing
 
@@ -39,6 +39,10 @@ Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
 Demo: C3 Dashboard -> [`C3 Dashboard`](./SP%20Client%20Charting/Dashboard)
 
 Demo: Canvas Guage -> [`Canvas Guage`](./SP%20Client%20Charting/Guage)
+
+### Excel automation scenarios with SharePoint client-side development
+
+Demo: Microsoft Graph Excel -> [`MSGraph Excel`](./MSGraph%20Excel)
 
 ### Develop and deploy Outlook Actionable Messages for optimize user productivity
 

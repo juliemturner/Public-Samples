@@ -12,21 +12,20 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "css-loader": "~2.1.1",
-    "gulp": "^3.9.1",
-    "gulp-cache": "~1.1.1",
-    "gulp-watch": "~5.0.1",
-    "html-loader": "~0.5.5",
+    "css-loader": "^3.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cache": "0.4.6",
+    "gulp-watch": "^5.0.1",
     "map-stream": "~0.0.7",
-    "node-sass": "~4.11.0",
-    "sass-loader": "~7.1.0",
-    "spsave": "~3.1.0",
-    "style-loader": "~0.23.1",
-    "ts-loader": "~5.3.3",
-    "typescript": "~3.3.3333",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "spsave": "^3.1.5",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
     "vinyl-fs": "~3.0.1",
-    "webpack": "~4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
     "@types/c3": "^0.6.3",

@@ -94,6 +94,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     this.getDriveItems();
   }
 
+  //1
   private getDriveItems = async (): Promise<void> => {
     try {
       let result = await this.props.httpGraph
@@ -116,6 +117,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
+  //2
   private selectDriveItem = async (item: Item): Promise<void> => {
     this.setState({ currentItem: item },
       async () => {
@@ -125,6 +127,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
+  //3
   private getSession = async (persistChanges: string = "true"): Promise<boolean> => {
     let retVal: boolean = false;
     try {
@@ -171,6 +174,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return retVal;
   }
 
+  //4
   private getWorksheets = async () => {
     try {
       let result = await this.props.httpGraph
@@ -194,6 +198,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
+  //5
   private renameSheet = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
@@ -221,6 +226,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
+  //6
   private addSheet = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
@@ -275,7 +281,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return retVal;
   }
 
-  private addDataSheet = async () => {
+  //7
+  private addDataSheet = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
       let itDataRetrieved = await this.getHelpDeskRequests();
@@ -310,7 +317,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
-  private formatDates = async () => {
+  //8
+  private formatDates = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
       let range: string = "A2:G" + (this.state.itData.length + 1).toString();
@@ -337,7 +345,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
-  private createTable = async () => {
+  //9
+  private createTable = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
       let range: string = "A1:G" + (this.state.itData.length + 1).toString();
@@ -363,7 +372,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
-  private getTables = async () => {
+  //10
+  private getTables = async (): Promise<void> => {
     try {
       let result = await this.props.httpGraph
         .api(`sites/${this.props.siteId}/lists/${this.props.libraryId}/items/${this.state.currentItem.id}/driveItem/workbook/tables`)
@@ -393,7 +403,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
-  private addColumn = async () => {
+  //11
+  private addColumn = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
       let range: string = "H1:H" + (this.state.itData.length + 1).toString();
@@ -423,7 +434,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return;
   }
 
-  private addRow = async () => {
+  //12
+  private addRow = async (): Promise<void> => {
     let retVal: boolean = false;
     try {
       let newRow = this.state.newRowValue;
@@ -504,7 +516,8 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     return retVal;
   }
 
-  private createChart = async () => {
+  //13
+  private createChart = async (): Promise<void> => {
 
     let retVal: boolean = false;
     try {
@@ -565,6 +578,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
     }
   }
 
+  //1 Persistant
   private getGrandTotal = async () => {
     let result: boolean = false;
     result = await this.getSession("false");

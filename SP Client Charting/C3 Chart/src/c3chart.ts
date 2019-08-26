@@ -1,6 +1,6 @@
 import * as lodash from "lodash";
 import * as c3 from "c3";
-import './node_modules/c3/c3.css';
+import '../node_modules/c3/c3.css';
 
 export interface IDataObj {
   ID: string;
@@ -10,7 +10,6 @@ export interface IDataObj {
   DueDate: Date;
   Assigned: string;
 }
-
 
 export class DataObj implements IDataObj {
   constructor(

@@ -1,5 +1,5 @@
 "use strict";
-//Node v 6.12.0
+//Node v 8.16.0
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var cache = require('gulp-cache');
@@ -18,81 +18,41 @@ function makeHashKey(file) {
   return [file.contents.toString('utf8'), file.stat.mtime.toISOString()].join('');
 }
 
-gulp.task("copyToSharePointFolder",
-  function () {
-    gulp.src(settings.srcFiles, {
-        base: settingsSecurity.rootFolder
-      })
-      .pipe(
-        cache(
-          map(function (file, cb) {
-            let f = file;
-            spsave({
-              siteUrl: settings.siteCollURL,
-              checkinType: 2,
-              checkin: false
-            }, {
-              username: settingsSecurity.username,
-              password: settingsSecurity.pwd
-            }, {
-              file: file,
-              folder: settings.destFolder
-            });
-            cb(null, file);
-          }), {
-            key: makeHashKey,
-            fileCache: new cache.Cache({
-              cacheDirName: settings.projectname + '-cache'
-            }),
-            name: settingsSecurity.username + "." + settings.projectname
-          }
-        )
-      );
-  }
-);
+function copyToSharePointFolder(vinyl) {
+  gulp.src(vinyl.path)
+    .pipe(
+      cache(
+        map(function (file, cb) {
+          spsave({
+            siteUrl: settings.siteCollURL,
+            checkinType: 2,
+            checkin: false
+          }, {
+            username: settingsSecurity.username,
+            password: settingsSecurity.pwd
+          }, {
+            file: file,
+            folder: settings.destFolder
+          });
+          cb(null, file);
+        }), {
+          key: makeHashKey,
+          fileCache: new cache.Cache({
+            cacheDirName: settings.projectname + '-cache'
+          }),
+          name: settingsSecurity.username + "." + settings.projectname
+        }
+      )
+    );
+}
 
-// gulp.task("copyTest",
-// function () {
-//     let count = 0;
-//     gulp.src(settings.srcFiles, { base: settingsSecurity.rootFolder })
-//         .pipe(
-//                 map(function(file, cb) {
-//                     count++;
-//                     var filePath = file.history[0].replace(file.cwd, '.');
-//                     console.warn(filePath);
-//                     spsave({
-//                             siteUrl: settings.siteCollURL,
-//                             checkinType: 2,
-//                             checkin: false
-//                         },
-//                         {
-//                             username: settingsSecurity.username,
-//                             password: settingsSecurity.pwd
-//                         },
-//                         {
-//                             glob: filePath,
-//                             folder: settings.destFolder
-//                         }
-//                     );
-//                     console.warn(`Callback start: ${count}`);
-//                     cb(null, file);
-//                 })
-//         );
-// }
-// )
-
-gulp.task("copyToSharePointFlat",
-  function () {
-    let count = 0;
-    gulp.src(settings.srcFiles, {
-        base: settingsSecurity.rootFolder
-      })
-      .pipe(
-        cache(
-          map(function (file, cb) {
-            count++;
-            var filePath = file.history[0].replace(file.cwd, '.');
-            console.warn(filePath);
+function copyToSharePointFlat(vinyl) {
+  gulp.src(vinyl.path)
+    .pipe(
+      cache(
+        map(
+          function (file, cb) {
+            var filePath = file.path.replace(file.cwd, '.');
             spsave({
               siteUrl: settings.siteCollURL,
               checkinType: 2,
@@ -104,27 +64,25 @@ gulp.task("copyToSharePointFlat",
               glob: filePath,
               folder: settings.destFolder
             });
-            console.warn(`Callback start: ${count}`);
             cb(null, file);
-          }), {
-            key: makeHashKey,
-            fileCache: new cache.Cache({
-              cacheDirName: settings.projectname + '-cache'
-            }),
-            name: settingsSecurity.username + "." + settings.projectname
           }
-        )
+        ), {
+          //key: makeHashKey,
+          fileCache: new cache.Cache({
+            cacheDirName: settings.projectname + '-cache'
+          }),
+          name: settingsSecurity.username + "." + settings.projectname
+        }
       )
-  });
+    );
+}
 
-gulp.task("copyToLegacySharePoint", function () {
-  gulp.src(settings.srcFiles, {
-      base: settingsSecurity.rootFolder
-    })
+function copyToLegacySharePoint(vinyl) {
+  gulp.src(vinyl.path)
     .pipe(
       cache(
         map(function (file, cb) {
-          var filePath = file.history[0].replace(file.cwd, '.');
+          var filePath = file.path.replace(file.cwd, '.');
           console.log('Copying -- ' + file.path);
           vfs.src([filePath]).pipe(vfs.dest(settings.destFolder));
           cb(null, file);
@@ -137,20 +95,25 @@ gulp.task("copyToLegacySharePoint", function () {
         }
       )
     );
-});
+}
 
 gulp.task("watchFlat", function () {
-  gulp.watch(settings.srcFiles, ["copyToSharePointFlat"]);
+  return watch(settings.srcFiles, {
+    ignoreInitial: true,
+    events: ['add', 'change']
+  }, copyToSharePointFlat);
 });
 
 gulp.task("watchFolder", function () {
-  gulp.watch(settings.srcFiles, ["copyToSharePointFolder"]);
+  return watch(settings.srcFiles, {
+    ignoreInitial: true,
+    events: ['add', 'change']
+  }, copyToSharePointFolder);
 });
 
 gulp.task("watchLegacy", function () {
-  gulp.watch(settings.srcFiles, ["copyToLegacySharePoint"]);
-});
-
-gulp.task("watchTest", function () {
-  gulp.watch(settings.srcFiles, ["copyTest"]);
+  return watch(settings.srcFiles, {
+    ignoreInitial: true,
+    events: ['add', 'change']
+  }, copyToLegacySharePoint);
 });
