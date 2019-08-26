@@ -37,14 +37,14 @@ export default class ExcelGraphWebPart extends BaseClientSideWebPart<IExcelGraph
   }
 
   public async render(): Promise<void> {
-    //sympraxis.sharepoint.com,3923d07d-9cee-4574-be34-04c184dedbf2,caff9805-d4d1-49ea-a625-1c275cb0bc4d
-    const element: React.ReactElement<IExcelGraphProps > = React.createElement(
+    //tenant.sharepoint.com,3923d07d-9cee-4574-be34-04c184dedbf2,caff9805-d4d1-49ea-a625-1c275cb0bc4d
+    const element: React.ReactElement<IExcelGraphProps> = React.createElement(
       ExcelGraph,
       {
         httpGraph: this.graphClient,
         siteId: `${document.location.hostname},${this.context.pageContext.site.id.toString()},${this.context.pageContext.web.id.toString()}`,
-        libraryId: '3f846da7-31d6-4b83-b3e8-d3507fe99601',
-        itRequestsId: '0669b44b-6625-4dfc-ad13-236cb8b64cca'
+        libraryId: '2d79a297-84b6-4c49-9d4c-006810036518',
+        itRequestsId: '2c7f1cf7-b2c2-424e-a01a-033dfc119a90'
       }
     );
 
