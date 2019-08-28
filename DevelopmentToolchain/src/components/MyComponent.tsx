@@ -6,10 +6,13 @@ export interface IMyComponentProps {
 }
 
 export interface IMyComponentState {
+  total: number;
 }
 
 export class MyComponentState implements IMyComponentState {
-  constructor() { }
+  constructor(
+    public total: number = 0
+  ) { }
 }
 
 export default class MyComponent extends React.Component<IMyComponentProps, IMyComponentState> {
@@ -26,12 +29,20 @@ export default class MyComponent extends React.Component<IMyComponentProps, IMyC
     return true;
   }
 
+  //event: React.MouseEvent<HTMLElement>
+  private _onClick = () => {
+    const total = 5 * 5;
+    this.setState({ total: total });
+  }
+
   public render(): React.ReactElement<IMyComponentProps> {
     try {
       return (
         <div className="demo">
           <h1>{this.props.title}</h1>
           <div>This is Version 1.0 of the web part.</div>
+          <div>Current Total: {this.state.total}</div>
+          <button onClick={this._onClick}>Update Total</button>
         </div>
       );
     } catch (err) {

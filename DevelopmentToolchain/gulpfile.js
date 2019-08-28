@@ -6,9 +6,14 @@ var cache = require('gulp-cache');
 var spsave = require('spsave').spsave;
 var map = require('map-stream');
 var vfs = require('vinyl-fs');
+//var credman = require('windows-credman');
 
 var settings = require("./settings.json");
 var settingsSecurity = require("./settings_security.json");
+//var username = credman.getCredentials(settingsSecurity.credentials).username;
+//var password = credman.getCredentials(settingsSecurity.credentials).password;
+var username = settingsSecurity.username;
+var password = settingsSecurity.pwd;
 
 gulp.task('clear', function (done) {
   return cache.clearAll(done);
@@ -28,19 +33,19 @@ function copyToSharePointFolder(vinyl) {
             checkinType: 2,
             checkin: false
           }, {
-            username: settingsSecurity.username,
-            password: settingsSecurity.pwd
-          }, {
-            file: file,
-            folder: settings.destFolder
-          });
+              username: username,
+              password: password
+            }, {
+              file: file,
+              folder: settings.destFolder
+            });
           cb(null, file);
         }), {
           key: makeHashKey,
           fileCache: new cache.Cache({
             cacheDirName: settings.projectname + '-cache'
           }),
-          name: settingsSecurity.username + "." + settings.projectname
+          name: username + "." + settings.projectname
         }
       )
     );
@@ -58,12 +63,12 @@ function copyToSharePointFlat(vinyl) {
               checkinType: 2,
               checkin: false
             }, {
-              username: settingsSecurity.username,
-              password: settingsSecurity.pwd
-            }, {
-              glob: filePath,
-              folder: settings.destFolder
-            });
+                username: username,
+                password: password
+              }, {
+                glob: filePath,
+                folder: settings.destFolder
+              });
             cb(null, file);
           }
         ), {
@@ -71,7 +76,7 @@ function copyToSharePointFlat(vinyl) {
           fileCache: new cache.Cache({
             cacheDirName: settings.projectname + '-cache'
           }),
-          name: settingsSecurity.username + "." + settings.projectname
+          name: username + "." + settings.projectname
         }
       )
     );
@@ -91,7 +96,7 @@ function copyToLegacySharePoint(vinyl) {
           fileCache: new cache.Cache({
             cacheDirName: settings.projectname + '-cache'
           }),
-          name: settingsSecurity.username + "." + settings.projectname
+          name: username + "." + settings.projectname
         }
       )
     );
