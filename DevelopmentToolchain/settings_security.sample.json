@@ -1,5 +1,6 @@
 {
   "rootFolder": "/Code/Conference-Demos/CDNDemoWebpackTS",
   "username": "",
-  "pwd": ""
+  "pwd": "",
+  "credentials": "{if using windows-credman}"
 }

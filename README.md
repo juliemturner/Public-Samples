@@ -52,7 +52,7 @@ Demo: Actionable Message Azure Functions -> [`AMFunctions`](./AMFunctions)
 
 Demo: Use adal.js library without a framework -> [`SPADALNoFramework`](./MSGraph%20ADAL%20Intro/SPADALNoFramework)
 
-Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./MSGraph%20ADAL%20Intro/SPADALAngular) 
+Demo: Use adal.js & adal-angular.js in AngularJS 1.x application -> [`SPADALAngular`](./MSGraph%20ADAL%20Intro/SPADALAngular)
 
 Demo: Create Excel Spreadsheet from Client Side Widget -> [`SPADALMSGraphAPI`](./MSGraph%20ADAL%20Intro/SPADALMSGraphAPI)
 

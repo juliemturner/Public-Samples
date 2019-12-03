@@ -1,17 +1,18 @@
 "use strict";
-//Node v 8.16.0
+//Node v 10.17.0
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var cache = require('gulp-cache');
 var spsave = require('spsave').spsave;
 var map = require('map-stream');
 var vfs = require('vinyl-fs');
-//var credman = require('windows-credman');
 
 var settings = require("./settings.json");
 var settingsSecurity = require("./settings_security.json");
-//var username = credman.getCredentials(settingsSecurity.credentials).username;
-//var password = credman.getCredentials(settingsSecurity.credentials).password;
+//Windows Credential Manager -- installed globally must be rebuild using rebuild.cdm executed in dir
+// var credman = require('windows-credman');
+// var username = credman.getCredentials(settingsSecurity.credentials).username;
+// var password = credman.getCredentials(settingsSecurity.credentials).password;
 var username = settingsSecurity.username;
 var password = settingsSecurity.pwd;
 
@@ -33,12 +34,12 @@ function copyToSharePointFolder(vinyl) {
             checkinType: 2,
             checkin: false
           }, {
-              username: username,
-              password: password
-            }, {
-              file: file,
-              folder: settings.destFolder
-            });
+            username: username,
+            password: password
+          }, {
+            file: file,
+            folder: settings.destFolder
+          });
           cb(null, file);
         }), {
           key: makeHashKey,
@@ -63,12 +64,12 @@ function copyToSharePointFlat(vinyl) {
               checkinType: 2,
               checkin: false
             }, {
-                username: username,
-                password: password
-              }, {
-                glob: filePath,
-                folder: settings.destFolder
-              });
+              username: username,
+              password: password
+            }, {
+              glob: filePath,
+              folder: settings.destFolder
+            });
             cb(null, file);
           }
         ), {
