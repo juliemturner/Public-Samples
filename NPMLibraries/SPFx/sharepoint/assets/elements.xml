@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="LibraryChainingExt"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="5fe3614e-a7a2-4d5e-8be1-e68af3898faf"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

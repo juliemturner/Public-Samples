@@ -28,6 +28,10 @@ USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Build NPM Libraries for use with SPFx
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
 ### Strategies for Modernizing Your Development Skills
 
 Demo: [`Development Toolchain`](./DevelopmentToolchain)

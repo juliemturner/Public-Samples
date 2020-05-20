@@ -1,0 +1,19 @@
+.lib2 {
+  color: black;
+  padding: 10px;
+
+  .launch {
+    text-align: right;
+    margin-top: 5px;
+
+    button {
+      background-color: darkred;
+      color: white;
+      padding: 3px;
+
+      :hover {
+        border: 1px solid gray;
+      }
+    }
+  }
+}

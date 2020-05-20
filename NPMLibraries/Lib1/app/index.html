@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Lib1_1 Library Workbench</title>
+  <script src="../node_modules/react/umd/react.development.js"></script>
+  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="../node_modules/@juliemturner/lib1_1/dist/lib1_1.js"></script>
+  <script src="../dist/lib1.js"></script>
+</head>
+
+<body>
+  <div id="lib1">
+  </div>
+</body>
+
+<script>
+  const container = document.getElementById("lib1");
+  const items = [{
+      title: "Test Item 1",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      url: "https://bing.com"
+    },
+    {
+      title: "Test Item 2",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      url: "https://bing.com"
+    },
+    {
+      title: "Test Item 3",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      url: "https://bing.com"
+    },
+    {
+      title: "Test Item 4",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      url: "https://bing.com"
+    }
+  ];
+  const props = {
+    domElement: container,
+    items: items
+  }
+  const launcher = new Lib1Launcher(props);
+  launcher.launch();
+</script>
+
+</html>

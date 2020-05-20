@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "library-chaining-ext-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/libraryChainingExt/LibraryChainingExtApplicationCustomizer.js",
+          "manifest": "./src/extensions/libraryChainingExt/LibraryChainingExtApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    //"@juliemturner/lib1": "https://jmtstorage.blob.core.windows.net/jt-cdn/libchaindemo/lib1.js",
+    "@juliemturner/lib1": "https://localhost:3010/dist/lib1.js",
+    //"@juliemturner/lib1_1": "https://jmtstorage.blob.core.windows.net/jt-cdn/libchaindemo/lib1_1.js"
+    "@juliemturner/lib1_1": "https://localhost:3000/dist/lib1_1.js"
+  },
+  "localizedResources": {
+    "LibraryChainingExtApplicationCustomizerStrings": "lib/extensions/libraryChainingExt/loc/{locale}.js"
+  }
+}
