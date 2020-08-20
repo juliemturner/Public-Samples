@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "asyncawait-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/asyncawait/AsyncawaitWebPart.js",
+          "manifest": "./src/webparts/asyncawait/AsyncawaitWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AsyncawaitWebPartStrings": "lib/webparts/asyncawait/loc/{locale}.js"
+  }
+}

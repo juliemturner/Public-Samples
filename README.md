@@ -28,6 +28,10 @@ USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise
 
 ## Conference Sessions - Most recent sessions at the top
 
+### PnPjs and Async/Await - A Powerful Combination to Make your SharePoint Framework code Sing
+
+Sample: [`PnPjs and Async/Await`](./PnPjsAsyncAwait)
+
 ### Build NPM Libraries for use with SPFx
 
 Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
