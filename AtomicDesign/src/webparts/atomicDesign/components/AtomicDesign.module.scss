@@ -1,0 +1,15 @@
+@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+
+.atomicDesign {
+
+  :global {
+
+    // Various types of buttons
+    @import 'node_modules/@n8d/htwoo-core/lib/components/buttons';
+
+    @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+
+    @import 'node_modules/@n8d/htwoo-core/lib/sass/03-organism/cards/_splash-cards.scss';
+  }
+
+}

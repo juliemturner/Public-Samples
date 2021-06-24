@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as lodash from "lodash";
+import isEqual from 'lodash/isEqual';
 
 export interface IMyComponentProps {
   title: string;
@@ -24,7 +24,7 @@ export default class MyComponent extends React.Component<IMyComponentProps, IMyC
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IMyComponentProps>, nextState: Readonly<IMyComponentState>) {
-    if ((lodash.isEqual(nextState, this.state) && lodash.isEqual(nextProps, this.props)))
+    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
       return false;
     return true;
   }
@@ -40,7 +40,7 @@ export default class MyComponent extends React.Component<IMyComponentProps, IMyC
       return (
         <div className="demo">
           <h1>{this.props.title}</h1>
-          <div>This is Version 1.0 of the web part.</div>
+          <div>This is Version 3.0 of the web part.</div>
           <div>Current Total: {this.state.total}</div>
           <button onClick={this._onClick}>Update Total</button>
         </div>

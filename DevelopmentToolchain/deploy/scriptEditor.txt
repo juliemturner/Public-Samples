@@ -1,0 +1,36 @@
+//** DEV CONFIGURATION */
+<div>
+    <div></div>
+    <script type="text/javascript" src="/sites/cdn/Code/WebpackTS/pnp-ww.min.js" 
+        ww-appName="WebpackDemo"
+        ww-appbind="wpdLibrary.WebpackDemo"
+        ww-appScripts='[{
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.9.0/cjs/react.production.min.js", 
+            "priority":0
+          },
+          {
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js", 
+            "priority":0
+          },
+          {
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.9.0/cjs/react-dom.production.min.js",
+            "priority":1
+          },
+          {"src": "https://localhost:3000/bDemoWebpack.js", "priority":2}
+        ]'>
+    </script> 
+</div>
+
+//** PRODUCTION CONFIGURATION */
+<div>
+    <div></div>
+    <script type="text/javascript" src="/sites/cdn/Code/WebpackTS/pnp-ww.min.js" 
+        ww-appName="WebpackDemo"
+        ww-appbind="wpdLibrary.WebpackDemo"
+        ww-appScripts='[{"src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.9.0/cjs/react.production.min.js", "priority":0},
+                        {"src": "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js", "priority":0},
+                        {"src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.9.0/cjs/react-dom.production.min.js", "priority":1},
+                        {"src": "~/bDemoWebpack.js", "priority":2}
+        ]'>
+    </script> 
+</div>

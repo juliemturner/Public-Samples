@@ -14,12 +14,11 @@ import "@pnp/sp/lists/web";
 import "@pnp/sp/fields/list";
 import { IList } from '@pnp/sp/lists';
 import "@pnp/sp/views/list";
+import { IFieldAddResult, IFieldInfo } from '@pnp/sp/fields/types';
+import { IView, IViewAddResult } from '@pnp/sp/views/types';
 
 //import * as strings from 'AsyncawaitWebPartStrings';
 import Asyncawait, { IAsyncawaitProps } from './components/Asyncawait';
-import { IFieldInfo } from '@pnp/sp/fields/types';
-import { IView } from '@pnp/sp/views/types';
-
 
 export interface IAsyncawaitWebPartProps {
 }
@@ -53,7 +52,7 @@ export default class AsyncawaitWebPart extends BaseClientSideWebPart<IAsyncawait
           console.log(`Error creating List ${JSON.stringify(listReject)}`);
           resolve(false);
         })
-        .then((fieldResult) => {
+        .then((fieldResult: IFieldAddResult) => {
           if (!fieldResult) { resolve(false); }
           f = fieldResult.data;
           //Create the view
@@ -63,7 +62,7 @@ export default class AsyncawaitWebPart extends BaseClientSideWebPart<IAsyncawait
             console.log(`Error creating Field ${JSON.stringify(fieldReject)}`);
             resolve(false);
           })
-        .then((viewResult) => {
+        .then((viewResult: IViewAddResult) => {
           if (!viewResult) { resolve(false); }
           v = viewResult.view;
           //Add the field to the view

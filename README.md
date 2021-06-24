@@ -28,17 +28,21 @@ USE INSTRUCTIONS: All examples intended for classic SharePoint, unless otherwise
 
 ## Conference Sessions - Most recent sessions at the top
 
+### An Introduction to Atomic React Component Design
+
+Sample: [`Atomic Design`](./AtomicDesign)
+
 ### PnPjs and Async/Await - A Powerful Combination to Make your SharePoint Framework code Sing
 
 Sample: [`PnPjs and Async/Await`](./PnPjsAsyncAwait)
 
-### Build NPM Libraries for use with SPFx
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
-
 ### Strategies for Modernizing Your Development Skills
 
 Demo: [`Development Toolchain`](./DevelopmentToolchain)
+
+### Build NPM Libraries for use with SPFx
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
 
 ### BI for the Cobbler's Children - Client Side Charting and Graphing
 

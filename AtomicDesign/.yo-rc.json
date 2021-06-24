@@ -3,8 +3,8 @@
     "isCreatingSolution": true,
     "environment": "spo",
     "version": "1.12.1",
-    "libraryName": "asyncawaitdemo",
-    "libraryId": "241e1888-bc53-4508-beaf-6fdb6eae7c31",
+    "libraryName": "atomic-design",
+    "libraryId": "3f351651-29b1-4cb8-8479-80b1feaa73bf",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "webpart"

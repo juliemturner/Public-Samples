@@ -26,7 +26,8 @@
       "dom",
       "es2015.collection",
       "es2015.promise"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src/**/*.ts",

@@ -2,3 +2,6 @@
 **/.vscode/
 **/.vscode/*
 **/settings_security.json
+
+dist
+lib

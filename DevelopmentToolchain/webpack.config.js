@@ -7,32 +7,28 @@ module.exports = {
   devtool: 'eval-source-map',
   target: 'node',
   entry: {
-    bDemoWebpack: "./src/main.ts"
+    bDemoWebpack: "./lib/main.js"
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].js",
     library: 'wpdLibrary'
   },
+  resolve: {
+    modules: [
+      "node_modules",
+      path.resolve(__dirname, "lib")
+    ],
+  },
   module: {
     rules: [{
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
+      test: /\.css$/,
+      exclude: /node_modules/,
+      loader: ["style-loader", "css-loader"]
+    }]
   },
   externals: {
     React: 'React',
     'ReactDOM': 'ReactDOM'
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  },
-  watch: true
+  }
 };

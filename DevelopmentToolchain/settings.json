@@ -1,7 +1,8 @@
 {
   "projectname": "WebpackDemo",
+  "srcBase": "dist",
   "srcFiles": [
-    "./dist/**/*.js"
+    "./dist/*.js"
   ],
   "siteCollURL": "https://sympjulie.sharepoint.com/sites/CDN",
   "destFolder": "/Code/WebpackTS"
