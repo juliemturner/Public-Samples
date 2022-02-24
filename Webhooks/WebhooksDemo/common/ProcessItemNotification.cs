@@ -6,7 +6,6 @@ using PnP.Core.QueryModel;
 using PnP.Core;
 using Newtonsoft.Json;
 using System.Threading;
-using PnP.Core.Auth.Services;
 
 namespace LibrarySubscritption
 {
@@ -28,11 +27,10 @@ namespace LibrarySubscritption
         {
             try
             {
-                var versionSyncDB = new VersionSyncDB(_log);
+                var versionSyncDB = new WebhookDB(_log);
                 var webHook = versionSyncDB.GetListWebhook(new Guid(notification.Resource));
                 if (webHook != null)
                 {
-                    //var certAuthProvider = _pnpAuthProviderFactory.Create("CertAuth");
                     using (var pnpContext = _pnpContextFactory.Create(new Uri(webHook.WebUrl)))
                     {
                         var changeList = pnpContext.Web.Lists.GetById(new Guid(notification.Resource), p => p.Title, p => p.DefaultDisplayFormUrl, p => p.Items, p => p.Fields.QueryProperties(p => p.InternalName,

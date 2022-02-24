@@ -1,17 +1,16 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace LibrarySubscritption
 {
-    public class VersionSyncDB
+    public class WebhookDB
     {
-        public readonly string LOG_LOCATION = "VersionSyncDB";
+        public readonly string LOG_LOCATION = "WebhookDB";
         private ILogger _log;
 
-        public VersionSyncDB(ILogger log)
+        public WebhookDB(ILogger log)
         {
             _log = log;
         }
