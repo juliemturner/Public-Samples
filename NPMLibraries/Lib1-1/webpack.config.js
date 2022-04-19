@@ -1,10 +1,5 @@
-//entry can be an array and an include multiple files
 const webpack = require('webpack');
 const path = require('path');
-const bundleAnalyzer = require('webpack-bundle-analyzer');
-
-const dropPath = path.join(__dirname, 'temp', 'stats');
-const lastDirName = path.basename(__dirname);
 
 let bannerText = "";
 const fs = require('fs');
@@ -24,19 +19,12 @@ module.exports = {
   plugins: [
     new webpack.BannerPlugin({
       banner: bannerText
-    }),
-    new bundleAnalyzer.BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerMode: 'static',
-      reportFilename: path.join(dropPath, `${lastDirName}.stats.html`),
-      generateStatsFile: true,
-      statsFilename: path.join(dropPath, `${lastDirName}.stats.json`),
-      logLevel: 'error'
     })
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].js",
+    library: "Lib11",
     libraryTarget: 'umd'
   },
   resolve: {
@@ -52,8 +40,8 @@ module.exports = {
       loader: ["style-loader", "css-loader"]
     }]
   },
-  externals: [
-    'react',
-    'react-dom'
-  ]
+  externals: {
+    'React': 'react',
+    'ReactDOM': 'react-dom'
+  }
 };

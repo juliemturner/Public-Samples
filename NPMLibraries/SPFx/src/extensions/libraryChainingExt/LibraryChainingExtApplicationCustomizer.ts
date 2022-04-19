@@ -24,12 +24,10 @@ export default class LibraryChainingExtApplicationCustomizer
   extends BaseApplicationCustomizer<ILibraryChainingExtApplicationCustomizerProperties> {
 
   @override
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     console.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
     this.context.application.navigatedEvent.add(this, this.render);
-
-    return Promise.resolve();
   }
 
   private async render(): Promise<void> {

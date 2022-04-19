@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "pnpjsv-3",
+    "libraryId": "44a7bfd5-a98a-4efc-9536-6a18af1b8477",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "pnpjsv3",
+    "solutionShortDescription": "pnpjsv3 description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

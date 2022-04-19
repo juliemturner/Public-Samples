@@ -28,6 +28,18 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Using Webhooks to get SharePoint List/Library Event Notifications
+
+Sample: [`Webhooks`](./Webhooks)
+
+### Build NPM Libraries for use with SPFx
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
+### PnPjs and the SharePoint Framework: Version 3 What's New
+
+Sample [`PnPjsV3`](./PnPjsV3/)
+
 ### An Introduction to Atomic React Component Design
 
 Sample: [`Atomic Design`](./AtomicDesign)
@@ -39,10 +51,6 @@ Sample: [`PnPjs and Async/Await`](./PnPjsAsyncAwait)
 ### Strategies for Modernizing Your Development Skills
 
 Demo: [`Development Toolchain`](./DevelopmentToolchain)
-
-### Build NPM Libraries for use with SPFx
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
 
 ### BI for the Cobbler's Children - Client Side Charting and Graphing
 
