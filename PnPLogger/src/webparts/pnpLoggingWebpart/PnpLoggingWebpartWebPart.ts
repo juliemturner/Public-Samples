@@ -26,8 +26,8 @@ export interface IPnpLoggingWebpartWebPartProps {
 }
 
 export default class PnpLoggingWebpartWebPart extends BaseClientSideWebPart<IPnpLoggingWebpartWebPartProps> {
-  private _ppLoggingTypes: IPropertyPaneDropdownOption[] = [{key: "Basic", text: "Basic"},{key: "Custom", text: "Custom"}, {key: "Advanced", text: "Advanced"}];
-  
+  private _ppLoggingTypes: IPropertyPaneDropdownOption[] = [{ key: "Basic", text: "Basic" }, { key: "Custom", text: "Custom" }, { key: "Advanced", text: "Advanced" }];
+
   public async onInit(): Promise<void> {
     try {
       //Initialize sp for writing to sp lists.
@@ -36,7 +36,7 @@ export default class PnpLoggingWebpartWebPart extends BaseClientSideWebPart<IPnp
       });
 
       //Set type of logger
-      switch(this.properties.loggingType){
+      switch (this.properties.loggingType) {
         case "Basic":
           this.basicLogging();
           break;
@@ -107,7 +107,7 @@ export default class PnpLoggingWebpartWebPart extends BaseClientSideWebPart<IPnp
     );
 
     ReactDom.render(element, this.domElement);
-    Logger.write(`Initialized PnPLoggingSample: ${this.context.pageContext.web.absoluteUrl}`, LogLevel.Info);
+    console.error(`Initialized PnPLoggingSample: ${this.context.pageContext.web.absoluteUrl}`, LogLevel.Info);
   }
 
   protected onDispose(): void {

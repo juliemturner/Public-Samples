@@ -11,7 +11,7 @@ export interface IPnpLoggingWebpartState {
   logType: string;
 }
 
-export default class PnpLoggingWebpart extends React.Component<IPnpLoggingWebpartProps, IPnpLoggingWebpartState> {
+export default class PnpLoggingWebpart extends React.PureComponent<IPnpLoggingWebpartProps, IPnpLoggingWebpartState> {
 
   constructor(props) {
     super(props);
@@ -42,12 +42,12 @@ export default class PnpLoggingWebpart extends React.Component<IPnpLoggingWebpar
     //simulating error to get stack trace
     let stack = new Error().stack || "";
     //utilized in advanced logging
-    let data: ILogData = {FileName: "PnpLoggingWebpart.tsx", MethodName: "logDemo", StackTrace: stack};
-    let logEntry: LogEntry = {message: `Logging information to logger which was already initialized for log level ${this.state.logType}!`, level: level, data: data};
+    let data: ILogData = { FileName: "PnpLoggingWebpart.tsx", MethodName: "logDemo", StackTrace: stack };
+    let logEntry: LogEntry = { message: `Logging information to logger which was already initialized for log level ${this.state.logType}!`, level: level, data: data };
     Logger.log(logEntry);
 
     //Alternately if not using data payload you can call Logger.Write(<message>, <LogLevel>)
-    //Logger.write(`message`, level);
+    //console.error(`message`, level);
   }
 
   public render(): React.ReactElement<IPnpLoggingWebpartProps> {

@@ -15,7 +15,7 @@ export class MyComponentState implements IMyComponentState {
   ) { }
 }
 
-export default class MyComponent extends React.Component<IMyComponentProps, IMyComponentState> {
+export default class MyComponent extends React.PureComponent<IMyComponentProps, IMyComponentState> {
   private LOG_SOURCE: string = "MyComponent";
 
   constructor(props) {

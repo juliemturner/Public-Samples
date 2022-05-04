@@ -62,7 +62,7 @@ export class PnPjsV3Service implements IPnPjsV3Service {
         };
       });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (ReadAllFileSize) - ${JSON.stringify(err)} - `, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (ReadAllFileSize) - ${JSON.stringify(err)} - `);
     } finally {
       return retVal;
     }
@@ -92,7 +92,7 @@ export class PnPjsV3Service implements IPnPjsV3Service {
 
       retVal = items;
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (UpdateTitles) - ${JSON.stringify(err)} - `, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (UpdateTitles) - ${JSON.stringify(err)} - `);
     } finally {
       return retVal;
     }

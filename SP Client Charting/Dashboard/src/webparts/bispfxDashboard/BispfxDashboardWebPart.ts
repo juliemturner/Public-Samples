@@ -39,9 +39,9 @@ export default class BispfxDashboardWebPart extends BaseClientSideWebPart<IBispf
       this.dbService = new DBService("IT Requests");
       await this.dbService.init();
 
-      Logger.write(`Initialized BISPFx Dashboard Web Part`, LogLevel.Info);
+      console.error(`Initialized BISPFx Dashboard Web Part`, LogLevel.Info);
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render) -- Could not start web part.`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render) -- Could not start web part.`);
     }
   }
 
@@ -57,7 +57,7 @@ export default class BispfxDashboardWebPart extends BaseClientSideWebPart<IBispf
       options += `<option value="${this.dbService.businessUnits[i]}">${this.dbService.businessUnits[i]}</option>`;
     }
     this.domElement.innerHTML = `
-      <div class="${ styles.bispfxDashboard}">
+      <div class="${styles.bispfxDashboard}">
         <div class="${styles.header}">
           <div><select id="buSelector">${options}</select></div>
           <div>
@@ -65,20 +65,20 @@ export default class BispfxDashboardWebPart extends BaseClientSideWebPart<IBispf
             <button id="refreshButton">Refresh</button>
           </div>
         </div>
-        <div class="${ styles.chartCont}">
-          <div class="${ styles.chart}">
+        <div class="${styles.chartCont}">
+          <div class="${styles.chart}">
             <h2 id="RequestsByAssigneeTitle"></h2>
             <div id="RequestsByAssignee"></div>
           </div>
-          <div class="${ styles.chart}">
+          <div class="${styles.chart}">
             <h2 id="AvgRequestWeekdayTitle"></h2>
             <div id="AvgRequestWeekday"></div>
           </div>
-          <div class="${ styles.chart}">
+          <div class="${styles.chart}">
             <h2 id="RequestByBusinessUnitTitle"></h2>
             <div id="RequestByBusinessUnit"></div>
           </div>
-          <div class="${ styles.chart}">
+          <div class="${styles.chart}">
             <h2 id="RequestStatusCountTitle"></h2>
             <div id="RequestStatusCount"></div>
           </div>

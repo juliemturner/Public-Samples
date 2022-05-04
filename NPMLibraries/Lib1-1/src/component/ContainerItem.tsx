@@ -22,7 +22,7 @@ export class ContainerItemState implements IContainerItemState {
   constructor() { }
 }
 
-export default class ContainerItem extends React.Component<IContainerItemProps, IContainerItemState> {
+export default class ContainerItem extends React.PureComponent<IContainerItemProps, IContainerItemState> {
   private LOG_SOURCE: string = "ContainerItem";
 
   constructor(props) {

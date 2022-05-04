@@ -75,7 +75,7 @@ export class ExcelGraphState implements IExcelGraphState {
   ) { }
 }
 
-export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcelGraphState> {
+export default class ExcelGraph extends React.PureComponent<IExcelGraphProps, IExcelGraphState> {
   private timer;
 
   constructor(props) {
@@ -608,7 +608,7 @@ export default class ExcelGraph extends React.Component<IExcelGraphProps, IExcel
       <div className={styles.excelGraph}>
         <h1>Working with Excel using Microsoft Graph</h1>
         <div>Persistant Session:
-        <input type="checkbox" checked={this.state.persistant} onChange={() => { this.setState({ persistant: !this.state.persistant }); }} />
+          <input type="checkbox" checked={this.state.persistant} onChange={() => { this.setState({ persistant: !this.state.persistant }); }} />
         </div>
         <div className="sectionTitle">Select a file:</div>
         <ul className="fileList">

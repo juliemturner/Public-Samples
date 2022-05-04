@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash/isEqual";
 import SplashCard from "./organisms/SplashCard";
 import styles from "./AtomicDesign.module.scss";
 
@@ -14,18 +12,12 @@ export class AtomicDesignState implements IAtomicDesignState {
   constructor() { }
 }
 
-export default class AtomicDesign extends React.Component<IAtomicDesignProps, IAtomicDesignState> {
+export default class AtomicDesign extends React.PureComponent<IAtomicDesignProps, IAtomicDesignState> {
   private LOG_SOURCE: string = "🔶AtomicDesign";
 
   constructor(props: IAtomicDesignProps) {
     super(props);
     this.state = new AtomicDesignState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IAtomicDesignProps>, nextState: Readonly<IAtomicDesignState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IAtomicDesignProps> {
@@ -36,7 +28,7 @@ export default class AtomicDesign extends React.Component<IAtomicDesignProps, IA
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

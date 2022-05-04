@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash/isEqual";
 import HooButton, { BUTTON_TYPE } from "../atoms/HooButton";
 
 export interface ISplashFooterProps {
@@ -13,7 +11,7 @@ export class SplashFooterState implements ISplashFooterState {
   constructor() { }
 }
 
-export default class SplashFooter extends React.Component<ISplashFooterProps, ISplashFooterState> {
+export default class SplashFooter extends React.PureComponent<ISplashFooterProps, ISplashFooterState> {
   private LOG_SOURCE: string = "🔶SplashFooter";
 
   constructor(props: ISplashFooterProps) {
@@ -21,17 +19,11 @@ export default class SplashFooter extends React.Component<ISplashFooterProps, IS
     this.state = new SplashFooterState();
   }
 
-  public shouldComponentUpdate(nextProps: Readonly<ISplashFooterProps>, nextState: Readonly<ISplashFooterState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
-  }
-
   private _createClick = () => {
     try {
       alert("Create Something Was Clicked");
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_createClick) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_createClick) - ${err}`);
     }
   }
 
@@ -39,7 +31,7 @@ export default class SplashFooter extends React.Component<ISplashFooterProps, IS
     try {
       alert("Call for Action Was Clicked");
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_callClick) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_callClick) - ${err}`);
     }
   }
 
@@ -52,7 +44,7 @@ export default class SplashFooter extends React.Component<ISplashFooterProps, IS
         </footer>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

@@ -23,7 +23,7 @@ export class GuageState implements IGuageState {
   ) { }
 }
 
-export default class Guage extends React.Component<IGuageProps, IGuageState> {
+export default class Guage extends React.PureComponent<IGuageProps, IGuageState> {
   private LOG_SOURCE: string = "Guage";
 
   private refresh: boolean = false;
@@ -186,7 +186,7 @@ export default class Guage extends React.Component<IGuageProps, IGuageState> {
         </div>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

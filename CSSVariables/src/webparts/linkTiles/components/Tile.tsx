@@ -18,7 +18,7 @@ export class TileState implements ITileState {
   constructor() { }
 }
 
-export default class Tile extends React.Component<ITileProps, ITileState> {
+export default class Tile extends React.PureComponent<ITileProps, ITileState> {
   private LOG_SOURCE: string = "Tile";
 
   constructor(props) {
@@ -57,7 +57,7 @@ export default class Tile extends React.Component<ITileProps, ITileState> {
         </div>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

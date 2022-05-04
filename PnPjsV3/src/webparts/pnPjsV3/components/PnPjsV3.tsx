@@ -80,7 +80,7 @@ export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3
 
       this.setState({ items });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_readAllFilesSize) - ${JSON.stringify(err)} - `, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_readAllFilesSize) - ${JSON.stringify(err)} - `);
     }
   }
 
@@ -111,7 +111,7 @@ export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3
 
       this.setState({ items });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_updateTitles) - ${JSON.stringify(err)} - `, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_updateTitles) - ${JSON.stringify(err)} - `);
     }
   }
 
@@ -141,7 +141,7 @@ export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${JSON.stringify(err)} - `, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${JSON.stringify(err)} - `);
       return null;
     }
   }

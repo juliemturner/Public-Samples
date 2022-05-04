@@ -13,7 +13,26 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "atomic-design description"
+      },
+      "longDescription": {
+        "default": "atomic-design description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "atomic-design Feature",
+        "description": "The feature that activates elements of the atomic-design solution.",
+        "id": "fecf6c26-b2b5-4e2e-b89e-8ca9da18763f",
+        "version": "1.0.0.0"
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/atomic-design.sppkg"

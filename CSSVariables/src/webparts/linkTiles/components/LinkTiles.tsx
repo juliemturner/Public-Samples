@@ -19,7 +19,7 @@ export class LinkTilesState implements ILinkTilesState {
   constructor() { }
 }
 
-export default class LinkTiles extends React.Component<ILinkTilesProps, ILinkTilesState> {
+export default class LinkTiles extends React.PureComponent<ILinkTilesProps, ILinkTilesState> {
   private LOG_SOURCE: string = "LinkTiles";
 
   constructor(props) {
@@ -48,7 +48,7 @@ export default class LinkTiles extends React.Component<ILinkTilesProps, ILinkTil
         </div>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

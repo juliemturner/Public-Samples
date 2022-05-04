@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash/isEqual";
 
 export interface ISplashTitleProps {
   title: string;
@@ -13,18 +11,12 @@ export class SplashTitleState implements ISplashTitleState {
   constructor() { }
 }
 
-export default class SplashTitle extends React.Component<ISplashTitleProps, ISplashTitleState> {
+export default class SplashTitle extends React.PureComponent<ISplashTitleProps, ISplashTitleState> {
   private LOG_SOURCE: string = "🔶SplashTitle";
 
   constructor(props: ISplashTitleProps) {
     super(props);
     this.state = new SplashTitleState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<ISplashTitleProps>, nextState: Readonly<ISplashTitleState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<ISplashTitleProps> {
@@ -35,7 +27,7 @@ export default class SplashTitle extends React.Component<ISplashTitleProps, ISpl
         </h1>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

@@ -7,7 +7,7 @@ export interface IAsyncawaitProps {
   start: () => void;
 }
 
-export default class Asyncawait extends React.Component<IAsyncawaitProps, {}> {
+export default class Asyncawait extends React.PureComponent<IAsyncawaitProps, {}> {
   public render(): React.ReactElement<IAsyncawaitProps> {
     return (
       <>

@@ -65,7 +65,7 @@ export class BIDemoGuageState implements IBIDemoGuageState {
   ) { }
 }
 
-export default class BIDemoGuage extends React.Component<IBIDemoGuageProps, IBIDemoGuageState> {
+export default class BIDemoGuage extends React.PureComponent<IBIDemoGuageProps, IBIDemoGuageState> {
   private LOG_SOURCE: string = "BIDemoGuage";
 
   constructor(props) {
@@ -151,7 +151,7 @@ export default class BIDemoGuage extends React.Component<IBIDemoGuageProps, IBID
         </div>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

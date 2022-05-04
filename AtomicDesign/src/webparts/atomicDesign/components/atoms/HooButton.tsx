@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash/isEqual";
 
 export enum BUTTON_TYPE {
   "Primary",
@@ -21,18 +19,12 @@ export class HooButtonState implements IHooButtonState {
   constructor() { }
 }
 
-export default class HooButton extends React.Component<IHooButtonProps, IHooButtonState> {
+export default class HooButton extends React.PureComponent<IHooButtonProps, IHooButtonState> {
   private LOG_SOURCE: string = "🔶HooButton";
 
   constructor(props: IHooButtonProps) {
     super(props);
     this.state = new HooButtonState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHooButtonProps>, nextState: Readonly<IHooButtonState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHooButtonProps> {
@@ -43,7 +35,7 @@ export default class HooButton extends React.Component<IHooButtonProps, IHooButt
         </button>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }
