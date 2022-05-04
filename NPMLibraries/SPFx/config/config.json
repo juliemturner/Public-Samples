@@ -12,9 +12,9 @@
     }
   },
   "externals": {
-    //"@juliemturner/lib1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1.js",
+    //"@juliemturner/lib1": "https://yourcdn.com/npmlib/lib1.js",
     "@juliemturner/lib1": "https://localhost:3010/dist/lib1.js",
-    //"@juliemturner/lib1_1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1_1.js"
+    //"@juliemturner/lib1_1": "https://yourcdn.com/npmlib/lib1_1.js"
     "@juliemturner/lib1_1": "https://localhost:3000/dist/lib1_1.js"
   },
   "localizedResources": {

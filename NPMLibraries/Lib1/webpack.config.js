@@ -1,14 +1,4 @@
-const webpack = require('webpack');
 const path = require('path');
-
-let bannerText = "";
-const fs = require('fs');
-const package = './package.json';
-if (fs.existsSync(package)) {
-  const packageFileContent = fs.readFileSync(package, 'UTF-8');
-  const pagesContents = JSON.parse(packageFileContent);
-  bannerText = `*****${pagesContents.name} - Version: ${pagesContents.version} - ${pagesContents.description}*****`;
-}
 
 module.exports = {
   mode: 'production',
@@ -16,11 +6,6 @@ module.exports = {
   entry: {
     lib1: path.resolve(__dirname, './lib/index.js')
   },
-  plugins: [
-    new webpack.BannerPlugin({
-      banner: bannerText
-    })
-  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].js",

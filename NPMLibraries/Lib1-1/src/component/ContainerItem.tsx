@@ -12,6 +12,7 @@ export interface ILibItem {
 
 export interface IContainerItemProps {
   item: ILibItem;
+  key: number;
 }
 
 export interface IContainerItemState {
@@ -36,7 +37,7 @@ export default class ContainerItem extends React.Component<IContainerItemProps, 
   public render(): React.ReactElement<IContainerItemProps> {
     try {
       return (
-        <div data-component={this.LOG_SOURCE} className="lib2">
+        <div data-component={this.LOG_SOURCE} className="lib2" key={this.props.key}>
           <h2>{this.props.item.title}</h2>
           <div>{this.props.item.description}</div>
           <div className="launch"><button onClick={this.onClick}>Launch</button></div>
