@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.14.0",
+    "version": "1.15.2",
     "libraryName": "atomic-design",
     "libraryId": "3f351651-29b1-4cb8-8479-80b1feaa73bf",
     "packageManager": "npm",
