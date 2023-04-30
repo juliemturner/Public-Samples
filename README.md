@@ -28,6 +28,10 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Level up workflow with Webhooks
+
+Sample: [`Webhooks`](./Webhooks)
+
 ### PnPjs and the SharePoint Framework: Version 3 What's New
 
 Sample [`PnPjsV3`](./PnPjsV3/)
@@ -35,10 +39,6 @@ Sample [`PnPjsV3`](./PnPjsV3/)
 ### An Introduction to Atomic React Component Design
 
 Sample: [`Atomic Design`](./AtomicDesign)
-
-### Using Webhooks to get SharePoint List/Library Event Notifications
-
-Sample: [`Webhooks`](./Webhooks)
 
 ### Build NPM Libraries for use with SPFx
 
