@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-
 //Include CSS in bundle
-import '../component/Lib1Styles.css';
+import "../component/Lib1Styles";
 
 import Container from "../component/Container";
 import { IContainerProps } from "../component/Container";
@@ -40,12 +39,12 @@ export class Lib1Launcher implements ILib1Launcher {
   private renderHeader(): void {
     console.log("Lib1Launcher render");
     try {
-      var containerElement = document.createElement("DIV");
+      const containerElement = document.createElement("DIV");
       this.domElementHeader.appendChild(containerElement);
 
       const header = React.createElement("h2", null, "My list of items");
 
-      const props: IContainerProps = { items: this.items }
+      const props: IContainerProps = { items: this.items };
       const container = React.createElement(Container, props, null);
 
       const elements = [header, container];

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "sp-ext-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/spExt/SpExtApplicationCustomizer.js",
+          "manifest": "./src/extensions/spExt/SpExtApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    //"@juliemturner/lib1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1.js",
+    "@juliemturner/lib1": "https://localhost:3010/lib1.js",
+    //"@juliemturner/lib1_1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1_1.js"
+    "@juliemturner/lib1_1": "https://localhost:3000/lib1_1.js"
+  },
+  "localizedResources": {
+    "SpExtApplicationCustomizerStrings": "lib/extensions/spExt/loc/{locale}.js"
+  }
+}

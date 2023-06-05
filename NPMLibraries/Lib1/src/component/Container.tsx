@@ -1,22 +1,20 @@
 import * as React from "react";
-
-import { ContainerItem, ILibItem } from "@juliemturner/lib1_1";
+import {ContainerItem, ILibItem } from "@juliemturner/lib1_1";
 
 export interface IContainerProps {
   items: ILibItem[];
 }
 
-export interface IContainerState {
-}
-
+export interface IContainerState {}
 export class ContainerState implements IContainerState {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() { }
 }
 
-export default class Container extends React.PureComponent<IContainerProps, IContainerState> {
+export default class Container extends React.Component<IContainerProps, IContainerState> {
   private LOG_SOURCE = "Container";
 
-  constructor(props) {
+  constructor(props: IContainerProps) {
     super(props);
     this.state = new ContainerState();
   }

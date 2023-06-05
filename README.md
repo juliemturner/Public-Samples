@@ -28,9 +28,9 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
-### Level up workflow with Webhooks
+### Build NPM Libraries for use with SPFx
 
-Sample: [`Webhooks`](./Webhooks)
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
 
 ### PnPjs and the SharePoint Framework: Version 3 What's New
 
@@ -40,9 +40,9 @@ Sample [`PnPjsV3`](./PnPjsV3/)
 
 Sample: [`Atomic Design`](./AtomicDesign)
 
-### Build NPM Libraries for use with SPFx
+### Level up workflow with Webhooks
 
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+Sample: [`Webhooks`](./Webhooks)
 
 ### PnPjs and Async/Await - A Powerful Combination to Make your SharePoint Framework code Sing
 

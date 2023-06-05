@@ -3,11 +3,11 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Lib1_1 Library Workbench</title>
-  <script src="../node_modules/react/umd/react.development.js"></script>
-  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
-  <script src="../node_modules/@juliemturner/lib1_1/dist/lib1_1.js"></script>
-  <script src="../dist/lib1.js"></script>
+  <title>Lib1 Library Workbench</title>
+  <script src="./react/umd/react.development.js"></script>
+  <script src="./react-dom/umd/react-dom.development.js"></script>
+  <script src="./@juliemturner/lib1_1/dist/lib1_1.js"></script>
+  <script src="./lib1.js"></script>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     domElement: container,
     items: items
   }
-  const launcher = new Lib1.Lib1Launcher(props);
+  const launcher = new lib1.Lib1Launcher(props);
   launcher.launch();
 </script>
 

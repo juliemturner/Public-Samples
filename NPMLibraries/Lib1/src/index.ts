@@ -1,7 +1,4 @@
-import { ILib1Launcher, Lib1Launcher, ILib1LauncherProps } from './services/Lib1Launcher';
+import { ILib1Launcher, Lib1Launcher, ILib1LauncherProps } from "./services/Lib1Launcher";
 
-export {
-  ILib1Launcher,
-  Lib1Launcher,
-  ILib1LauncherProps
-};
+export type { ILib1LauncherProps, ILib1Launcher };
+export {Lib1Launcher};
