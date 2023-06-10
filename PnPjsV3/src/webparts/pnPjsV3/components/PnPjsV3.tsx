@@ -7,9 +7,7 @@ import { IItemUpdateResult } from "@pnp/sp/items";
 import styles from "./PnPjsV3.module.scss";
 import { getSP } from "../pnpjsConfig";
 import { spfi, SPFI } from "@pnp/sp";
-import { Label } from "@microsoft/office-ui-fabric-react-bundle/node_modules/office-ui-fabric-react/lib/Label";
-import { PrimaryButton } from "@microsoft/office-ui-fabric-react-bundle";
-import { pnpv3 } from "../pnpjsService";
+import { PrimaryButton, Label } from "@fluentui/react";
 
 export interface IFile {
   Id: number;
@@ -29,6 +27,7 @@ export interface IResponseItem {
   Title: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IPnPjsV3Props {
 }
 
@@ -43,8 +42,8 @@ export class PnPjsV3State implements IPnPjsV3State {
 }
 
 export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3State> {
-  private LOG_SOURCE: string = "🔶PnPjsV3";
-  private LIBRARY_NAME: string = "Documents";
+  private LOG_SOURCE = "🔶PnPjsV3";
+  private LIBRARY_NAME = "Documents";
   private _sp: SPFI;
 
   constructor(props: IPnPjsV3Props) {
@@ -59,59 +58,55 @@ export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3
 
   private _readAllFilesSize = async (): Promise<void> => {
     try {
-      // const spCache = spfi(this._sp).using(Caching({ store: "session" }));
+      const spCache = spfi(this._sp).using(Caching({ store: "session" }));
 
-      // const response: IResponseItem[] = await spCache.web.lists
-      //   .getByTitle(this.LIBRARY_NAME)
-      //   .items
-      //   .select("Id", "Title", "FileLeafRef", "File/Length")
-      //   .expand("File")();
+      const response: IResponseItem[] = await spCache.web.lists
+        .getByTitle(this.LIBRARY_NAME)
+        .items
+        .select("Id", "Title", "FileLeafRef", "File/Length")
+        .expand("File")();
 
-      // const items: IFile[] = response.map((item: IResponseItem) => {
-      //   return {
-      //     Id: item.Id,
-      //     Title: item.Title || "Unknown",
-      //     Size: item.File?.Length || 0,
-      //     Name: item.FileLeafRef
-      //   };
-      // });
-
-      const items = await pnpv3.ReadAllFileSize();
+      const items: IFile[] = response.map((item: IResponseItem) => {
+        return {
+          Id: item.Id,
+          Title: item.Title || "Unknown",
+          Size: item.File?.Length || 0,
+          Name: item.FileLeafRef
+        };
+      });
 
       this.setState({ items });
     } catch (err) {
-      console.error(`${this.LOG_SOURCE} (_readAllFilesSize) - ${JSON.stringify(err)} - `);
+      Logger.log({level: LogLevel.Error, message: `${this.LOG_SOURCE} (_readAllFilesSize) - ${JSON.stringify(err)}`});
     }
   }
 
   private _updateTitles = async (): Promise<void> => {
     try {
-      // const [batchedSP, execute] = this._sp.batched();
+      const [batchedSP, execute] = this._sp.batched();
 
-      // const items: IFile[] = JSON.parse(JSON.stringify(this.state.items));
+      const items: IFile[] = JSON.parse(JSON.stringify(this.state.items));
 
-      // let res: IItemUpdateResult[] = [];
-      // for (let i = 0; i < items.length; i++) {
-      //   batchedSP.web.lists
-      //     .getByTitle(this.LIBRARY_NAME)
-      //     .items
-      //     .getById(items[i].Id)
-      //     .update({ Title: `${items[i].Name}-Updated` })
-      //     .then(r => res.push(r));
-      // }
+      const res: IItemUpdateResult[] = [];
+      for (let i = 0; i < items.length; i++) {
+        batchedSP.web.lists
+          .getByTitle(this.LIBRARY_NAME)
+          .items
+          .getById(items[i].Id)
+          .update({ Title: `${items[i].Name}-Updated` })
+          .then(r => res.push(r));
+      }
 
-      // await execute();
+      await execute();
 
-      // for (let i = 0; i < res.length; i++) {
-      //   const item = await res[i].item.select("Id, Title")<{ Id: number, Title: string }>();
-      //   items[i].Name = item.Title;
-      // }
-
-      const items = await pnpv3.UpdateTitles(JSON.parse(JSON.stringify(this.state.items)));
+      for (let i = 0; i < res.length; i++) {
+        const item = await res[i].item.select("Id, Title")<{ Id: number, Title: string }>();
+        items[i].Name = item.Title;
+      }
 
       this.setState({ items });
     } catch (err) {
-      console.error(`${this.LOG_SOURCE} (_updateTitles) - ${JSON.stringify(err)} - `);
+      Logger.log({level: LogLevel.Error, message: `${this.LOG_SOURCE} (_updateTitles) - ${JSON.stringify(err)}`});
     }
   }
 
@@ -141,7 +136,7 @@ export default class PnPjsV3 extends React.PureComponent<IPnPjsV3Props, IPnPjsV3
         </div>
       );
     } catch (err) {
-      console.error(`${this.LOG_SOURCE} (render) - ${JSON.stringify(err)} - `);
+      Logger.log({level: LogLevel.Error, message: `${this.LOG_SOURCE} (render) - ${JSON.stringify(err)}`});
       return null;
     }
   }

@@ -9,9 +9,10 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 import * as strings from 'PnPjsV3WebPartStrings';
-import PnPjsV3, { IPnPjsV3Props } from './components/PnPjsV3';
-import { getSP } from './pnpjsConfig';
+// import PnPjsV3, { IPnPjsV3Props } from './components/PnPjsV3';
+// import { getSP } from './pnpjsConfig';
 import { pnpv3 } from './pnpjsService';
+import PnPjsV3, { IPnPjsV3Props } from './components/PnPjsV3_service';
 
 export interface IPnPjsV3WebPartProps {
   description: string;
@@ -19,8 +20,8 @@ export interface IPnPjsV3WebPartProps {
 
 export default class PnPjsV3WebPart extends BaseClientSideWebPart<IPnPjsV3WebPartProps> {
 
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
+  private _isDarkTheme = false;
+  private _environmentMessage = '';
 
   protected onInit(): Promise<void> {
     this._environmentMessage = this._getEnvironmentMessage();
@@ -28,6 +29,7 @@ export default class PnPjsV3WebPart extends BaseClientSideWebPart<IPnPjsV3WebPar
     //Initialize our _sp object that we can then use in other packages without having to pass around the context.
     //  Check out pnpjsConfig.ts for an example of a project setup file.
     //getSP(this.context);
+    
     pnpv3.Init(this.context.serviceScope);
 
     return super.onInit();
@@ -42,7 +44,7 @@ export default class PnPjsV3WebPart extends BaseClientSideWebPart<IPnPjsV3WebPar
   }
 
   private _getEnvironmentMessage(): string {
-    if (!!this.context.sdks.microsoftTeams) { // running in Teams
+    if (!this.context.sdks.microsoftTeams) { // running in Teams
       return this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
     }
 
