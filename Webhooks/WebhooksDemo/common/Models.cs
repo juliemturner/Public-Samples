@@ -4,24 +4,6 @@ using System.Collections.Generic;
 
 namespace LibrarySubscritption
 {
-    public class SubscriptionModel
-    {
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
-
-        [JsonProperty(PropertyName = "clientState", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClientState { get; set; }
-
-        [JsonProperty(PropertyName = "expirationDateTime")]
-        public DateTime ExpirationDateTime { get; set; }
-
-        [JsonProperty(PropertyName = "notificationUrl")]
-        public string NotificationUrl { get; set; }
-
-        [JsonProperty(PropertyName = "resource", NullValueHandling = NullValueHandling.Ignore)]
-        public string Resource { get; set; }
-    }
-
     public class ResponseModel<T>
     {
         [JsonProperty(PropertyName = "value")]
@@ -59,11 +41,5 @@ namespace LibrarySubscritption
         public DateTime? Expiration { get; set; }
         public string LastChangeToken { get; set; }
         public string WebUrl { get; set; }
-    }
-
-    public class SiteSubscriptions
-    {
-        public Guid SiteId { get; set; }
-        public string SiteUrl { get; set; }
     }
 }

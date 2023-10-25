@@ -28,6 +28,10 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Level up workflow with Webhooks
+
+Sample: [`Webhooks`](./Webhooks)
+
 ### Build NPM Libraries for use with SPFx
 
 Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
@@ -39,10 +43,6 @@ Sample [`PnPjsV3`](./PnPjsV3/)
 ### An Introduction to Atomic React Component Design
 
 Sample: [`Atomic Design`](./AtomicDesign)
-
-### Level up workflow with Webhooks
-
-Sample: [`Webhooks`](./Webhooks)
 
 ### PnPjs and Async/Await - A Powerful Combination to Make your SharePoint Framework code Sing
 
