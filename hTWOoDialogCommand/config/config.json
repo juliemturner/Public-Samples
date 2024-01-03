@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "cmd-dialog-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/cmdDialog/CmdDialogCommandSet.js",
+          "manifest": "./src/extensions/cmdDialog/CmdDialogCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CmdDialogCommandSetStrings": "lib/extensions/cmdDialog/loc/{locale}.js"
+  }
+}

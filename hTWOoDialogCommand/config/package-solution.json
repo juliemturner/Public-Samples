@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hTWOo Dialog Demo",
+    "id": "ede65cde-2055-49da-8594-f021128518dc",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Sympraxis Consulting",
+      "websiteUrl": "https://sympraxisconsulting.com",
+      "privacyUrl": "https://symp.info/privacyUrl",
+      "termsOfUseUrl": "https://symp.info/termsOfUseUrl",
+      "mpnId": "SYMPRAXIS"
+    },
+    "iconPath": "images/SolutionIcon.png",
+    "metadata": {
+      "shortDescription": {
+        "default": "h20dialog description"
+      },
+      "longDescription": {
+        "default": "h20dialog description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "3bf69cd0-cef4-4266-8eed-455771e6711f",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/h-20-dialog.sppkg"
+  }
+}

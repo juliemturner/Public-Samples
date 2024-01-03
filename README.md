@@ -10,6 +10,8 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 >Blog posts are linked here, with a link to the corresponding code to the right of the ->
 
+[SPFx Command Set Dialogs without DOM Manipulation using hTWOo React](https://julieturner.net/post/htwoo-dialogs-command/) -> [`hTWOoDialogCommand`](./hTWOoDialogCommand)
+
 [Using CSS Variables to Morph Your SPFx Design at Run Time](https://wp.me/p7UKup-ew) -> [`CSSVariables`](./CSSVariables)
 
 [Curate the News: Social Following Sites on behalf of a user](https://julieturner.net/?p=838&preview=true) -> [`FollowSite`](./FollowSite)
