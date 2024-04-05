@@ -30,6 +30,10 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Extending Microsoft 365: Exploring the Art of the Possible
+
+[Links](./M365ExtLinks.md)
+
 ### Level up workflow with Webhooks
 
 Sample: [`Webhooks`](./Webhooks)
