@@ -17,7 +17,6 @@ If you have any issues or questions please feel free to [post an issue](https://
 [Ask Sympraxis: Microsoft 365 Templates Series](https://www.sympraxisconsulting.com/series/microsoft-365-templates/)
 [PnP List Formatting Samples](https://pnp.github.io/List-Formatting/)
 
-
 ## Low Code Extensibility
 
 >Slide 7
