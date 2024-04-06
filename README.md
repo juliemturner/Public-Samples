@@ -64,7 +64,7 @@ Demo: C3 Chart -> [`C3 Chart`](./SP%20Client%20Charting/C3%20Chart)
 
 Demo: C3 Dashboard -> [`C3 Dashboard`](./SP%20Client%20Charting/Dashboard)
 
-Demo: Canvas Guage -> [`Canvas Guage`](./SP%20Client%20Charting/Guage)
+Demo: Canvas Gauge -> [`Canvas Gauge`](./SP%20Client%20Charting/Gauge)
 
 ### Excel automation scenarios with SharePoint client-side development
 
