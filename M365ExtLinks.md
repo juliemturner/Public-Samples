@@ -60,6 +60,7 @@ If you have any issues or questions please feel free to [post an issue](https://
 >Slide 16
 
 [Overview of SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions)
+[Add Teams tab to SharePoint](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/tabs-in-sharepoint#introduction)
 
 ## Teams Development
 
