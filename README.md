@@ -34,6 +34,10 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 [Links](./M365ExtLinks.md)
 
+### Microsoft 365 
+
+[Microsoft 365 Development: Atomic Component Design](./Presentations/M365%20Dev%20-%20Atomic%20React%20Component%20Design.pdf)
+
 ### Level up workflow with Webhooks
 
 Sample: [`Webhooks`](./Webhooks)
