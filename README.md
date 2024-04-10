@@ -34,6 +34,9 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 [Links](./M365ExtLinks.md)
 
+#### Presentation
+[Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
+
 ### Microsoft 365 
 
 #### Presentation
