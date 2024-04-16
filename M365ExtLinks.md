@@ -44,6 +44,7 @@ If you have any issues or questions please feel free to [post an issue](https://
 [Azure Fluid Relay](https://azure.microsoft.com/en-ca/products/fluid-relay/)
 [Teams Live Share](https://developer.microsoft.com/en-us/microsoft-teams/liveshare)
 [Overview of SharePoint Embedded](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/overview)
+[Publish your app in the Microsoft Teams App Store](https://www.youtube.com/watch?v=IQf2Zs9Mob8)
 
 ## SPFx - Web Part
 
@@ -62,28 +63,35 @@ If you have any issues or questions please feel free to [post an issue](https://
 [Overview of SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions)
 [Add Teams tab to SharePoint](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/tabs-in-sharepoint#introduction)
 
-## Teams Development
+## SPFx - Viva Connections Adaptive Card Extensions (ACE)
 
 >Slide 17
+
+[Create a Viva Connections dashboard and add cards](https://learn.microsoft.com/en-us/viva/connections/create-dashboard)
+[Overview of Viva Connections Extensibility](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
+
+## Teams Development
+
+>Slide 18
 
 [Microsoft Bot Framework](https://dev.botframework.com/)
 [Microsoft Teams App Camp](https://microsoft.github.io/app-camp/)
 
 ## Teams - Tabs
 
->Slide 18
+>Slide 19
 
 [Build tabs for Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs?tabs=desktop%2Cdesktop1%2Cpersonal)
 
 ## Teams - Bots
 
->Slide 19
+>Slide 20
 
 [Build bots for Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/what-are-bots)
 
 ## Teams - Message Extensions
 
->Slide 20
+>Slide 21
 
 [Build message extensions](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions?tabs=desktop)
 [Build API-based message extension](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/build-api-based-message-extension?tabs=developer-portal-for-teams%2Cnew-api%2Cnew-api2)
@@ -91,69 +99,69 @@ If you have any issues or questions please feel free to [post an issue](https://
 
 ## Teams - Actions
 
->Slide 21
+>Slide 22
 
 [Define message extension action commands](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/how-to/action-commands/define-action-command?tabs=Teams-toolkit%2Cdotnet)
 
 ## Teams - Search
 
->Slide 22
+>Slide 23
 
 [Define message extension search commands](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/how-to/search-commands/define-search-command?tabs=Teams-toolkit%2Cdotnet)
 
 ## Teams - Link Unfurling
 
->Slide 24
+>Slide 25
 
 [Link unfurling](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/how-to/link-unfurling)
 
 ## Office Add-Ins
 
->Slide 25
+>Slide 26
 
 [Develop Office Add-ins](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/develop-overview)
 
 ## Tools - Cloud
 
->Slide 27
+>Slide 28
 
 [Azure products directory](https://azure.microsoft.com/en-us/products/)
 [Creating Generative AI Experiences with the Microsoft Cloud](https://learn.microsoft.com/en-us/microsoft-cloud/dev/copilot/isv-extensibility-story)
 
 ## Tools - Cloud - Data Sources
 
->Slide 28
+>Slide 29
 
 [Overview of SharePoint Embedded](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/overview)
 
 ## Authentication - Supported Flows
 
->Slide 30
+>Slide 31
 
 [Microsoft identity platform app types and authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios)
 
 ## MSAL (Microsoft Authentication Library)
 
->Slide 32
+>Slide 33
 
 [Overview of the Microsoft Authentication Library (MSAL)](https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview)
 
 ## @azure/identity
 
->Slide 33
+>Slide 34
 
 [@azure/identity javascript package](https://www.npmjs.com/package/@azure/identity)
 [Azure.Identity .NET package](https://www.nuget.org/packages/Azure.Identity)
 
 ## Managed Identity
 
->Slide 34
+>Slide 35
 
 [What are managed identities for Azure resources?](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview)
 
 ## Microsoft 365 Design Framework Options
 
->Slide 35
+>Slide 36
 
 [Why We're Breaking Up with CSS-in-JS](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b)
 [Microsoft Fluent UI](https://developer.microsoft.com/en-us/fluentui#/)
@@ -161,7 +169,7 @@ If you have any issues or questions please feel free to [post an issue](https://
 
 ## Data Bound Component Options
 
->Slide 37
+>Slide 38
 
 [Microsoft Graph Toolkit Web Components](https://www.npmjs.com/package/@microsoft/mgt-components)
 [FAST Design](https://www.fast.design/)
@@ -169,6 +177,6 @@ If you have any issues or questions please feel free to [post an issue](https://
 
 ## Community Support
 
->Slide 38
+>Slide 39
 
 [Microsoft 365 & Power Platform Community](https://aka.ms/m365pnp)
