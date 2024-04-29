@@ -30,6 +30,10 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### From Low Code to Pro Code Workshop
+
+[Links](./LowCodeProCode.md)
+
 ### Extending Microsoft 365: Exploring the Art of the Possible
 
 [Links](./M365ExtLinks.md)
