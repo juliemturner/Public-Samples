@@ -30,9 +30,12 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
-### From Low Code to Pro Code Workshop
+### Build Solutions for Microsoft 365 with a Fluent API Library
 
-[Links](./LowCodeProCode.md)
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
 ### Extending Microsoft 365: Exploring the Art of the Possible
 
@@ -40,6 +43,16 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
+
+### Managing Multiple tenants in Microsoft 365
+
+#### Presentation
+
+[Managing Multiple tenants in Microsoft 365](./Presentations/Managing%20Multiple%20tenants%20in%20Microsoft%20365.pdf)
+
+### From Low Code to Pro Code Workshop
+
+[Links](./LowCodeProCode.md)
 
 ### Microsoft 365 
 
