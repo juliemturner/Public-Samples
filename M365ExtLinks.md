@@ -121,47 +121,53 @@ If you have any issues or questions please feel free to [post an issue](https://
 
 [Develop Office Add-ins](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/develop-overview)
 
+## Community Support
+
+>Slide 27
+
+[Microsoft 365 & Power Platform Community](https://aka.ms/m365pnp)
+
 ## Tools - Cloud
 
->Slide 28
+>Slide 30
 
 [Azure products directory](https://azure.microsoft.com/en-us/products/)
 [Creating Generative AI Experiences with the Microsoft Cloud](https://learn.microsoft.com/en-us/microsoft-cloud/dev/copilot/isv-extensibility-story)
 
 ## Tools - Cloud - Data Sources
 
->Slide 29
+>Slide 31
 
 [Overview of SharePoint Embedded](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/overview)
 
 ## Authentication - Supported Flows
 
->Slide 31
+>Slide 32
 
 [Microsoft identity platform app types and authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios)
 
 ## MSAL (Microsoft Authentication Library)
 
->Slide 33
+>Slide 35
 
 [Overview of the Microsoft Authentication Library (MSAL)](https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview)
 
 ## @azure/identity
 
->Slide 34
+>Slide 36
 
 [@azure/identity javascript package](https://www.npmjs.com/package/@azure/identity)
 [Azure.Identity .NET package](https://www.nuget.org/packages/Azure.Identity)
 
 ## Managed Identity
 
->Slide 35
+>Slide 37
 
 [What are managed identities for Azure resources?](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview)
 
 ## Microsoft 365 Design Framework Options
 
->Slide 36
+>Slide 39
 
 [Why We're Breaking Up with CSS-in-JS](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b)
 [Microsoft Fluent UI](https://developer.microsoft.com/en-us/fluentui#/)
@@ -169,14 +175,9 @@ If you have any issues or questions please feel free to [post an issue](https://
 
 ## Data Bound Component Options
 
->Slide 38
+>Slide 40
 
 [Microsoft Graph Toolkit Web Components](https://www.npmjs.com/package/@microsoft/mgt-components)
 [FAST Design](https://www.fast.design/)
 [Reusable React controls for your SharePoint Framework solutions](https://pnp.github.io/sp-dev-fx-controls-react/)
 
-## Community Support
-
->Slide 39
-
-[Microsoft 365 & Power Platform Community](https://aka.ms/m365pnp)
