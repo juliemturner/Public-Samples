@@ -44,6 +44,15 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
 
+
+### Building reusable code libraries for extending Microsoft 365
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
+#### Presentation
+
+[](./Presentations/Building reusable code libraries.pdf)
+
 ### Managing Multiple tenants in Microsoft 365
 
 #### Presentation
@@ -62,10 +71,6 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 ### Level up workflow with Webhooks
 
 Sample: [`Webhooks`](./Webhooks)
-
-### Build NPM Libraries for use with SPFx
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
 
 ### PnPjs and the SharePoint Framework: Version 3 What's New
 
