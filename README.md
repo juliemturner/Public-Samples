@@ -30,13 +30,6 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
-### Build Solutions for Microsoft 365 with a Fluent API Library
-
-[PnPjs Documentation](https://pnp.github.io/pnpjs/)
-
-#### Presentation
-[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
-
 ### Extending Microsoft 365: Exploring the Art of the Possible
 
 [Links](./M365ExtLinks.md)
@@ -44,6 +37,12 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
 
+### Build Solutions for Microsoft 365 with a Fluent API Library
+
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
 ### Building reusable code libraries for extending Microsoft 365
 
