@@ -1,0 +1,28 @@
+{
+  "name": "event-grid-test",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/functions": "4.7.2",
+    "@pnp/azidjsclient": "4.14.0",
+    "@pnp/nodejs": "4.14.0",
+    "@pnp/sp": "4.14.0",
+    "@pnp/graph": "4.14.0",
+    "applicationinsights": "2.x"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "rimraf": "6.x",
+    "typescript": "5.x"
+  },
+  "main": "dist/src/functions/*.js"
+}

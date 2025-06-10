@@ -6,29 +6,16 @@ Please feel free to utilize the code at will.  As such there are no guarantees t
 
 USE INSTRUCTIONS: All examples that are not written using the SharePoint framework are intended for classic SharePoint and, unless otherwise stipulated, are intended to be run inside the context of a SharePoint site collection. Where a 3rd party library was used I make an effort to point to a public CDN where available. Many of these examples have references to custom files that would be stored in a library in a site collection in my own tenant.  Please make sure you review the locations of all reference libraries and make sure to adjust accordingly to your own needs.
 
-## Blog Posts - Most recent posts at the top
-
->Blog posts are linked here, with a link to the corresponding code to the right of the ->
-
-[SPFx Command Set Dialogs without DOM Manipulation using hTWOo React](https://julieturner.net/post/htwoo-dialogs-command/) -> [`hTWOoDialogCommand`](./hTWOoDialogCommand)
-
-[Using CSS Variables to Morph Your SPFx Design at Run Time](https://wp.me/p7UKup-ew) -> [`CSSVariables`](./CSSVariables)
-
-[Curate the News: Social Following Sites on behalf of a user](https://julieturner.net/?p=838&preview=true) -> [`FollowSite`](./FollowSite)
-
-[Resolve to Log](https://julieturner.net/2018/12/resolve-to-log/) -> [`PnPLogger`](./PnPLogger)
-
-[Conquer your dev toolchain in classic SharePoint](http://julieturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/) -> [`DevelopmentToolchain`](./DevelopmentToolchain)
-
-[Creating a property pane for editing items in your SPFx web parts](http://wp.me/p7UKup-6D) -> [`SPFXItemProperty`](./SPFXItemProperty)
-
-[Utilizing ngOfficeUIFabric People Picker in SharePoint](http://wp.me/p7UKup-5v) -> [`NGFabricUIPeoplePicker`](./NGFabricUIPeoplePicker)
-
-[SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)
-
-[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
-
 ## Conference Sessions - Most recent sessions at the top
+
+### Azure Functions: Real world scenarios and NodeJS implementation overview
+
+Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
+
+### Level up workflow with Webhooks (Change Events)
+
+NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
+.NET C# - HTTP Tigger: [`Webhooks C#`](./Webhooks)
 
 ### Extending Microsoft 365: Exploring the Art of the Possible
 
@@ -99,3 +86,25 @@ All Demos in the subfolder: [`SP Intro Client Dev`](./SP%20Intro%20Client%20Dev)
 Demo: Get Manager/Peers/Direct Reports -> [`GetManagerPeerDR.ts`](./MSGraph%20Application)
 
 Demo: File from SharePoint to OneDrive -> [`FileSPtoOD.ts`](./MSGraph%20Application)
+
+## Blog Posts - Most recent posts at the top
+
+>Blog posts are linked here, with a link to the corresponding code to the right of the ->
+
+[SPFx Command Set Dialogs without DOM Manipulation using hTWOo React](https://julieturner.net/post/htwoo-dialogs-command/) -> [`hTWOoDialogCommand`](./hTWOoDialogCommand)
+
+[Using CSS Variables to Morph Your SPFx Design at Run Time](https://wp.me/p7UKup-ew) -> [`CSSVariables`](./CSSVariables)
+
+[Curate the News: Social Following Sites on behalf of a user](https://julieturner.net/?p=838&preview=true) -> [`FollowSite`](./FollowSite)
+
+[Resolve to Log](https://julieturner.net/2018/12/resolve-to-log/) -> [`PnPLogger`](./PnPLogger)
+
+[Conquer your dev toolchain in classic SharePoint](http://julieturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/) -> [`DevelopmentToolchain`](./DevelopmentToolchain)
+
+[Creating a property pane for editing items in your SPFx web parts](http://wp.me/p7UKup-6D) -> [`SPFXItemProperty`](./SPFXItemProperty)
+
+[Utilizing ngOfficeUIFabric People Picker in SharePoint](http://wp.me/p7UKup-5v) -> [`NGFabricUIPeoplePicker`](./NGFabricUIPeoplePicker)
+
+[SharePoint time, is not your time, is not their time.](http://wp.me/p7UKup-5a) -> [`SPDateTime`](./SPDateTime)
+
+[Extending SharePoint with ADAL and the Microsoft Graph API](http://wp.me/p7UKup-28) -> [`MSGraph ADAL Intro`](./MSGraph%20ADAL%20Intro)
