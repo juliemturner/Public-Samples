@@ -24,6 +24,31 @@ NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
 
+### Build Solutions for Microsoft 365 with a Fluent API Library
+
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
+
+### Building reusable code libraries for extending Microsoft 365
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
+#### Presentation
+
+[](./Presentations/Building reusable code libraries.pdf)
+
+### Managing Multiple tenants in Microsoft 365
+
+#### Presentation
+
+[Managing Multiple tenants in Microsoft 365](./Presentations/Managing%20Multiple%20tenants%20in%20Microsoft%20365.pdf)
+
+### From Low Code to Pro Code Workshop
+
+[Links](./LowCodeProCode.md)
+
 ### Microsoft 365 
 
 #### Presentation
@@ -32,10 +57,6 @@ NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
 ### Level up workflow with Webhooks
 
 Sample: [`Webhooks`](./Webhooks)
-
-### Build NPM Libraries for use with SPFx
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
 
 ### PnPjs and the SharePoint Framework: Version 3 What's New
 
