@@ -37,7 +37,7 @@ export class MyService implements IMyService {
     let retVal = false;
     try{
       // Do something with the queue item.
-      this._auth.sp.web.lists.getById(process.env.ProjectListId).items.getById(item.id).update({Title: 'New Title'});
+      await this._auth.sp.web.lists.getById(process.env.ProjectListId).items.getById(item.id).update({Title: 'New Title'});
       retVal = true;
     }catch(err){
       this._apu.Log(MessageType.Exception, {
