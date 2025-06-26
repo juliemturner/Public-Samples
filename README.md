@@ -12,10 +12,26 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
 
+#### Presentation
+
+[Introduction to Azure Functions](./Presentations/AzureFunctionsIntro.pdf)
+
 ### Level up workflow with Webhooks (Change Events)
 
 NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
 .NET C# - HTTP Tigger: [`Webhooks C#`](./Webhooks)
+
+#### Presentation
+
+[Level Up Workflow with Webhoooks](./Presentations/LevelUpWorkflowWebhooks.pdf)
+
+### Build Solutions for Microsoft 365 with a Fluent API Library
+
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
 ### Extending Microsoft 365: Exploring the Art of the Possible
 
@@ -23,13 +39,6 @@ NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
 
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
-
-### Build Solutions for Microsoft 365 with a Fluent API Library
-
-[PnPjs Documentation](https://pnp.github.io/pnpjs/)
-
-#### Presentation
-[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
 ### Building reusable code libraries for extending Microsoft 365
 
