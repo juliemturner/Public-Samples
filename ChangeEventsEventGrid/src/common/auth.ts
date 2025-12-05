@@ -64,9 +64,11 @@ export class AuthService implements IAuthService {
   public get ready(): boolean {
     return this._ready;
   }
+  
   public get sp(): SPFI {
     return this._sp;
   }
+
   public get graph(): GraphFI {
     return this._graph;
   }
