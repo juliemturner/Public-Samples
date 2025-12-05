@@ -16,14 +16,16 @@ Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
 
 [Introduction to Azure Functions](./Presentations/AzureFunctionsIntro.pdf)
 
-### Level up workflow with Webhooks (Change Events)
+### Pro Code Solutions for Scalable Workflow Management in Microsoft 365
 
-NodeJS - Event Grid: [`Webhooks NodeJs`](./WebhooksEventGrid)
-.NET C# - HTTP Tigger: [`Webhooks C#`](./Webhooks)
+NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
+
+(Older sample for SharePoint Webhooks in C#)
+.NET C# - HTTP Tigger: [`Webhooks (C#)`](./Webhooks)
 
 #### Presentation
 
-[Level Up Workflow with Webhoooks](./Presentations/LevelUpWorkflowWebhooks.pdf)
+[Pro Code Solutions for Scalable Workflow Management in Microsoft 365](./Presentations/ChangeEventsEventGridPresentation.pdf)
 
 ### Build Solutions for Microsoft 365 with a Fluent API Library
 
