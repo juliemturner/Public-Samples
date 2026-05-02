@@ -1,10 +1,9 @@
 import { BaseApplicationCustomizer, PlaceholderContent, PlaceholderName } from '@microsoft/sp-application-base';
 import { override } from '@microsoft/decorators';
 
+import 'react';
 import * as ReactDOM from "react-dom";
 import { Lib1Launcher, ILib1Launcher, ILib1LauncherProps } from "@juliemturner/lib1";
-require('react');
-require("@juliemturner/lib1_1");
 
 export interface ISpExtApplicationCustomizerProperties { }
 
@@ -26,7 +25,7 @@ export default class SpExtApplicationCustomizer
   public async onDispose(): Promise<void> {
     try {
       this.context.application.navigatedEvent.remove(this, this._render);
-      // eslint-disable-next-line @microsoft/spfx/pair-react-dom-render-unmount
+      // eslint-disable-next-line @rushstack/pair-react-dom-render-unmount
       ReactDOM.unmountComponentAtNode(this._getTopContainer());
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (onDispose) ${err}`);
@@ -37,7 +36,7 @@ export default class SpExtApplicationCustomizer
   }
 
   private _getTopContainer(): HTMLElement {
-    return document.getElementById(this._elementId);
+    return document.getElementById(this._elementId) as HTMLElement;
   }
 
   private async _render(): Promise<void> {
@@ -50,12 +49,12 @@ export default class SpExtApplicationCustomizer
       }
 
       //if a placeholder was retrieved, then we can work with that
-      if (this._topPlaceholder != undefined) {
+      if (this._topPlaceholder !== undefined) {
         //get the nav container we want that would be inside of the SPFx placeholder
         let container = this._getTopContainer();
 
         //if the container was not found, go and create, then append to spfx top placeholder
-        if (container == undefined) {
+        if (container === null) {
           //create nav div
           container = document.createElement("DIV");
           container.setAttribute("id", this._elementId);

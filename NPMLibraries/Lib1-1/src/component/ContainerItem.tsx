@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "./Lib2Styles";
+import "./Lib2Styles.scss";
 
 export interface ILibItem {
   title: string;
@@ -32,7 +32,7 @@ export default class ContainerItem extends React.Component<IContainerItemProps, 
     window.open(this.props.item.url, "_blank");
   };
 
-  public render(): React.ReactElement<IContainerItemProps> {
+  public render(): React.ReactElement<IContainerItemProps> | null {
     try {
       return (
         <div data-component={this.LOG_SOURCE} className="lib2">

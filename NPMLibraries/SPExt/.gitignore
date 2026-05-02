@@ -32,3 +32,9 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# SPFx 1.22.1 heft build outputs
+lib-dts
+lib-commonjs
+lib-esm
+jest-output

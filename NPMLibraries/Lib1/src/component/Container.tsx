@@ -19,7 +19,7 @@ export default class Container extends React.Component<IContainerProps, IContain
     this.state = new ContainerState();
   }
 
-  public render(): React.ReactElement<IContainerProps> {
+  public render(): React.ReactElement<IContainerProps> | null {
     try {
       return (
         <div data-component={this.LOG_SOURCE} className="lib1">

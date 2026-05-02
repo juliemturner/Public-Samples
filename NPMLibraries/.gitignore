@@ -286,6 +286,9 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+# SSL certificates (private keys must never be committed)
+certs/
+
 # Visual Studio 6 build log
 *.plg
 

@@ -12,10 +12,15 @@
     }
   },
   "externals": {
-    //"@juliemturner/lib1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1.js",
-    "@juliemturner/lib1": "https://localhost:3010/lib1.js",
-    //"@juliemturner/lib1_1": "https://jmtdemos.blob.core.windows.net/npmlib/lib1_1.js"
-    "@juliemturner/lib1_1": "https://localhost:3000/lib1_1.js"
+    "@juliemturner/lib1": {
+      "path": "https://localhost:3010/lib1.js",
+      "globalName": "lib1",
+      "globalDependencies": ["@juliemturner/lib1_1"]
+    },
+    "@juliemturner/lib1_1": {
+      "path": "https://localhost:3000/lib1_1.js",
+      "globalName": "lib11"
+    }
   },
   "localizedResources": {
     "SpExtApplicationCustomizerStrings": "lib/extensions/spExt/loc/{locale}.js"

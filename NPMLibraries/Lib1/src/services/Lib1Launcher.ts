@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 //Include CSS in bundle
-import "../component/Lib1Styles";
+import "../component/Lib1Styles.scss";
 
 import Container from "../component/Container";
 import { IContainerProps } from "../component/Container";
@@ -18,8 +18,8 @@ export interface ILib1Launcher {
 }
 
 export class Lib1Launcher implements ILib1Launcher {
-  private domElementHeader: HTMLDivElement;
-  private items: ILibItem[];
+  private domElementHeader!: HTMLDivElement;
+  private items!: ILibItem[];
 
   constructor(props: ILib1LauncherProps) {
     console.log("Lib1Launcher constructor");

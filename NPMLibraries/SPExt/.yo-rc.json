@@ -2,12 +2,13 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.18.1",
+    "nodeVersion": "18.20.4",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.9.1"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.17.3",
+    "version": "1.22.2",
+    "useGulp": false,
     "libraryName": "sp-ext",
     "libraryId": "71348efa-b07e-4caa-9d2a-cde7baa9374a",
     "environment": "spo",
