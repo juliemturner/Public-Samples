@@ -8,6 +8,23 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Building reusable code libraries for extending Microsoft 365
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
+#### Presentation
+
+[](./Presentations/Building reusable code libraries.pdf)
+
+### ECS 
+
+Sample: [`M365 Extensibility Demo`](./M365Ext/)
+
+#### Presentation
+
+[M365 Extensibility with SharePoint Framework](./Presentations/ECS-Workshop-SPFx.pdf)
+
+Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
 ### Azure Functions: Real world scenarios and NodeJS implementation overview
 
 Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
@@ -42,13 +59,6 @@ NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEvent
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
 
-### Building reusable code libraries for extending Microsoft 365
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
-
-#### Presentation
-
-[](./Presentations/Building reusable code libraries.pdf)
 
 ### Managing Multiple tenants in Microsoft 365
 
