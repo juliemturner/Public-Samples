@@ -1,6 +1,6 @@
-import { IAppInsightUtil, MessageType, SeverityLevel } from "../common/appinsightutil";
-import { IAuthService } from "../common/auth";
-import { IMyQueueItem } from "../models/models";
+import { IAppInsightUtil, MessageType, SeverityLevel } from "../common/appinsightutil.js";
+import { IAuthService } from "../common/auth.js";
+import { IMyQueueItem } from "../models/models.js";
 
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
