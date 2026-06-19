@@ -8,7 +8,7 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
-### Pro Code Solutions for Scalable Workflow Management in Microsoft 365
+### Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management
 
 NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
 
@@ -17,7 +17,7 @@ NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEvent
 
 #### Presentation
 
-[Pro Code Solutions for Scalable Workflow Management in Microsoft 365](./Presentations/ChangeEventsEventGridPresentation.pdf)
+[Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management](./Presentations/ChangeEventsEventGridPresentation.pdf)
 
 ### Azure Functions: Real world scenarios and NodeJS implementation overview
 
