@@ -9,7 +9,7 @@
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.2.1" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.1.2" />
     <PackageReference Include="PnP.Core.Auth" Version="1.10.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
