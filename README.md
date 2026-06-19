@@ -60,6 +60,16 @@ Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
 
 [Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
+Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
+
+### Build Solutions for Microsoft 365 with a Fluent API Library
+
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
+
 ### Managing Multiple tenants in Microsoft 365
 
 #### Presentation

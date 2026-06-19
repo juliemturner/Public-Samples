@@ -1,4 +1,5 @@
 import { app, InvocationContext } from "@azure/functions";
+import { QueueClient } from "@azure/storage-queue";
 import { AppInsightUtil, MessageType, SeverityLevel } from "../common/appinsightutil.js";
 import { AuthService } from "../common/auth.js";
 import { IMyQueueItem } from "../models/models.js";
@@ -34,8 +35,40 @@ export async function queueTrigger(queueItem: IMyQueueItem, context: InvocationC
       },
       severity: (result) ? SeverityLevel.Information : SeverityLevel.Critical
     });
+    // Used to throw exception in AppInsights and will be requeued based on settings in host.json
     if (!result) {
       throw Error(`Error processing queue item ${JSON.stringify(queueItem)}`);
+    }
+    // Alternate: Requeue logic
+    if (!result) {
+      const queueClient = new QueueClient(
+        process.env.AzureWebJobsStorage,
+        process.env.MyQueuePath
+      );
+
+      const response = await queueClient.updateMessage(
+        context.triggerMetadata.id as string,
+        context.triggerMetadata.popReceipt as string,
+        Buffer.from(JSON.stringify(queueItem)).toString("base64"),
+        300
+      );
+
+      _apu.Log(MessageType.Trace, {
+        message: `Requeued Item - Incomplete`,
+        logSource: LOG_SOURCE,
+        properties: {
+          method: "{function}",
+          result: response.errorCode || "Success",
+          messageId: context.triggerMetadata.id,
+          popReceipt: context.triggerMetadata.popReceipt,
+          queueItem: JSON.stringify(queueItem)
+        },
+        severity: (response.errorCode) ? SeverityLevel.Error : SeverityLevel.Information
+      });
+
+      if (response.errorCode) {
+        throw Error(`Could not requeue item.`);
+      }
     }
   } catch (err) {
     _apu.Log(MessageType.Exception, {

@@ -12,11 +12,11 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "4.7.2",
-    "@pnp/azidjsclient": "4.14.0",
-    "@pnp/nodejs": "4.14.0",
-    "@pnp/sp": "4.14.0",
-    "@pnp/graph": "4.14.0",
+    "@azure/functions": "4.16.0",
+    "@pnp/azidjsclient": "4.20.0",
+    "@pnp/nodejs": "4.20.0",
+    "@pnp/sp": "4.20.0",
+    "@pnp/graph": "4.20.0",
     "applicationinsights": "2.x"
   },
   "devDependencies": {
