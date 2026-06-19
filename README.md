@@ -8,6 +8,32 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Pro Code Solutions for Scalable Workflow Management in Microsoft 365
+
+NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
+
+(Older sample for SharePoint Webhooks in C#)
+.NET C# - HTTP Tigger: [`Webhooks (C#)`](./Webhooks)
+
+#### Presentation
+
+[Pro Code Solutions for Scalable Workflow Management in Microsoft 365](./Presentations/ChangeEventsEventGridPresentation.pdf)
+
+### Azure Functions: Real world scenarios and NodeJS implementation overview
+
+Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
+
+#### Presentation
+
+[Introduction to Azure Functions](./Presentations/AzureFunctionsIntro.pdf)
+
+### Extending Microsoft 365: Exploring the Art of the Possible
+
+[Links](./M365ExtLinks.md)
+
+#### Presentation
+[Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
+
 ### Building reusable code libraries for extending Microsoft 365
 
 Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
@@ -25,24 +51,6 @@ Sample: [`M365 Extensibility Demo`](./M365Ext/)
 [M365 Extensibility with SharePoint Framework](./Presentations/ECS-Workshop-SPFx.pdf)
 
 Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
-### Azure Functions: Real world scenarios and NodeJS implementation overview
-
-Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
-
-#### Presentation
-
-[Introduction to Azure Functions](./Presentations/AzureFunctionsIntro.pdf)
-
-### Pro Code Solutions for Scalable Workflow Management in Microsoft 365
-
-NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
-
-(Older sample for SharePoint Webhooks in C#)
-.NET C# - HTTP Tigger: [`Webhooks (C#)`](./Webhooks)
-
-#### Presentation
-
-[Pro Code Solutions for Scalable Workflow Management in Microsoft 365](./Presentations/ChangeEventsEventGridPresentation.pdf)
 
 ### Build Solutions for Microsoft 365 with a Fluent API Library
 
@@ -51,14 +59,6 @@ NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEvent
 #### Presentation
 
 [Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
-
-### Extending Microsoft 365: Exploring the Art of the Possible
-
-[Links](./M365ExtLinks.md)
-
-#### Presentation
-[Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
-
 
 ### Managing Multiple tenants in Microsoft 365
 
