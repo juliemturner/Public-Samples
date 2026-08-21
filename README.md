@@ -8,13 +8,16 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
-### Extending Microsoft 365: Exploring the Art of the Possible
+### Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management
 
-[Links](./M365ExtLinks.md)
+NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
+
+(Older sample for SharePoint Webhooks in C#)
+.NET C# - HTTP Tigger: [`Webhooks (C#)`](./Webhooks)
 
 #### Presentation
 
-[Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
+[Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management](./Presentations/ChangeEventsEventGridPresentation.pdf)
 
 ### Azure Functions: Real world scenarios and NodeJS implementation overview
 
@@ -34,14 +37,10 @@ Sample: [`AzureFunctionsBindings`](./AzureFunctionsBindings)
 
 ### Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management
 
-NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
-
-(Older sample for SharePoint Webhooks in C#)
-.NET C# - HTTP Tigger: [`Webhooks (C#)`](./Webhooks)
+[Links](./M365ExtLinks.md)
 
 #### Presentation
-
-[Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management](./Presentations/ChangeEventsEventGridPresentation.pdf)
+[Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
 
 ### Building reusable code libraries for extending Microsoft 365
 
@@ -58,6 +57,16 @@ Sample: [`M365 Extensibility Demo`](./M365Ext/)
 #### Presentation
 
 [M365 Extensibility with SharePoint Framework](./Presentations/ECS-Workshop-SPFx.pdf)
+
+Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
+
+### Build Solutions for Microsoft 365 with a Fluent API Library
+
+[PnPjs Documentation](https://pnp.github.io/pnpjs/)
+
+#### Presentation
+
+[Build Solutions for Microsoft 365 with a Fluent API Library](./Presentations//Build%20Solutions%20for%20Microsoft%20365%20with%20a%20Fluent%20API%20Library.pdf)
 
 Microsoft 365 Developer Power Class: Copilot and Platform Extensibility
 
