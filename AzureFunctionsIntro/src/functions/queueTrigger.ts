@@ -6,9 +6,9 @@ import { IMyQueueItem } from "../models/models.js";
 import { MyService } from "../services/myService.js";
 
 export async function queueTrigger(queueItem: IMyQueueItem, context: InvocationContext): Promise<void> {
-  const LOG_SOURCE = "provisionQueue";
+  const LOG_SOURCE = "queueTrigger";
   const _apu = new AppInsightUtil();
-  _apu.Init(context.invocationId);
+  _apu.Init(context.invocationId, context.traceContext?.traceParent ?? '');
 
   _apu.Log(MessageType.Event, {
     logSource: `${LOG_SOURCE}`,
@@ -79,7 +79,7 @@ export async function queueTrigger(queueItem: IMyQueueItem, context: InvocationC
         method: "notificationQueue"
       }
     });
-    throw Error(`Queue item was not processed. ${err}`);
+    throw err;
   }
 }
 

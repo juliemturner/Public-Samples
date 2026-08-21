@@ -22,7 +22,15 @@ Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
 
 #### Presentation
 
-[Introduction to Azure Functions](./Presentations/AzureFunctionsIntro.pdf)
+[Azure Functions: Real world scenarios and NodeJS implementation overview](./Presentations/AzureFunctionsIntro.pdf)
+
+### Deep Dive into Azure Function Bindings: Blob, Queues, Event Grid & More
+
+Sample: [`AzureFunctionsBindings`](./AzureFunctionsBindings)
+
+#### Presentation
+
+[Deep Dive into Azure Function Bindings: Blob, Queues, Event Grid & More](./Presentations/AzureFunctionsBindings.pdf)
 
 ### Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management
 
