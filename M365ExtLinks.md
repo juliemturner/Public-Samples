@@ -50,6 +50,11 @@ If you have any issues or questions please feel free to [post an issue](https://
 [Create a Viva Connections dashboard and add cards](https://learn.microsoft.com/en-us/viva/connections/create-dashboard)
 [Overview of Viva Connections Extensibility](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
 
+## SPFx - SharePoint Copilot Apps
+
+[Overview of SharePoint Copilot Apps](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/copilot/overview-copilot-apps)
+[SharePoint Copilot Apps Samples - UX in Copilot canvas](https://github.com/pnp/spfx-copilot-apps)
+
 ## Teams Development
 
 [Microsoft Bot Framework](https://dev.botframework.com/)

@@ -8,9 +8,9 @@ const queueOutput = output.storageQueue({
 });
 
 export async function httpRequest(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  const LOG_SOURCE = "provisionCompleteHttp";
+  const LOG_SOURCE = "httpRequest";
   const _apu = new AppInsightUtil();
-  _apu.Init(context.invocationId);
+  _apu.Init(context.invocationId, context.traceContext?.traceParent ?? '');
 
   _apu.Log(MessageType.Event, {
     logSource: `${LOG_SOURCE}`,
@@ -31,7 +31,7 @@ export async function httpRequest(request: HttpRequest, context: InvocationConte
       exception: err,
       severity: SeverityLevel.Critical,
       properties: {
-        method: "provisionCompleteHttp"
+        method: "{function}"
       }
     });
     return { status: 500, body: JSON.stringify({ message: `Critical error - ${err}` }) };

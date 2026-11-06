@@ -4,9 +4,9 @@ import { AuthService } from "../common/auth.js";
 import { MyService } from "../services/myService.js";
 
 export async function timerTrigger(myTimer: Timer, context: InvocationContext): Promise<void> {
-  const LOG_SOURCE = "TimerTrigger";
+  const LOG_SOURCE = "timerTrigger";
   const _apu = new AppInsightUtil();
-  _apu.Init(context.invocationId);
+  _apu.Init(context.invocationId, context.traceContext?.traceParent ?? '');
 
   _apu.Log(MessageType.Event, {
     logSource: `${LOG_SOURCE}`,
