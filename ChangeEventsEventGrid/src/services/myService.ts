@@ -45,6 +45,10 @@ export class MyService implements IMyService {
       // Process the notification
       let processingSuccess = true;
       const changeIds = await this._getChangedItemIds();
+      if(changeIds == null){
+        this._subConfig.lastToken = null;
+        return this._subConfig;
+      }
 
       // Process Changes Ids to get items
       if (changeIds.length > 0) {
@@ -188,8 +192,8 @@ export class MyService implements IMyService {
     return this._subConfig;
   }
 
-  private async _getChangedItemIds(skipIds: boolean = false): Promise<number[]> {
-    const retVal: number[] = [];
+  private async _getChangedItemIds(skipIds: boolean = false): Promise<number[] | null> {
+    let retVal: number[] = [];
     try {
       // Process the notification
       const changeQuery: IChangeQuery = {
@@ -232,6 +236,7 @@ export class MyService implements IMyService {
         }
       } while (items != null && items?.length > 0)
     } catch (err) {
+      retVal = null;
       this._apu.Log(MessageType.Exception, {
         logSource: this.LOG_SOURCE,
         exception: err,

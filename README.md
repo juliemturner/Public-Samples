@@ -8,6 +8,26 @@ USE INSTRUCTIONS: All examples that are not written using the SharePoint framewo
 
 ## Conference Sessions - Most recent sessions at the top
 
+### Building reusable code libraries for extending Microsoft 365
+
+Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
+
+#### Presentation
+
+[](./Presentations/Building reusable code libraries.pdf)
+
+### Deep Dive into Azure Function Bindings: Blob, Queues, Event Grid & More
+
+#### Presentation
+
+[](./Presentations/AzureFunctionBindings.pdf)
+
+### "Auth Is Easy" - A 101 Guide to Authentication & Authorization in Microsoft 365 Development
+
+#### Presentation
+
+[](./Presentations/AuthIsEasy.pdf)
+
 ### Harnessing Change Events in Microsoft 365 for Enterprise-Scale Workflow Management
 
 NodeJS - Event Grid: [`Change Events - Event Grid (NodeJS)`](./ChangeEventsEventGrid)
@@ -33,14 +53,6 @@ Sample: [`AzureFunctionsIntro`](./AzureFunctionsIntro)
 
 #### Presentation
 [Extending Microsoft 365: Exploring the Art of the Possible](./Presentations/M365Extensibility.pdf)
-
-### Building reusable code libraries for extending Microsoft 365
-
-Sample: [`NPM Libraries for SPFx`](./NPMLibraries)
-
-#### Presentation
-
-[](./Presentations/Building reusable code libraries.pdf)
 
 ### ECS 
 
